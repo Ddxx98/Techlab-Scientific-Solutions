@@ -1,0 +1,162 @@
+.productSection {
+    padding: 5rem 1.25rem;
+    background: var(--color-bg-light-alt);
+}
+
+.container {
+    max-width: 75rem;
+    margin: 0 auto;
+}
+
+.header {
+    margin-bottom: 4rem;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    margin-bottom: 1.5rem;
+}
+
+.highlight {
+    color: var(--color-primary);
+}
+
+.subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-tertiary);
+    max-width: 50rem;
+    line-height: 1.6;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+}
+
+.card {
+    background: var(--color-bg-white);
+    border: 1px solid var(--color-border-light);
+    padding: 1.5rem;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.card:hover {
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.05);
+    transform: translateY(-0.25rem);
+    border-color: var(--color-primary);
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.productName {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin: 0;
+}
+
+.arrow {
+    font-size: 1.25rem;
+    color: var(--color-primary);
+}
+
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    height: 15rem;
+    background: var(--color-bg-light-secondary);
+    overflow: hidden;
+}
+
+.productImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .productImage {
+    transform: scale(1.05);
+}
+
+.categoryBadge {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    background: var(--color-bg-white);
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    color: var(--color-text-tertiary);
+    border: 1px solid var(--color-border-light);
+}
+
+.exploreCard {
+    background: var(--color-primary);
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-white);
+}
+
+.exploreContent {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    width: 100%;
+}
+
+.moreCount {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.exploreBtn {
+    background: transparent;
+    border: none;
+    color: var(--color-text-white);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0;
+    width: fit-content;
+}
+
+.exploreArrow {
+    font-size: 1.125rem;
+}
+
+@media (max-width: 62rem) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 48rem) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .title {
+        font-size: 2.25rem;
+    }
+
+    .productSection {
+        padding: 3rem 1.25rem;
+    }
+}

@@ -1,0 +1,239 @@
+.hero {
+  background: var(--color-bg-light-secondary);
+  padding: 5rem 1.25rem;
+  padding-top: 8rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.headerSection {
+  width: 100%;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.highlight {
+  color: var(--color-primary);
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 0.3125rem;
+  color: var(--color-primary);
+  font-weight: 300;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+.mainContent {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+.imageSection {
+  position: relative;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  height: 25rem;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.controls {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  display: flex;
+  gap: 0.625rem;
+}
+
+.controlBtn {
+  background: var(--color-bg-white);
+  border: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.125rem;
+  color: var(--color-primary);
+  box-shadow: 0 0.125rem 0.5rem var(--color-shadow);
+  transition: all 0.2s;
+}
+
+.controlBtn:hover {
+  background: var(--color-bg-light-alt);
+}
+
+.sideSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9375rem;
+}
+
+.projectCard {
+  background: var(--color-bg-white);
+  padding: 1.25rem;
+  border-radius: 0.25rem;
+  border: 0.0625rem solid var(--color-border-dark);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cardTag {
+  font-size: 0.75rem;
+  color: var(--color-text-tertiary);
+  margin-bottom: 0.3125rem;
+  display: block;
+}
+
+.cardTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0 0 0.625rem;
+}
+
+.cardText {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.footerSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.875rem;
+}
+
+.description {
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  max-width: 50rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.buttons {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.primaryBtn {
+  background: var(--color-primary);
+  color: var(--color-text-white);
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  transition: background 0.2s;
+}
+
+.primaryBtn:hover {
+  background: var(--color-primary-hover);
+}
+
+.secondaryBtn {
+  background: transparent;
+  border: 0.0625rem solid var(--color-primary);
+  color: var(--color-primary);
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  transition: all 0.2s;
+}
+
+.secondaryBtn:hover {
+  background: rgba(0, 86, 179, 0.05);
+}
+
+.arrow {
+  font-size: 1.125rem;
+}
+
+@media (max-width: 62rem) {
+  .mainContent {
+    grid-template-columns: 1fr;
+  }
+
+  .sideSection {
+    display: none;
+  }
+
+  .imageSection {
+    height: 18.75rem;
+  }
+
+  .title {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  .hero {
+    padding: 2.5rem 1.25rem;
+    padding-top: 5.5rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 0.9375rem;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}

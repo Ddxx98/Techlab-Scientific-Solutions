@@ -1,0 +1,234 @@
+.aboutPage {
+    padding-top: 8rem;
+    background: var(--color-bg-accent);
+}
+
+.container {
+    max-width: 75rem;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+}
+
+.headerSection {
+    padding: 4rem 0;
+}
+
+.headerContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 2rem;
+}
+
+.pageTitle {
+    font-size: 3.5rem;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    margin: 0;
+}
+
+.tagline {
+    font-size: 1.125rem;
+    color: var(--color-text-tertiary);
+    max-width: 30rem;
+    text-align: right;
+    margin: 0;
+}
+
+.principleHero {
+    height: 35rem;
+    background-image: url(https://images.unsplash.com/photo-1581093588401-fbb62a02f120?q=80&w=2070&auto=format&fit=crop);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin-bottom: 4rem;
+}
+
+.heroOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-overlay);
+    display: flex;
+    align-items: center;
+}
+
+.heroContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: var(--color-text-white);
+    gap: 4rem;
+}
+
+.heroTitle {
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.heroText {
+    font-size: 1.25rem;
+    max-width: 35rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.contentSection {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    padding: 4rem 0;
+    border-top: 1px solid var(--color-border-light);
+}
+
+.sectionTitle h3 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    margin: 0;
+}
+
+.sectionBody {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.sectionBody p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+.approachList,
+.benefitsList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.approachList ul,
+.benefitsList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.approachList li::before,
+.benefitsList li::before {
+    content: "•";
+    color: var(--color-primary);
+    font-weight: 700;
+    display: inline-block;
+    width: 1.5rem;
+}
+
+.approachList li,
+.benefitsList li {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+}
+
+.motto,
+.emphasis {
+    font-weight: 500;
+    color: var(--color-text-primary);
+}
+
+.contactBtn {
+    background: var(--color-primary);
+    color: var(--color-text-white);
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: fit-content;
+    transition: background 0.2s, transform 0.2s;
+    margin-top: 1rem;
+}
+
+.contactBtn:hover {
+    background: var(--color-primary-hover);
+    transform: translateX(0.25rem);
+}
+
+.arrow {
+    font-size: 1.125rem;
+}
+
+@media (max-width: 62rem) {
+    .contentSection {
+        grid-template-columns: 1fr 1.5fr;
+        gap: 2rem;
+    }
+
+    .pageTitle {
+        font-size: 2.5rem;
+    }
+
+    .heroTitle {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 48rem) {
+    .aboutPage {
+        padding-top: 5.5rem;
+    }
+
+    .headerContent {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .tagline {
+        text-align: left;
+        font-size: 1rem;
+    }
+
+    .principleHero {
+        height: 25rem;
+    }
+
+    .heroContent {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .heroText {
+        font-size: 1.125rem;
+    }
+
+    .contentSection {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 3rem 0;
+    }
+
+    .sectionTitle h3 {
+        font-size: 1.75rem;
+    }
+
+    .sectionBody p,
+    .approachList li,
+    .benefitsList li {
+        font-size: 1rem;
+    }
+
+    .contactBtn {
+        width: 100%;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,168 @@
+.serviceDataSection {
+    padding: 6rem 1.25rem;
+    padding-top: 9rem;
+    background: var(--color-bg-accent);
+}
+
+.container {
+    max-width: 75rem;
+    margin: 0 auto;
+}
+
+.sectionTitle {
+    font-size: 3.5rem;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    margin-bottom: 4rem;
+}
+
+.contentWrapper {
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+    gap: 4rem;
+}
+
+.linksColumn {
+    border-right: 1px solid var(--color-border-light);
+    padding-right: 2rem;
+}
+
+.serviceList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.serviceItem {
+    font-size: 1.25rem;
+    color: var(--color-text-tertiary);
+    cursor: pointer;
+    transition: all 0.2s;
+    width: fit-content;
+    position: relative;
+}
+
+.serviceItem:hover {
+    color: var(--color-primary);
+}
+
+.serviceItem.active {
+    color: var(--color-primary);
+    font-weight: 500;
+}
+
+.serviceItem.active::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--color-primary);
+}
+
+.detailsColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.imageWrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: var(--color-bg-light-tertiary);
+    border-radius: 0.125rem;
+    overflow: hidden;
+}
+
+.serviceImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.textWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.description {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+.contactLink {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    width: fit-content;
+    transition: opacity 0.2s;
+}
+
+.contactLink:hover {
+    opacity: 0.7;
+}
+
+@media (max-width: 62rem) {
+    .contentWrapper {
+        grid-template-columns: 1fr 2fr;
+        gap: 2rem;
+    }
+
+    .sectionTitle {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 48rem) {
+    .serviceDataSection {
+        padding: 4rem 1.25rem;
+        padding-top: 6.5rem;
+    }
+
+    .sectionTitle {
+        font-size: 2rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .contentWrapper {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .linksColumn {
+        border-right: none;
+        border-bottom: 1px solid var(--color-border-light);
+        padding-right: 0;
+        padding-bottom: 1.5rem;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .serviceList {
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .serviceItem {
+        font-size: 1.125rem;
+    }
+
+    .detailsColumn {
+        gap: 1.5rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,171 @@
+.serviceSection {
+    padding: 5rem 1.25rem;
+    background: var(--color-bg-light-secondary);
+}
+
+.container {
+    max-width: 75rem;
+    margin: 0 auto;
+}
+
+.mainTitle {
+    font-size: 3rem;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    margin-bottom: 4rem;
+}
+
+.highlight {
+    color: var(--color-primary);
+}
+
+.contentWrapper {
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
+}
+
+.serviceList {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.serviceItem {
+    padding-left: 1.5rem;
+    border-left: 0.125rem solid var(--color-border-dark);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.serviceItem.active {
+    border-left-color: var(--color-primary);
+}
+
+.serviceHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.serviceId {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.serviceTitle {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin: 0;
+}
+
+.serviceDescription {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    max-width: 25rem;
+}
+
+.moreInfo {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.moreText {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.exploreBtn {
+    background: var(--color-primary);
+    color: var(--color-text-white);
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    width: fit-content;
+    transition: background 0.2s;
+}
+
+.exploreBtn:hover {
+    background: var(--color-primary-hover);
+}
+
+.arrow {
+    font-size: 1.125rem;
+}
+
+.desktopImageWrapper {
+    flex: 1.2;
+    height: 30rem;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    box-shadow: 0 0.5rem 2rem var(--color-shadow);
+}
+
+.desktopImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.mobileImageWrapper {
+    display: none;
+}
+
+@media (max-width: 62rem) {
+    .contentWrapper {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .desktopImageWrapper {
+        display: none;
+    }
+
+    .mobileImageWrapper {
+        display: block;
+        width: 100%;
+        height: 15rem;
+        margin-top: 1.5rem;
+        border-radius: 0.25rem;
+        overflow: hidden;
+    }
+
+    .mobileImage {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .serviceDescription {
+        max-width: 100%;
+    }
+
+    .serviceItem {
+        padding-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 48rem) {
+    .mainTitle {
+        font-size: 2.25rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .serviceSection {
+        padding: 3rem 1.25rem;
+    }
+}

@@ -1,0 +1,117 @@
+.industries {
+    padding: 5rem 1.25rem;
+    background: var(--color-bg-light-alt);
+}
+
+.container {
+    max-width: 75rem;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    margin-bottom: 3rem;
+}
+
+.highlight {
+    color: var(--color-primary);
+}
+
+.displaySection {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background: var(--color-bg-white);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 0.25rem 1.5rem rgba(0, 0, 0, 0.05);
+}
+
+.imageWrapper {
+    width: 100%;
+    height: 30rem;
+    overflow: hidden;
+}
+
+.industryImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.optionsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--color-border-light);
+}
+
+.optionBtn {
+    background: var(--color-bg-white);
+    border: none;
+    padding: 1.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-top: 0.25rem solid transparent;
+}
+
+.optionBtn:hover {
+    background: var(--color-bg-light-alt);
+}
+
+.optionBtn.active {
+    border-top-color: var(--color-primary);
+}
+
+.optionName {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    line-height: 1.4;
+}
+
+.optionBtn.active .optionName {
+    color: var(--color-primary);
+}
+
+@media (max-width: 62rem) {
+    .optionsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .optionBtn {
+        border-top: none;
+        border-bottom: 1px solid var(--color-border-light);
+        padding: 1.25rem 1rem;
+    }
+
+    .optionBtn:nth-child(odd) {
+        border-right: 1px solid var(--color-border-light);
+    }
+
+    .optionBtn.active {
+        background: #f0f7ff;
+        border-bottom: 0.25rem solid var(--color-primary);
+    }
+}
+
+@media (max-width: 48rem) {
+    .title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .imageWrapper {
+        height: 20rem;
+    }
+
+    .optionName {
+        font-size: 0.875rem;
+    }
+}

@@ -2,11 +2,11 @@
 
 :root {
   /* Primary Colors */
-  --color-primary: #0056b3;
+  --color-primary: #0055AF;
   --color-primary-hover: #004494;
 
   /* Text Colors */
-  --color-text-primary: #333;
+  --color-text-primary: #2C3743;
   --color-text-secondary: #555;
   --color-text-tertiary: #666;
   --color-text-light: #999;
@@ -16,19 +16,46 @@
   --color-bg-white: #fff;
   --color-bg-light: #f8f8f8;
   --color-bg-light-alt: #f8f9fa;
-  --color-bg-light-secondary: #f4f5f7;
+  --color-bg-light-secondary: #F4F5F6;
   --color-bg-light-tertiary: #f5f5f5;
   --color-bg-accent: #fdfdfd;
 
   /* Border Colors */
-  --color-border-light: #eee;
+  --color-border-light: #A9B7C6;
   --color-border-medium: #e5e5e5;
   --color-border-dark: #e0e0e0;
 
   /* Utility Colors */
   --color-shadow: rgba(0, 0, 0, 0.1);
   --color-overlay: rgba(0, 0, 0, 0.4);
+
+  /* Container & Spacing - Viewport Relative */
+  --container-max-width: 100%;
+  --section-padding-y: 6vh;
+  --section-padding-x: 5vw;
+  --section-gap: 3vw;
+  --element-gap: 2vw;
 }
+
+/* @media (max-width: 48rem) {
+  :root {
+    --section-padding-y: 4vh;
+    --section-padding-x: 4vw;
+    --section-gap: 4vw;
+    --element-gap: 3vw;
+  }
+}
+
+@media (min-width: 100rem) {
+  :root {
+    --container-max-width: 100%;
+    --section-padding-y: 5rem;
+    --section-padding-x: 2rem;
+    --section-gap: 3rem;
+    --element-gap: 2rem;
+  }
+} */
+
 
 /* 1. Use a more-intuitive box-sizing model */
 *,

@@ -1,16 +1,18 @@
 import React, { useState } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import styles from "./Header.module.css";
 import logo from "../../assets/logo.png"; // replace with your logo path
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Services", path: "/services" },
     { name: "Products", path: "/products" },
     { name: "About", path: "/about" },
+
   ];
 
   return (
@@ -33,7 +35,10 @@ const Header = () => {
               {link.name}
             </NavLink>
           ))}
-          <button className={styles.contactBtn}>
+          <button
+            className={styles.contactBtn}
+            onClick={() => navigate("/contact")}
+          >
             CONTACT <span>→</span>
           </button>
         </nav>
@@ -60,8 +65,8 @@ const Header = () => {
               {link.name}
             </NavLink>
           ))}
-          <button className={styles.mobileContactBtn}>
-            CONTACT →
+          <button onClick={() => navigate("/contact")} className={styles.mobileContactBtn}>
+            CONTACT <span>→</span>
           </button>
         </div>
       )}

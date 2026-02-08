@@ -1,10 +1,10 @@
 .supportSection {
-    padding: 4rem 1.25rem;
+    padding: calc(var(--section-padding-y) * 0.8) var(--section-padding-x);
     background: var(--color-bg-light-secondary);
 }
 
 .container {
-    max-width: 75rem;
+    max-width: var(--container-max-width);
     margin: 0 auto;
 }
 
@@ -15,8 +15,10 @@
     padding: 4rem;
     overflow: hidden;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
 }
 
 .gradientBg {
@@ -34,7 +36,26 @@
 .content {
     position: relative;
     z-index: 2;
-    max-width: 50rem;
+    flex: 1;
+    max-width: 50%;
+}
+
+.image {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 25rem;
+    width: auto;
+    /* Ensure width adjusts to height constraint */
 }
 
 .title {
@@ -54,6 +75,7 @@
 }
 
 .contactBtn {
+    text-decoration: none;
     background: var(--color-primary);
     color: var(--color-text-white);
     border: none;
@@ -77,6 +99,17 @@
     font-size: 1.125rem;
 }
 
+@media (max-width: 62rem) {
+    .dashedBox {
+        padding: 3rem;
+        gap: 2rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+}
+
 @media (max-width: 48rem) {
     .supportSection {
         padding: 2rem 1.25rem;
@@ -84,10 +117,32 @@
 
     .dashedBox {
         padding: 2.5rem 1.5rem;
+        flex-direction: column-reverse;
+        /* Image on top */
+        text-align: center;
+    }
+
+    .content {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .image img {
+        max-height: 15rem;
+        width: 100%;
+        /* Allow full width on mobile if needed, or keep auto */
+        object-fit: contain;
     }
 
     .title {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
 
     .description {

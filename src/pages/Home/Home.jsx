@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../../components/Header/Header'
 import Hero from '../../components/Hero/Hero'
+import DetailsBar from '../../components/DetailsBar/DetailsBar'
 import Industries from '../../components/Industries/Industries'
 import Service from '../../components/Service/Service'
 import Product from '../../components/Product/Product'
@@ -15,10 +16,10 @@ const Home = () => {
         <div>
             <Hero />
             <Industries />
+            <DetailsBar />
             <Service />
             <Product />
-            <Review />
-            <WhyUs />
+            <Review isDark={true} />
             <Questions />
             <Support />
         </div>

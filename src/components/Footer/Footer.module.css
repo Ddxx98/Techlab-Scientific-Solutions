@@ -1,10 +1,10 @@
 .footer {
-    padding: 4rem 1.25rem 2rem;
+    padding: calc(var(--section-padding-y) * 0.8) var(--section-padding-x) 2rem;
     background: var(--color-bg-white);
 }
 
 .container {
-    max-width: 75rem;
+    max-width: var(--container-max-width);
     margin: 0 auto;
 }
 

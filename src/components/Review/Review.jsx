@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./Review.module.css";
 
 const reviewsData = {
@@ -51,11 +52,14 @@ const reviewsData = {
     ],
 };
 
-const Review = () => {
+const Review = ({ isDark = true }) => {
     const [activeTab, setActiveTab] = useState("products");
+    const navigate = useNavigate();
+
+    const themeClass = isDark ? "" : styles.lightTheme;
 
     return (
-        <section className={styles.reviewSection}>
+        <section className={`${styles.reviewSection} ${themeClass}`}>
             <div className={styles.container}>
                 <h2 className={styles.title}>
                     What <span className={styles.highlight}>people says</span> about us
@@ -97,7 +101,10 @@ const Review = () => {
                             <h3 className={styles.contactTitle}>
                                 Be the next person who appreciates our services
                             </h3>
-                            <button className={styles.contactBtn}>
+                            <button
+                                className={styles.contactBtn}
+                                onClick={() => navigate("/contact")}
+                            >
                                 CONTACT <span className={styles.arrow}>→</span>
                             </button>
                         </div>

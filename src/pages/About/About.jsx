@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./About.module.css";
 
 const About = () => {
+    const navigate = useNavigate();
     return (
         <div className={styles.aboutPage}>
             {/* Header Section */}
@@ -127,7 +129,10 @@ const About = () => {
                             If you are looking for service support, repairs, spare parts, or are planning to purchase analytical instruments, we're here to help.
                         </p>
                         <p>Get in touch with us to discuss your requirement.</p>
-                        <button className={styles.contactBtn}>
+                        <button
+                            className={styles.contactBtn}
+                            onClick={() => navigate("/contact")}
+                        >
                             CONTACT <span className={styles.arrow}>→</span>
                         </button>
                     </div>

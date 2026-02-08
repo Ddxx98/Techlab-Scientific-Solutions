@@ -1,5 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./Support.module.css";
+import SupportImage from "../../assets/Support.png";
 
 const Support = () => {
     return (
@@ -14,9 +16,12 @@ const Support = () => {
                         <p className={styles.description}>
                             Our team is ready to assist you with instrument queries, service requests, or product selection guidance.
                         </p>
-                        <button className={styles.contactBtn}>
+                        <Link to="/contact" className={styles.contactBtn}>
                             CONTACT <span className={styles.arrow}>→</span>
-                        </button>
+                        </Link>
+                    </div>
+                    <div className={styles.image}>
+                        <img src={SupportImage} alt="Support" />
                     </div>
                 </div>
             </div>

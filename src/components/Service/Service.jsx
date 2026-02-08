@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./Service.module.css";
 
 const servicesData = [
@@ -30,6 +31,7 @@ const servicesData = [
 
 const Service = () => {
     const [activeIndex, setActiveIndex] = useState(0);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -57,7 +59,9 @@ const Service = () => {
                                     <span className={styles.serviceId}>{service.id} - </span>
                                     <h3 className={styles.serviceTitle}>{service.title}</h3>
                                 </div>
-                                <p className={styles.serviceDescription}>{service.description}</p>
+                                <div className={styles.serviceBody}>
+                                    <p className={styles.serviceDescription}>{service.description}</p>
+                                </div>
 
                                 {/* Mobile Image (shown between items on mobile) */}
                                 <div className={styles.mobileImageWrapper}>
@@ -68,7 +72,10 @@ const Service = () => {
 
                         <div className={styles.moreInfo}>
                             <span className={styles.moreText}>+4 more</span>
-                            <button className={styles.exploreBtn}>
+                            <button
+                                className={styles.exploreBtn}
+                                onClick={() => navigate("/services")}
+                            >
                                 Explore ALL <span className={styles.arrow}>→</span>
                             </button>
                         </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import styles from "./ProductDetails.module.css";
 import Header from "../../components/Header/Header";
 
@@ -23,6 +23,7 @@ const productsData = {
 
 const ProductDetails = () => {
     const { id } = useParams();
+    const navigate = useNavigate();
     const product = productsData[id] || productsData["01"]; // Fallback to 01 if not found
 
     return (
@@ -52,7 +53,12 @@ const ProductDetails = () => {
                                 </ul>
                             </div>
 
-                            <button className={styles.inquiryBtn}>Request Inquiry</button>
+                            <button
+                                className={styles.inquiryBtn}
+                                onClick={() => navigate("/contact")}
+                            >
+                                Request Inquiry
+                            </button>
                         </div>
                     </div>
                 </div>

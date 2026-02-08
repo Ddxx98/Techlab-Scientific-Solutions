@@ -1,86 +1,124 @@
 .whyUsSection {
-    padding: 6rem 1.25rem;
-    background: var(--color-bg-light-secondary);
+    position: relative;
+    padding: 6rem var(--section-padding-x);
+    min-height: 40rem;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: var(--color-text-white);
+}
+
+.bgWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.bgImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    /* Dark overlay for text readability */
 }
 
 .container {
-    max-width: 75rem;
+    position: relative;
+    z-index: 2;
+    max-width: var(--container-max-width);
+    width: 100%;
     margin: 0 auto;
-}
-
-.contentWrapper {
     display: flex;
+    flex-direction: column;
     gap: 4rem;
-    align-items: flex-start;
 }
 
-.leftSection {
-    flex: 1;
+.headerContent {
+    max-width: 50rem;
 }
 
 .title {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 500;
-    color: var(--color-text-primary);
+    margin-bottom: 1rem;
     line-height: 1.2;
-    margin-bottom: 2rem;
-}
-
-.blueText {
-    color: var(--color-primary);
 }
 
 .description {
-    font-size: 1.25rem;
-    color: var(--color-text-secondary);
+    font-size: 1.125rem;
+    opacity: 0.9;
     line-height: 1.6;
-    max-width: 30rem;
 }
 
-.rightSection {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
+.gridWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    /* Cards touch each other or have borders */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.25rem;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+    /* Glassmorphism base */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
-.featuresList {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-}
-
-.featureItem {
-    background: var(--color-bg-white);
-    padding: 1.25rem 2rem;
+.featureCard {
+    padding: 2.5rem;
     display: flex;
     align-items: center;
     gap: 1.5rem;
-    border-radius: 0.125rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
-    transition: transform 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Ensure borders don't double up too much, or use negative margins. 
+       Grid gap 0 + border on items works if we handle collapse. 
+       Let's use a simpler approach: border-right and border-bottom */
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: background 0.3s;
 }
 
-.featureItem:hover {
-    transform: translateX(0.5rem);
+/* Remove right border for last column */
+.featureCard:nth-child(2n) {
+    border-right: none;
+}
+
+/* Remove bottom border for last row */
+.featureCard:nth-last-child(-n+2) {
+    border-bottom: none;
+}
+
+.featureCard:hover {
+    background: rgba(255, 255, 255, 0.15);
 }
 
 .iconWrapper {
-    color: var(--color-text-primary);
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--color-text-white);
 }
 
 .featureTitle {
     font-size: 1.125rem;
     font-weight: 500;
-    color: var(--color-text-primary);
+    line-height: 1.4;
 }
 
 .buttonGroup {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .primaryBtn {
@@ -95,6 +133,7 @@
     align-items: center;
     gap: 0.75rem;
     transition: background 0.2s;
+    border-radius: 0.25rem;
 }
 
 .primaryBtn:hover {
@@ -102,9 +141,9 @@
 }
 
 .secondaryBtn {
-    background: transparent;
+    background: var(--color-bg-white);
     color: var(--color-primary);
-    border: 1px solid var(--color-primary);
+    border: none;
     padding: 1rem 2rem;
     font-size: 1rem;
     font-weight: 500;
@@ -112,53 +151,63 @@
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    transition: all 0.2s;
+    transition: background 0.2s;
+    border-radius: 0.25rem;
 }
 
 .secondaryBtn:hover {
-    background: rgba(0, 86, 179, 0.05);
+    background: #f0f0f0;
 }
 
 .arrow {
     font-size: 1.125rem;
 }
 
-@media (max-width: 62rem) {
-    .contentWrapper {
-        flex-direction: column;
-        gap: 3rem;
-    }
-
-    .title {
-        font-size: 2.75rem;
-    }
-
-    .leftSection,
-    .rightSection {
-        width: 100%;
-    }
-}
-
 @media (max-width: 48rem) {
     .whyUsSection {
-        padding: 4rem 1.25rem;
+        padding: 4rem var(--section-padding-x);
     }
 
     .title {
-        font-size: 2.25rem;
+        font-size: 2rem;
+    }
+
+    .gridWrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .featureCard {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .featureCard:last-child {
+        border-bottom: none;
+    }
+
+    /* Reset nth-child logic for mobile */
+    .featureCard:nth-child(2n) {
+        border-right: none;
+        /* Already none, but good to be explicit */
+    }
+
+    .featureCard:nth-last-child(-n+2) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        /* Reset desktop rule */
+    }
+
+    .featureCard:last-child {
+        border-bottom: none;
     }
 
     .buttonGroup {
         flex-direction: column;
+        gap: 1rem;
     }
 
     .primaryBtn,
     .secondaryBtn {
         width: 100%;
         justify-content: center;
-    }
-
-    .featureItem {
-        padding: 1rem 1.5rem;
     }
 }

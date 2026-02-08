@@ -7,6 +7,7 @@ import Services from './pages/Services/Services';
 import Products from './pages/Products/Products';
 import About from './pages/About/About';
 import ProductDetails from './pages/ProductDetails/ProductDetails';
+import Contact from './pages/Contact/Contact';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/about" element={<About />} />
         <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </>

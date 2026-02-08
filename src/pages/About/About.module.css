@@ -37,7 +37,7 @@
 
 .principleHero {
     height: 35rem;
-    background-image: url(https://images.unsplash.com/photo-1581093588401-fbb62a02f120?q=80&w=2070&auto=format&fit=crop);
+    background-image: url("../../assets/about.jpg");
     background-size: cover;
     background-position: center;
     position: relative;

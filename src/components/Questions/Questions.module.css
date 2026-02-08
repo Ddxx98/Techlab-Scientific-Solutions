@@ -1,16 +1,18 @@
 .questionsSection {
-    padding: 6rem 1.25rem;
-    background: var(--color-bg-white);
+    padding: calc(var(--section-padding-y) * 1.2) var(--section-padding-x);
+    background: var(--color-bg-light-secondary);
     position: relative;
     overflow: hidden;
 }
 
 .container {
-    max-width: 75rem;
+    max-width: var(--container-max-width);
+    background: var(--color-bg-white);
     margin: 0 auto;
     position: relative;
+    padding: 4rem 3rem 3rem 3rem;
 }
-
+    
 .header {
     display: flex;
     justify-content: space-between;
@@ -175,7 +177,7 @@
 
 @media (max-width: 48rem) {
     .questionsSection {
-        padding: 4rem 1.25rem;
+        padding: calc(var(--section-padding-y) * 0.8) var(--section-padding-x);
     }
 
     .header {

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import heroImage from "../../assets/hero.png";
 import styles from "./Hero.module.css";
 
@@ -24,6 +25,7 @@ const heroSlides = [
 
 const Hero = () => {
   const [current, setCurrent] = useState(0);
+  const navigate = useNavigate();
 
   const prevSlide = () => {
     setCurrent((prev) => (prev === 0 ? heroSlides.length - 1 : prev - 1));
@@ -83,10 +85,16 @@ const Hero = () => {
         <div className={styles.footerSection}>
           <p className={styles.description}>{heroSlides[current].description}</p>
           <div className={styles.buttons}>
-            <button className={styles.primaryBtn}>
+            <button
+              className={styles.primaryBtn}
+              onClick={() => navigate("/services")}
+            >
               View services <span className={styles.arrow}>→</span>
             </button>
-            <button className={styles.secondaryBtn}>
+            <button
+              className={styles.secondaryBtn}
+              onClick={() => navigate("/contact")}
+            >
               Talk to an Expert <span className={styles.arrow}>→</span>
             </button>
           </div>

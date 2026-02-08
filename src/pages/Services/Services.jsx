@@ -6,7 +6,7 @@ const Services = () => {
     return (
         <div>
             <ServiceData />
-            <Review />
+            <Review isDark={false} />
         </div>
     );
 };

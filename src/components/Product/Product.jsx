@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./Product.module.css";
 
 const productsData = [
@@ -36,6 +36,7 @@ const productsData = [
 ];
 
 const Product = () => {
+    const navigate = useNavigate();
     return (
         <section className={styles.productSection}>
             <div className={styles.container}>
@@ -63,7 +64,10 @@ const Product = () => {
                     <div className={styles.exploreCard}>
                         <div className={styles.exploreContent}>
                             <span className={styles.moreCount}>+20 more</span>
-                            <button className={styles.exploreBtn}>
+                            <button
+                                className={styles.exploreBtn}
+                                onClick={() => navigate("/products")}
+                            >
                                 Explore All <span className={styles.exploreArrow}>→</span>
                             </button>
                         </div>

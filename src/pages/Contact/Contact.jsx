@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Contact.module.css";
-import ContactImg from "../../assets/Contact.png"
+import SEO from "../../components/SEO/SEO";
+import ContactImg from "../../assets/contact.png"
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -15,218 +16,269 @@ const Contact = () => {
             somethingElse: false,
         },
         message: "",
-        consent: true,
+        consent: true
     });
+
+    const [status, setStatus] = useState({
+        submitting: false,
+        submitted: false,
+        error: null
+    });
+
+    const [errors, setErrors] = useState({});
+
+    const validateForm = () => {
+        const newErrors = {};
+        if (!formData.name.trim()) newErrors.name = "Name is required";
+        if (!formData.email.trim()) {
+            newErrors.email = "Email is required";
+        } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+            newErrors.email = "Email is invalid";
+        }
+        if (!formData.message.trim()) newErrors.message = "Message is required";
+        if (!formData.consent) newErrors.consent = "You must agree to be contacted";
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
-        setFormData((prev) => ({ ...prev, [name]: value }));
-    };
-
-    const handleCheckboxChange = (e) => {
-        const { name, checked } = e.target;
-        if (name === "consent") {
-            setFormData((prev) => ({ ...prev, consent: checked }));
-        } else {
-            setFormData((prev) => ({
-                ...prev,
-                contactingFor: { ...prev.contactingFor, [name]: checked },
-            }));
+        setFormData((prev) => ({
+            ...prev,
+            [name]: value
+        }));
+        if (errors[name]) {
+            setErrors(prev => ({ ...prev, [name]: null }));
         }
     };
 
-    const handleSubmit = (e) => {
+    const handleCheckboxChange = (option) => {
+        setFormData((prev) => ({
+            ...prev,
+            contactingFor: {
+                ...prev.contactingFor,
+                [option]: !prev.contactingFor[option]
+            }
+        }));
+    };
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log("Form submitted:", formData);
-        // Add submission logic here
+        if (!validateForm()) return;
+
+        setStatus({ submitting: true, submitted: false, error: null });
+
+        try {
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            setStatus({ submitting: false, submitted: true, error: null });
+            setFormData({
+                name: "",
+                phone: "",
+                email: "",
+                location: "",
+                contactingFor: {
+                    products: false,
+                    services: true,
+                    sparePart: false,
+                    somethingElse: false,
+                },
+                message: "",
+                consent: true
+            });
+            setErrors({});
+        } catch (err) {
+            setStatus({ submitting: false, submitted: false, error: "Something went wrong. Please try again later." });
+        }
     };
 
     return (
         <div className={styles.contactPage}>
+            <SEO
+                title="Contact Us"
+                description="Get in touch with Techlab Scientific Solutions for any inquiries regarding laboratory equipment, services, or support."
+            />
             <div className={styles.container}>
                 <h1 className={styles.pageTitle}>Contact Us</h1>
 
                 <div className={styles.contentWrapper}>
                     {/* Left Side: Form */}
                     <div className={styles.formSection}>
-                        <form onSubmit={handleSubmit}>
+                        <form className={styles.form} onSubmit={handleSubmit} noValidate>
+                            {status.submitted && (
+                                <div className={styles.successMessage} role="alert">
+                                    Thank you! Your message has been sent successfully. We'll get back to you soon.
+                                </div>
+                            )}
+                            {status.error && (
+                                <div className={styles.errorMessage} role="alert">
+                                    {status.error}
+                                </div>
+                            )}
+
                             <div className={styles.inputGroup}>
-                                <label htmlFor="name">NAME *</label>
+                                <label htmlFor="name">NAME <span>*</span></label>
                                 <input
                                     type="text"
                                     id="name"
                                     name="name"
+                                    placeholder="Your Full Name"
                                     value={formData.name}
                                     onChange={handleInputChange}
-                                    placeholder="|"
                                     required
+                                    aria-invalid={errors.name ? "true" : "false"}
+                                    aria-describedby={errors.name ? "name-error" : undefined}
                                 />
+                                {errors.name && <span id="name-error" className={styles.errorText}>{errors.name}</span>}
                             </div>
 
                             <div className={styles.inputGroup}>
-                                <label htmlFor="phone">PHONE NUMBER *</label>
+                                <label htmlFor="phone">PHONE NUMBER</label>
                                 <input
                                     type="tel"
                                     id="phone"
                                     name="phone"
+                                    placeholder="+91 - 0000000000"
                                     value={formData.phone}
                                     onChange={handleInputChange}
-                                    placeholder="Type Here"
-                                    required
                                 />
                             </div>
 
                             <div className={styles.inputGroup}>
-                                <label htmlFor="email">EMAIL *</label>
+                                <label htmlFor="email">EMAIL <span>*</span></label>
                                 <input
                                     type="email"
                                     id="email"
                                     name="email"
+                                    placeholder="username@email.com"
                                     value={formData.email}
                                     onChange={handleInputChange}
-                                    placeholder="Type Here"
                                     required
+                                    aria-invalid={errors.email ? "true" : "false"}
+                                    aria-describedby={errors.email ? "email-error" : undefined}
                                 />
+                                {errors.email && <span id="email-error" className={styles.errorText}>{errors.email}</span>}
                             </div>
 
                             <div className={styles.inputGroup}>
-                                <label htmlFor="location">YOUR LOCATION *</label>
+                                <label htmlFor="location">LOCATION</label>
                                 <input
                                     type="text"
                                     id="location"
                                     name="location"
+                                    placeholder="Your City/Location"
                                     value={formData.location}
                                     onChange={handleInputChange}
-                                    placeholder="Type Here"
-                                    required
                                 />
                             </div>
 
                             <div className={styles.checkboxGroup}>
-                                <label>CONTACTING FOR *</label>
-                                <div className={styles.checkboxOptions}>
-                                    <label className={styles.checkboxLabel}>
-                                        <input
-                                            type="checkbox"
-                                            name="products"
-                                            checked={formData.contactingFor.products}
-                                            onChange={handleCheckboxChange}
-                                        />
-                                        <span className={styles.checkmark}></span>
-                                        Products
-                                    </label>
-                                    <label className={styles.checkboxLabel}>
-                                        <input
-                                            type="checkbox"
-                                            name="services"
-                                            checked={formData.contactingFor.services}
-                                            onChange={handleCheckboxChange}
-                                        />
-                                        <span className={styles.checkmark}></span>
-                                        Services
-                                    </label>
-                                    <label className={styles.checkboxLabel}>
-                                        <input
-                                            type="checkbox"
-                                            name="sparePart"
-                                            checked={formData.contactingFor.sparePart}
-                                            onChange={handleCheckboxChange}
-                                        />
-                                        <span className={styles.checkmark}></span>
-                                        Spare part
-                                    </label>
-                                    <label className={styles.checkboxLabel}>
-                                        <input
-                                            type="checkbox"
-                                            name="somethingElse"
-                                            checked={formData.contactingFor.somethingElse}
-                                            onChange={handleCheckboxChange}
-                                        />
-                                        <span className={styles.checkmark}></span>
-                                        Something Else
-                                    </label>
+                                <label>CONTACTING FOR</label>
+                                <div className={styles.checkboxOptions} role="group" aria-label="Contact options">
+                                    {Object.keys(formData.contactingFor).map((option) => (
+                                        <label key={option} className={styles.checkboxLabel}>
+                                            <input
+                                                type="checkbox"
+                                                checked={formData.contactingFor[option]}
+                                                onChange={() => handleCheckboxChange(option)}
+                                            />
+                                            <span className={styles.checkmark}></span>
+                                            {option.charAt(0).toUpperCase() + option.slice(1).replace(/([A-Z])/g, ' $1')}
+                                        </label>
+                                    ))}
                                 </div>
                             </div>
 
                             <div className={styles.inputGroup}>
-                                <label htmlFor="message">SAY SOMETHING</label>
+                                <label htmlFor="message">YOUR MESSAGE <span>*</span></label>
                                 <textarea
                                     id="message"
                                     name="message"
+                                    placeholder="How can we help you?"
                                     value={formData.message}
                                     onChange={handleInputChange}
-                                    placeholder="Type Here"
-                                    rows="4"
+                                    required
+                                    aria-invalid={errors.message ? "true" : "false"}
+                                    aria-describedby={errors.message ? "message-error" : undefined}
                                 ></textarea>
+                                {errors.message && <span id="message-error" className={styles.errorText}>{errors.message}</span>}
                             </div>
 
                             <div className={styles.consentGroup}>
                                 <label className={styles.checkboxLabel}>
                                     <input
                                         type="checkbox"
-                                        name="consent"
                                         checked={formData.consent}
-                                        onChange={handleCheckboxChange}
+                                        onChange={() => setFormData(prev => ({ ...prev, consent: !prev.consent }))}
+                                        aria-invalid={errors.consent ? "true" : "false"}
+                                        aria-describedby={errors.consent ? "consent-error" : undefined}
                                     />
                                     <span className={styles.checkmark}></span>
                                     <span className={styles.consentText}>
-                                        I agree with Techlab scientific solutions using the information that I
-                                        provided here to contact me
+                                        I agree to the processing of my personal data for the purpose of contacting me.
                                     </span>
                                 </label>
+                                {errors.consent && <span id="consent-error" className={styles.errorText}>{errors.consent}</span>}
                             </div>
 
-                            <button type="submit" className={styles.submitBtn}>
-                                SUBMIT <span className={styles.arrow}>→</span>
+                            <button
+                                type="submit"
+                                className={styles.submitBtn}
+                                disabled={status.submitting}
+                                aria-busy={status.submitting}
+                            >
+                                {status.submitting ? "SENDING..." : "SUBMIT"}
+                                {!status.submitting && <span className={styles.arrow} aria-hidden="true">→</span>}
                             </button>
                         </form>
                     </div>
 
-                    {/* Right Side: Illustration */}
+                    {/* Right Side: Illustration & Text */}
                     <div className={styles.illustrationSection}>
-                        <div className={styles.illustrationContent}>
-                            <h2 className={styles.illustrationTitle}>
-                                Our team will reach you out within next 48 hours as you click on the
-                                submit button
-                            </h2>
-                            <div className={styles.imageWrapper}>
-                                {/* Placeholder for the illustration - User can replace src later */}
-                                <img
-                                    src={ContactImg}
-                                    alt="Contact Illustration"
-                                    className={styles.illustrationImage}
-                                />
-                            </div>
+                        <h2 className={styles.illustrationTitle}>
+                            Our team will reach you out within next 48 hours as you click on the
+                            submit button
+                        </h2>
+                        <div className={styles.imageWrapper}>
+                            <img
+                                src={ContactImg}
+                                alt="Contact Illustration"
+                                className={styles.illustrationImage}
+                            />
                         </div>
                     </div>
                 </div>
 
                 {/* Bottom Address Section */}
-                <div className={styles.addressSection}>
-                    <h3 className={styles.addressTitle}>BANGALORE</h3>
-                    <div className={styles.addressDetails}>
-                        <div className={styles.addressItem}>
-                            <span className={styles.icon}>💼</span>
-                            <p>
-                                Building no. 57, Government press layout, Mallathahalli, <br />
-                                Ullal main road, Bengaluru, Karnataka, India - 560 056.
+                <div className={styles.addressSection} aria-labelledby="bangalore-office">
+                    <h3 id="bangalore-office" className={styles.addressTitle}>BANGALORE</h3>
+                    <div className={styles.addressList}>
+                        <div className={styles.addressRow}>
+                            <span className={styles.icon} aria-hidden="true">💼</span>
+                            <div className={styles.addressContent}>
+                                <p>
+                                    Building no. 57, Government press layout, Mallathahalli, <br />
+                                    Ullal main road, Bengaluru, Karnataka, India - 560 056.
+                                </p>
+                                <div className={styles.linkGroup}>
+                                    <button className={styles.inlineLink} onClick={() => navigator.clipboard.writeText("Building no. 57, Government press layout, Mallathahalli, Ullal main road, Bengaluru, Karnataka, India - 560 056.")} aria-label="Copy office address">Copy Address</button>
+                                    <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className={styles.inlineLink}>Google Maps ↗</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className={styles.contactRow}>
+                            <span className={styles.icon} aria-hidden="true">✉️</span>
+                            <p className={styles.contactInfo}>
+                                techlab.tss@gamil.com <button className={styles.inlineLink} onClick={() => navigator.clipboard.writeText("techlab.tss@gamil.com")} aria-label="Copy email address">Copy Email</button>
                             </p>
                         </div>
-                        <div className={styles.links}>
-                            <a href="#" className={styles.actionLink}>Copy Address</a>
-                            <a href="#" className={styles.actionLink}>Google Maps ↗</a>
-                        </div>
 
                         <div className={styles.contactRow}>
-                            <span className={styles.icon}>✉️</span>
-                            <a href="mailto:techlab.tss@gamil.com" className={styles.contactLink}>techlab.tss@gamil.com</a>
-                            <a href="#" className={styles.copyLink}>Copy Email</a>
-                        </div>
-
-                        <div className={styles.contactRow}>
-                            <span className={styles.icon}>📱</span>
-                            <a href="tel:+917411723668" className={styles.contactLink}>+91 - 7411723668</a>
-                            <a href="#" className={styles.copyLink}>Copy Phone Number</a>
+                            <span className={styles.icon} aria-hidden="true">📱</span>
+                            <p className={styles.contactInfo}>
+                                +91 - 7411723668 <button className={styles.inlineLink} onClick={() => navigator.clipboard.writeText("+917411723668")} aria-label="Copy phone number">Copy Phone Number</button>
+                            </p>
                         </div>
                     </div>
                 </div>

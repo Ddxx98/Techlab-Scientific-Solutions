@@ -1,5 +1,4 @@
-import React from 'react'
-import Header from '../../components/Header/Header'
+import SEO from '../../components/SEO/SEO'
 import Hero from '../../components/Hero/Hero'
 import DetailsBar from '../../components/DetailsBar/DetailsBar'
 import Industries from '../../components/Industries/Industries'
@@ -9,11 +8,14 @@ import Review from '../../components/Review/Review'
 import WhyUs from '../../components/WhyUs/WhyUs'
 import Support from '../../components/Support/Support'
 import Questions from '../../components/Questions/Questions'
-import Footer from '../../components/Footer/Footer'
 
 const Home = () => {
     return (
-        <div>
+        <>
+            <SEO
+                title="Home"
+                description="Welcome to Techlab Scientific Solutions. We provide high-quality laboratory equipment and scientific solutions for research and industrial applications."
+            />
             <Hero />
             <Industries />
             <DetailsBar />
@@ -22,7 +24,7 @@ const Home = () => {
             <Review isDark={true} />
             <Questions />
             <Support />
-        </div>
+        </>
     )
 }
 

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Products.module.css";
+import SEO from "../../components/SEO/SEO";
 
 const Products = () => {
     const [activeCategory, setActiveCategory] = useState("Product type 01");
@@ -68,6 +69,10 @@ const Products = () => {
 
     return (
         <div className={styles.productsPage}>
+            <SEO
+                title="Our Products"
+                description="Browse our high-quality laboratory equipment, including analytical instruments, spares, and consumables from Techlab Scientific Solutions."
+            />
             <div className={styles.container}>
                 <h1 className={styles.pageTitle}>Products</h1>
 
@@ -81,9 +86,7 @@ const Products = () => {
                             onClick={() => setActiveCategory(category)}
                         >
                             {category}
-                            {activeCategory === category && (
-                                <span className={styles.arrow}>▲</span>
-                            )}
+                            <span className={styles.arrow}>▲</span>
                         </button>
                     ))}
                 </div>
@@ -109,32 +112,35 @@ const Products = () => {
                 <div className={styles.productList}>
                     {productsData.map((product) => (
                         <div key={product.id} className={styles.productCard}>
-                            {/* Image Placeholder */}
-                            <div className={styles.productImage}></div>
+                            {/* Improved Image Container */}
+                            <div className={styles.imageContainer}>
+                                <div className={styles.productImage}></div>
+                            </div>
 
                             {/* Product Details */}
                             <div className={styles.productDetails}>
-                                <div>
+                                <div className={styles.topInfo}>
                                     <h2 className={styles.productName}>{product.name}</h2>
                                     <p className={styles.productDescription}>
                                         {product.description}
                                     </p>
 
-                                    <table className={styles.attributesTable}>
-                                        <tbody>
-                                            {Object.entries(product.attributes).map(([key, value]) => (
-                                                <tr key={key}>
-                                                    <td>{key}</td>
-                                                    <td>{value}</td>
-                                                </tr>
-                                            ))}
-                                        </tbody>
-                                    </table>
+                                    {/* Modern Attributes List instead of table */}
+                                    <div className={styles.attributesList}>
+                                        {Object.entries(product.attributes).map(([key, value]) => (
+                                            <div key={key} className={styles.attributeItem}>
+                                                <span className={styles.attributeLabel}>{key}</span>
+                                                <span className={styles.attributeValue}>{value}</span>
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
 
-                                <Link to="/contact" className={styles.contactLink}>
-                                    CONTACT
-                                </Link>
+                                <div className={styles.btnWrapper}>
+                                    <Link to="/contact" className={styles.contactLink}>
+                                        CONTACT →
+                                    </Link>
+                                </div>
                             </div>
                         </div>
                     ))}

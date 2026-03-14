@@ -11,12 +11,14 @@ const DetailsBar = ({ stats }) => {
     ];
 
     const displayStats = stats || defaultStats;
+    // Duplicate stats for seamless looping
+    const extendedStats = [...displayStats, ...displayStats];
 
     return (
         <section className={styles.detailsBar}>
             <div className={styles.container}>
                 <div className={styles.statsWrapper}>
-                    {displayStats.map((stat, index) => (
+                    {extendedStats.map((stat, index) => (
                         <div key={index} className={styles.statItem}>
                             <h2 className={styles.value}>{stat.value}</h2>
                             <p className={styles.label}>{stat.label}</p>

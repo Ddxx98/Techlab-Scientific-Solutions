@@ -5,26 +5,26 @@ import styles from "./Service.module.css";
 const servicesData = [
     {
         id: "01",
-        title: "Preventive Maintenance",
-        description: "Preventive maintenance, breakdown service, calibration support, and technical troubleshooting by experienced professionals.",
+        title: "Service Contracts (AMC)",
+        description: "Annual Maintenance Contract (AMC). Reliable, scheduled maintenance to ensure continuous operation of your lab instruments.",
         image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200",
     },
     {
         id: "02",
-        title: "Breakdown Service",
-        description: "Rapid response and expert repair services to minimize downtime and restore your laboratory equipment to optimal performance.",
+        title: "Service Contracts (CMC)",
+        description: "Comprehensive Maintenance Contract (CMC). Complete coverage including preventive maintenance and essential parts replacement.",
         image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1200",
     },
     {
         id: "03",
-        title: "Calibration Support",
-        description: "Precise calibration services ensuring your instruments meet international standards for accuracy and reliability.",
+        title: "Onetime Service Visit",
+        description: "On-demand expert service visits for immediate technical troubleshooting, repairs, or specific maintenance requirements.",
         image: "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&q=80&w=1200",
     },
     {
         id: "04",
-        title: "Technical Troubleshooting",
-        description: "Advanced diagnostic and troubleshooting services to identify and resolve complex technical issues in laboratory instrumentation.",
+        title: "Inspection & Calibration",
+        description: "General inspection, Service, Installation, Calibration, and Qualification Visit options for thorough system checks.",
         image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80&w=1200",
     },
 ];

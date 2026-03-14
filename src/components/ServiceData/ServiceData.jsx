@@ -6,26 +6,26 @@ const ServiceData = () => {
     const services = [
         {
             id: "01",
-            title: "Service name",
-            description: "Techlab Scientific Solutions is a Bengaluru based company supporting laboratories with reliable scientific and analytical instrument solutions. We work closely with labs, institutions, and industries that depend on accuracy, consistency, and timely support.",
+            title: "Service Contracts (AMC)",
+            description: "Annual Maintenance Contract (AMC). We offer reliable, scheduled maintenance to keep your laboratory instruments in peak condition.",
             image: "https://images.unsplash.com/photo-1579154235602-3c2051695e9a?q=80&w=2070&auto=format&fit=crop"
         },
         {
             id: "02",
-            title: "Service name",
-            description: "Techlab Scientific Solutions is a Bengaluru based company supporting laboratories with reliable scientific and analytical instrument solutions. We work closely with labs, institutions, and industries that depend on accuracy, consistency, and timely support.",
+            title: "Service Contracts (CMC)",
+            description: "Comprehensive Maintenance Contract (CMC). Complete coverage including preventive maintenance and parts coverage for zero compromises.",
             image: "https://images.unsplash.com/photo-1581093458791-9f3c3250bb8b?q=80&w=2070&auto=format&fit=crop"
         },
         {
             id: "03",
-            title: "Service name",
-            description: "Techlab Scientific Solutions is a Bengaluru based company supporting laboratories with reliable scientific and analytical instrument solutions. We work closely with labs, institutions, and industries that depend on accuracy, consistency, and timely support.",
+            title: "Onetime Service Visit",
+            description: "Need immediate assistance? We provide onetime on-demand service visits for specific technical issues and resolving breakdowns.",
             image: "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?q=80&w=2070&auto=format&fit=crop"
         },
         {
             id: "04",
-            title: "Service name",
-            description: "Techlab Scientific Solutions is a Bengaluru based company supporting laboratories with reliable scientific and analytical instrument solutions. We work closely with labs, institutions, and industries that depend on accuracy, consistency, and timely support.",
+            title: "Inspection & Calibration",
+            description: "General inspection, Service, Installation, Calibration, and Qualification Visit options for thorough, standardized system checks.",
             image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2070&auto=format&fit=crop"
         }
     ];

@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./About.module.css";
+import SEO from '../../components/SEO/SEO';
+import AboutImg from '../../assets/about.jpg';
 
 const About = () => {
     const navigate = useNavigate();
     return (
         <div className={styles.aboutPage}>
+            <SEO
+                title="About Us"
+                description="Learn more about Techlab Scientific Solutions - our mission, vision, and our commitment to providing cutting-edge scientific instruments."
+            />
+
             {/* Header Section */}
-            <section className={styles.headerSection}>
+            <section className={styles.headerSection} aria-labelledby="about-title">
                 <div className={styles.container}>
                     <div className={styles.headerContent}>
-                        <h1 className={styles.pageTitle}>About Us</h1>
+                        <h1 id="about-title" className={styles.pageTitle}>About Us</h1>
                         <p className={styles.tagline}>
                             Practical solutions for lab instruments, without unnecessary complexity
                         </p>
@@ -19,9 +26,9 @@ const About = () => {
             </section>
 
             {/* Principle Hero Section */}
-            <section className={styles.principleHero}>
+            <section className={styles.principleHero} aria-label="One Principle">
                 <div className={styles.heroOverlay}>
-                    <div className={styles.container}>
+                    <div className={styles.containerHero}>
                         <div className={styles.heroContent}>
                             <h2 className={styles.heroTitle}>One Principle</h2>
                             <p className={styles.heroText}>
@@ -33,108 +40,133 @@ const About = () => {
             </section>
 
             {/* Content Sections */}
-            <div className={styles.container}>
+            <div className={styles.mainContent}>
                 {/* Who We Are */}
-                <section className={styles.contentSection}>
-                    <div className={styles.sectionTitle}>
-                        <h3>Who we are</h3>
-                    </div>
-                    <div className={styles.sectionBody}>
-                        <p>
-                            Techlab Scientific Solutions is a Bengaluru based company supporting laboratories with reliable scientific and analytical instrument solutions. We work closely with labs, institutions, and industries that depend on accuracy, consistency, and timely support.
-                        </p>
+                <section className={`${styles.contentSection} ${styles.whoWeAre}`} aria-labelledby="who-we-are">
+                    <div className={styles.container}>
+                        <div className={styles.sectionGrid}>
+                            <div className={styles.sectionTitle}>
+                                <h3 id="who-we-are">Who we are</h3>
+                            </div>
+                            <div className={styles.sectionBody}>
+                                <p>
+                                    Techlab Scientific Solutions is a Bengaluru based company supporting laboratories with reliable scientific and analytical instrument solutions. We work closely with labs, institutions, and industries that depend on accuracy, consistency, and timely support.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
                 {/* What We Do */}
-                <section className={styles.contentSection}>
-                    <div className={styles.sectionTitle}>
-                        <h3>What We Do</h3>
-                    </div>
-                    <div className={styles.sectionBody}>
-                        <p>
-                            We provide sales and service support for analytical instruments, along with spares, accessories, and consumables required for everyday lab operations.
-                        </p>
-                        <p>
-                            From helping you choose the right equipment to maintaining it over time, we stay involved beyond just the sale.
-                        </p>
+                <section className={styles.contentSection} aria-labelledby="what-we-do">
+                    <div className={styles.container}>
+                        <div className={styles.sectionGrid}>
+                            <div className={styles.sectionTitle}>
+                                <h3 id="what-we-do">What We Do</h3>
+                            </div>
+                            <div className={styles.sectionBody}>
+                                <p>
+                                    We provide sales and service support for analytical instruments, along with spares, accessories, and consumables required for everyday lab operations.
+                                </p>
+                                <p>
+                                    From helping you choose the right equipment to maintaining it over time, we stay involved beyond just the sale.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
                 {/* How We Work */}
-                <section className={styles.contentSection}>
-                    <div className={styles.sectionTitle}>
-                        <h3>How We Work</h3>
-                    </div>
-                    <div className={styles.sectionBody}>
-                        <p>
-                            We believe good service starts with understanding the problem clearly. We listen, inspect, and suggest only what is required.
-                        </p>
-                        <div className={styles.approachList}>
-                            <p>Our approach is:</p>
-                            <ul>
-                                <li>Clear communication</li>
-                                <li>Practical solutions</li>
-                                <li>Honest timelines</li>
-                                <li>Reliable follow up</li>
-                            </ul>
+                <section className={styles.contentSection} aria-labelledby="how-we-work">
+                    <div className={styles.container}>
+                        <div className={styles.sectionGrid}>
+                            <div className={styles.sectionTitle}>
+                                <h3 id="how-we-work">How We Work</h3>
+                            </div>
+                            <div className={styles.sectionBody}>
+                                <p>
+                                    We believe good service starts with understanding the problem clearly. We listen, inspect, and suggest only what is required.
+                                </p>
+                                <div className={styles.approachList}>
+                                    <p>Our approach is:</p>
+                                    <ul>
+                                        <li>Clear communication</li>
+                                        <li>Practical solutions</li>
+                                        <li>Honest timelines</li>
+                                        <li>Reliable follow up</li>
+                                    </ul>
+                                </div>
+                                <p className={styles.motto}>No over-selling. No unnecessary steps.</p>
+                            </div>
                         </div>
-                        <p className={styles.motto}>No over-selling. No unnecessary steps.</p>
                     </div>
                 </section>
 
                 {/* Why Clients Choose Us */}
-                <section className={styles.contentSection}>
-                    <div className={styles.sectionTitle}>
-                        <h3>Why Clients Choose Us</h3>
-                    </div>
-                    <div className={styles.sectionBody}>
-                        <p>
-                            Laboratories trust us because we focus on long-term reliability, not quick fixes.
-                        </p>
-                        <ul className={styles.benefitsList}>
-                            <li>Prompt service support</li>
-                            <li>Technical understanding of instruments</li>
-                            <li>Genuine and compatible spares</li>
-                            <li>Local presence with faster response</li>
-                        </ul>
-                        <p className={styles.emphasis}>
-                            We treat every instrument as critical to your work , because it is.
-                        </p>
+                <section className={styles.contentSection} aria-labelledby="why-us">
+                    <div className={styles.container}>
+                        <div className={styles.sectionGrid}>
+                            <div className={styles.sectionTitle}>
+                                <h3 id="why-us">Why Clients Choose Us</h3>
+                            </div>
+                            <div className={styles.sectionBody}>
+                                <p>
+                                    Laboratories trust us because we focus on long-term reliability, not quick fixes.
+                                </p>
+                                <ul className={styles.benefitsList}>
+                                    <li>Prompt service support</li>
+                                    <li>Technical understanding of instruments</li>
+                                    <li>Genuine and compatible spares</li>
+                                    <li>Local presence with faster response</li>
+                                </ul>
+                                <p className={styles.emphasis}>
+                                    We treat every instrument as critical to your work , because it is.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
                 {/* Our Commitment */}
-                <section className={styles.contentSection}>
-                    <div className={styles.sectionTitle}>
-                        <h3>Our Commitment</h3>
-                    </div>
-                    <div className={styles.sectionBody}>
-                        <p>
-                            When a lab instrument is down, work stops. We understand that urgency.
-                        </p>
-                        <p>
-                            Our commitment is to help you get back to work quickly, safely, and confidently, whether it's a service call, a spare requirement, or a new purchase.
-                        </p>
+                <section className={styles.contentSection} aria-labelledby="commitment">
+                    <div className={styles.container}>
+                        <div className={styles.sectionGrid}>
+                            <div className={styles.sectionTitle}>
+                                <h3 id="commitment">Our Commitment</h3>
+                            </div>
+                            <div className={styles.sectionBody}>
+                                <p>
+                                    When a lab instrument is down, work stops. We understand that urgency.
+                                </p>
+                                <p>
+                                    Our commitment is to help you get back to work quickly, safely, and confidently, whether it's a service call, a spare requirement, or a new purchase.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
                 {/* Let's Work Together */}
-                <section className={styles.contentSection}>
-                    <div className={styles.sectionTitle}>
-                        <h3>Let's Work Together</h3>
-                    </div>
-                    <div className={styles.sectionBody}>
-                        <p>
-                            If you are looking for service support, repairs, spare parts, or are planning to purchase analytical instruments, we're here to help.
-                        </p>
-                        <p>Get in touch with us to discuss your requirement.</p>
-                        <button
-                            className={styles.contactBtn}
-                            onClick={() => navigate("/contact")}
-                        >
-                            CONTACT <span className={styles.arrow}>→</span>
-                        </button>
+                <section className={styles.contentSection} aria-labelledby="work-together">
+                    <div className={styles.container}>
+                        <div className={styles.sectionGrid}>
+                            <div className={styles.sectionTitle}>
+                                <h3 id="work-together">Let's Work Together</h3>
+                            </div>
+                            <div className={styles.sectionBody}>
+                                <p>
+                                    If you are looking for service support, repairs, spare parts, or are planning to purchase analytical instruments, we're here to help.
+                                </p>
+                                <p>Get in touch with us to discuss your requirement.</p>
+                                <button
+                                    className={styles.contactBtn}
+                                    onClick={() => navigate("/contact")}
+                                    aria-label="Go to contact page to work together"
+                                >
+                                    CONTACT <span className={styles.arrow} aria-hidden="true">→</span>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </div>

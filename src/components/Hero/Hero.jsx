@@ -27,12 +27,23 @@ const Hero = () => {
   const [current, setCurrent] = useState(0);
   const navigate = useNavigate();
 
+  // Static content
+  const staticContent = {
+    title: "End to End Solutions for",
+    highlight: "Analytical & Laboratory",
+    subtitle: "Instruments",
+    description: "Sales, service, maintenance, spares, accessories, and consumables, delivered with technical expertise and prompt support.",
+  };
+
+  // Carousel images
+  const carouselImages = [heroImage, heroImage]; // Add more real images here as needed
+
   const prevSlide = () => {
-    setCurrent((prev) => (prev === 0 ? heroSlides.length - 1 : prev - 1));
+    setCurrent((prev) => (prev === 0 ? carouselImages.length - 1 : prev - 1));
   };
 
   const nextSlide = () => {
-    setCurrent((prev) => (prev === heroSlides.length - 1 ? 0 : prev + 1));
+    setCurrent((prev) => (prev === carouselImages.length - 1 ? 0 : prev + 1));
   };
 
   return (
@@ -41,9 +52,9 @@ const Hero = () => {
         {/* Top Heading */}
         <div className={styles.headerSection}>
           <h1 className={styles.title}>
-            {heroSlides[current].title} <br />
-            <span className={styles.highlight}>{heroSlides[current].highlight}</span>{" "}
-            {heroSlides[current].subtitle}
+            {staticContent.title} <br />
+            <span className={styles.highlight}>{staticContent.highlight}</span>{" "}
+            {staticContent.subtitle}
             <span className={styles.cursor}>|</span>
           </h1>
         </div>
@@ -52,7 +63,7 @@ const Hero = () => {
         <div className={styles.mainContent}>
           <div className={styles.imageSection}>
             <img
-              src={heroSlides[current].image}
+              src={carouselImages[current]}
               alt="Hero Slide"
               className={styles.heroImage}
             />
@@ -83,7 +94,7 @@ const Hero = () => {
 
         {/* Bottom Section: Description + Buttons */}
         <div className={styles.footerSection}>
-          <p className={styles.description}>{heroSlides[current].description}</p>
+          <p className={styles.description}>{staticContent.description}</p>
           <div className={styles.buttons}>
             <button
               className={styles.primaryBtn}

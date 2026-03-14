@@ -4,13 +4,13 @@
 }
 
 .container {
-    max-width: 75rem;
+    max-width: var(--container-max-width);
     margin: 0 auto;
-    padding: 0 1.25rem;
+    padding: 0 var(--section-padding-x);
 }
 
 .headerSection {
-    padding: 4rem 0;
+    padding: 6rem 0 3rem;
 }
 
 .headerContent {
@@ -57,10 +57,15 @@
 
 .heroContent {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: flex-start;
     color: var(--color-text-white);
-    gap: 4rem;
+}
+
+.containerHero {
+    width: 100%;
+    margin: 0;
+    padding: 0 var(--section-padding-x);
 }
 
 .heroTitle {
@@ -76,12 +81,23 @@
     margin: 0;
 }
 
+/* Content Section Styling */
 .contentSection {
+    width: 100%;
+    border-top: 1px solid var(--color-border-light);
+    background: transparent;
+}
+
+.contentSection.whoWeAre {
+    border-top: none;
+}
+
+.sectionGrid {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 4rem;
-    padding: 4rem 0;
-    border-top: 1px solid var(--color-border-light);
+    padding: 6rem 0;
+    /* Slightly increased for more premium feel */
 }
 
 .sectionTitle h3 {
@@ -146,7 +162,7 @@
     background: var(--color-primary);
     color: var(--color-text-white);
     border: none;
-    padding: 1rem 2rem;
+    padding: 1.125rem 2.25rem;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
@@ -154,23 +170,27 @@
     align-items: center;
     gap: 0.75rem;
     width: fit-content;
-    transition: background 0.2s, transform 0.2s;
+    transition: all 0.3s ease;
     margin-top: 1rem;
+    border-radius: 0.25rem;
 }
 
 .contactBtn:hover {
     background: var(--color-primary-hover);
-    transform: translateX(0.25rem);
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 85, 175, 0.25);
 }
 
 .arrow {
     font-size: 1.125rem;
 }
 
+/* Tablet */
 @media (max-width: 62rem) {
-    .contentSection {
+    .sectionGrid {
         grid-template-columns: 1fr 1.5fr;
         gap: 2rem;
+        padding: 4rem 0;
     }
 
     .pageTitle {
@@ -182,6 +202,7 @@
     }
 }
 
+/* Mobile */
 @media (max-width: 48rem) {
     .aboutPage {
         padding-top: 5.5rem;
@@ -205,13 +226,14 @@
     .heroContent {
         flex-direction: column;
         gap: 1.5rem;
+        align-items: flex-start;
     }
 
     .heroText {
         font-size: 1.125rem;
     }
 
-    .contentSection {
+    .sectionGrid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
         padding: 3rem 0;

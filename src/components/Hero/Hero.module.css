@@ -54,8 +54,8 @@
 
 .mainContent {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  /* Increased image side ratio */
+  grid-template-columns: 3fr 1fr;
+  /* Balanced ratio for deep overlap */
   gap: 0;
   /* Gap handled by overlap padding/margin */
   align-items: stretch;
@@ -66,12 +66,13 @@
   position: relative;
   border-radius: 0.5rem;
   overflow: hidden;
-  height: 55vh;
-  min-height: 25rem;
+  height: 60vh;
+  /* Increased height for better proportions */
+  min-height: 28rem;
   box-shadow: 0 1rem 3rem var(--color-shadow);
   z-index: 1;
-  width: calc(100% + 5vw);
-  /* Overlap extension */
+  width: calc(100% + 15vw);
+  /* Maximum overlap extension */
 }
 
 .heroImage {
@@ -116,10 +117,10 @@
   gap: var(--element-gap);
   position: relative;
   z-index: 2;
-  margin-left: -5vw;
-  /* Create the overlap */
-  padding: 2rem 0;
-  /* Vertical breathing room for cards */
+  margin-left: -15vw;
+  /* Deep overlap */
+  padding: 2.5rem 0;
+  /* Vertical breathing room */
 }
 
 .projectCard {

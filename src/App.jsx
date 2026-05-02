@@ -8,11 +8,13 @@ import Products from './pages/Products/Products';
 import About from './pages/About/About';
 import ProductDetails from './pages/ProductDetails/ProductDetails';
 import Contact from './pages/Contact/Contact';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 function App() {
 
   return (
     <>
+      <ScrollToTop />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />

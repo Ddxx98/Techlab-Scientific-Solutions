@@ -1,54 +1,62 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Review.module.css";
+import male from "../../assets/male.png";
+import female from "../../assets/female.png";
 
 const reviewsData = {
     products: [
         {
             id: 1,
-            author: "Amith Krishna",
-            lab: "24/42 Labs",
-            text: "Techlab Scientific Solutions is a Bengaluru based company supporting laboratories with reliable scientific and analytical instrument solutions. We work closely with labs, institutions, and industries that depend on accuracy, consistency, and timely support.",
+            author: "Dr. Rajesh Iyer",
+            lab: "IIT Madras - Research Lead",
+            text: "The Shimadzu GC-MS systems provided by Techlab have been pivotal for our pharmaceutical research. Their technical expertise and the instrument's sensitivity are unmatched in the industry.",
+            image: male,
         },
         {
             id: 2,
-            author: "Amith Krishna",
-            lab: "24/42 Labs",
-            text: "Techlab Scientific Solutions is a Bengaluru based company supporting laboratories with reliable scientific and analytical instrument solutions. We work closely with labs, institutions, and industries that depend on accuracy, consistency, and timely support.",
+            author: "Sneha Kulkarni",
+            lab: "QC Manager, Pharma Solutions",
+            text: "We've been using the GC-2010 Plus for over a year now. The reproducibility we get for our routine analysis is exceptional. Techlab's selection of instruments really meets global standards.",
+            image: female,
         },
         {
             id: 3,
-            author: "Amith Krishna",
-            lab: "24/42 Labs",
-            text: "Techlab Scientific Solutions is a Bengaluru based company supporting laboratories with reliable scientific and analytical instrument solutions. We work closely with labs, institutions, and industries that depend on accuracy, consistency, and timely support.",
+            author: "Dr. Arun Verma",
+            lab: "CSIR - Senior Scientist",
+            text: "The HS-20 Headspace Autosampler has significantly improved our throughput for volatile organic analysis. Highly recommend Techlab for their reliable scientific solutions.",
+            image: male,
         },
         {
             id: 4,
-            author: "Amith Krishna",
-            lab: "24/42 Labs",
-            text: "Techlab Scientific Solutions is a Bengaluru based company supporting laboratories with reliable scientific and analytical instrument solutions. We work closely with labs, institutions, and industries that depend on accuracy, consistency, and timely support.",
+            author: "Priya Sharma",
+            lab: "University Research Scholar",
+            text: "Beyond the high-quality instruments, the LabSolutions software support provided by Techlab made our research workflow much more efficient. Truly a dependable partner.",
+            image: female,
         },
         {
             id: 5,
-            author: "Amith Krishna",
-            lab: "24/42 Labs",
-            text: "Techlab Scientific Solutions is a Bengaluru based company supporting laboratories with reliable scientific and analytical instrument solutions. We work closely with labs, institutions, and industries that depend on accuracy, consistency, and timely support.",
+            author: "Dr. Sandeep Gupta",
+            lab: "Food Safety Laboratory",
+            text: "Reliable equipment is critical for food safety testing. Techlab ensures we have the best UV-Vis and Chromatography setups with consistent performance.",
+            image: male,
         },
     ],
     services: [
         {
             id: 1,
-            author: "Amith Krishna",
-            lab: "24/42 Labs",
-            text: "Techlab Scientific Solutions is a Bengaluru based company supporting laboratories with reliable scientific and analytical instrument solutions. We work closely with labs, institutions, and industries that depend on accuracy, consistency, and timely support.",
+            author: "Vikram Singh",
+            lab: "Lab In-charge, Industrial Chemicals",
+            text: "Their AMC service is fantastic. The engineers are prompt, well-versed with Shimadzu systems, and always ensure our instruments are in peak condition before every audit.",
+            image: male,
         },
         {
             id: 2,
-            author: "Amith Krishna",
-            lab: "24/42 Labs",
-            text: "Techlab Scientific Solutions is a Bengaluru based company supporting laboratories with reliable scientific and analytical instrument solutions. We work closely with labs, institutions, and industries that depend on accuracy, consistency, and timely support.",
-        },
-        // Add more service reviews if needed
+            author: "Dr. Meera Nair",
+            lab: "Clinical Research Institute",
+            text: "Our CMC contract with Techlab has given us complete peace of mind. We haven't had a single day of downtime in the last 14 months thanks to their preventive maintenance.",
+            image: female,
+        }
     ],
 };
 
@@ -84,7 +92,7 @@ const Review = ({ isDark = true }) => {
                     {reviewsData[activeTab].map((review) => (
                         <div key={review.id} className={styles.card}>
                             <div className={styles.cardHeader}>
-                                <div className={styles.avatarPlaceholder}></div>
+                                <div className={styles.avatarPlaceholder}><img src={review.image} alt="" /></div>
                                 <div className={styles.authorInfo}>
                                     <span className={styles.labName}>{review.lab}</span>
                                     <h4 className={styles.authorName}>{review.author}</h4>

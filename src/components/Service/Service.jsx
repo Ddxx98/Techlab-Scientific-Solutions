@@ -1,31 +1,35 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Service.module.css";
+import amc from "../../assets/amc_service.png";
+import cmc from "../../assets/cmc_service.png";
+import onetime from "../../assets/onetime_service.png";
+import calibration from "../../assets/calibration_service.png";
 
 const servicesData = [
     {
         id: "01",
         title: "Service Contracts (AMC)",
         description: "Annual Maintenance Contract (AMC). Reliable, scheduled maintenance to ensure continuous operation of your lab instruments.",
-        image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200",
+        image: amc,
     },
     {
         id: "02",
         title: "Service Contracts (CMC)",
         description: "Comprehensive Maintenance Contract (CMC). Complete coverage including preventive maintenance and essential parts replacement.",
-        image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1200",
+        image: cmc,
     },
     {
         id: "03",
         title: "Onetime Service Visit",
         description: "On-demand expert service visits for immediate technical troubleshooting, repairs, or specific maintenance requirements.",
-        image: "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&q=80&w=1200",
+        image: onetime,
     },
     {
         id: "04",
         title: "Inspection & Calibration",
         description: "General inspection, Service, Installation, Calibration, and Qualification Visit options for thorough system checks.",
-        image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80&w=1200",
+        image: calibration,
     },
 ];
 

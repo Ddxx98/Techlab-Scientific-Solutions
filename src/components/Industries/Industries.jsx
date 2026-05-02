@@ -1,26 +1,37 @@
 import React, { useState } from "react";
 import styles from "./Industries.module.css";
 
+import pharma from "../../assets/pharma_industry.png";
+import food from "../../assets/food_industry.png";
+import environmental from "../../assets/environmental_industry.png";
+import petrochemical from "../../assets/petrochemical_industry.png";
+import forensic from "../../assets/forensic_industry.png";
+
 const industriesData = [
     {
         id: "pharma",
-        name: "Pharmaceutical & Biotech Labs",
-        image: "/C:/Users/Deekshith D V/.gemini/antigravity/brain/27732b96-d5df-4979-8ccc-8dbeab7275f7/pharma_biotech_lab_1768130792122.png",
+        name: "Pharmaceutical & Biopharma",
+        image: pharma,
     },
     {
-        id: "academic",
-        name: "Academic & Research Labs",
-        image: "/C:/Users/Deekshith D V/.gemini/antigravity/brain/27732b96-d5df-4979-8ccc-8dbeab7275f7/academic_research_lab_1768130806837.png",
-    },
-    {
-        id: "industrial",
-        name: "Industrial Testing Labs",
-        image: "/C:/Users/Deekshith D V/.gemini/antigravity/brain/27732b96-d5df-4979-8ccc-8dbeab7275f7/industrial_testing_lab_1768130822450.png",
+        id: "food",
+        name: "Food & Beverage Safety",
+        image: food,
     },
     {
         id: "environmental",
-        name: "Environmental Analysis Labs",
-        image: "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&q=80&w=1200", // Placeholder for 4th image
+        name: "Environmental Testing",
+        image: environmental,
+    },
+    {
+        id: "petrochemical",
+        name: "Petrochemical & Energy",
+        image: petrochemical,
+    },
+    {
+        id: "forensic",
+        name: "Clinical & Forensics",
+        image: forensic,
     },
 ];
 

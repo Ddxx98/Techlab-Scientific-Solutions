@@ -1,25 +1,31 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import heroImage from "../../assets/hero.png";
+import hero1 from "../../assets/hero_slide_1.png";
+import hero2 from "../../assets/hero_slide_2.png";
+import hero3 from "../../assets/hero_slide_3.png";
 import styles from "./Hero.module.css";
 
-// Sample data (replace with your real content)
 const heroSlides = [
   {
     title: "End to End Solutions for",
     highlight: "Analytical & Laboratory",
     subtitle: "Instruments",
-    description:
-      "Sales, service, maintenance, spares, accessories, and consumables, delivered with technical expertise and prompt support.",
-    image: heroImage,
+    description: "Sales, service, maintenance, spares, accessories, and consumables, delivered with technical expertise and prompt support.",
+    image: hero1,
+  },
+  {
+    title: "Precision & Accuracy in",
+    highlight: "Chromatography Systems",
+    subtitle: "Solutions",
+    description: "High-performance GC, GC-MS, and UV-Vis systems designed for the most demanding research and industrial requirements.",
+    image: hero2,
   },
   {
     title: "Reliable Support for",
-    highlight: "Scientific Equipment",
+    highlight: "Scientific Excellence",
     subtitle: "Across India",
-    description:
-      "We support laboratories with accurate, consistent, and timely scientific solutions.",
-    image: heroImage,
+    description: "Deep technical expertise and comprehensive service contracts to keep your laboratory running at peak performance.",
+    image: hero3,
   },
 ];
 
@@ -27,23 +33,14 @@ const Hero = () => {
   const [current, setCurrent] = useState(0);
   const navigate = useNavigate();
 
-  // Static content
-  const staticContent = {
-    title: "End to End Solutions for",
-    highlight: "Analytical & Laboratory",
-    subtitle: "Instruments",
-    description: "Sales, service, maintenance, spares, accessories, and consumables, delivered with technical expertise and prompt support.",
-  };
-
-  // Carousel images
-  const carouselImages = [heroImage, heroImage]; // Add more real images here as needed
+  const currentSlide = heroSlides[current];
 
   const prevSlide = () => {
-    setCurrent((prev) => (prev === 0 ? carouselImages.length - 1 : prev - 1));
+    setCurrent((prev) => (prev === 0 ? heroSlides.length - 1 : prev - 1));
   };
 
   const nextSlide = () => {
-    setCurrent((prev) => (prev === carouselImages.length - 1 ? 0 : prev + 1));
+    setCurrent((prev) => (prev === heroSlides.length - 1 ? 0 : prev + 1));
   };
 
   return (
@@ -52,9 +49,9 @@ const Hero = () => {
         {/* Top Heading */}
         <div className={styles.headerSection}>
           <h1 className={styles.title}>
-            {staticContent.title} <br />
-            <span className={styles.highlight}>{staticContent.highlight}</span>{" "}
-            {staticContent.subtitle}
+            {currentSlide.title} <br />
+            <span className={styles.highlight}>{currentSlide.highlight}</span>{" "}
+            {currentSlide.subtitle}
             <span className={styles.cursor}>|</span>
           </h1>
         </div>
@@ -63,7 +60,7 @@ const Hero = () => {
         <div className={styles.mainContent}>
           <div className={styles.imageSection}>
             <img
-              src={carouselImages[current]}
+              src={currentSlide.image}
               alt="Hero Slide"
               className={styles.heroImage}
             />
@@ -77,16 +74,16 @@ const Hero = () => {
           <div className={styles.sideSection}>
             <div className={styles.projectCard}>
               <span className={styles.cardTag}>24/42 Labs</span>
-              <h3 className={styles.cardTitle}>Amith Krishna</h3>
+              <h3 className={styles.cardTitle}>Dr. Rajesh Iyer</h3>
               <p className={styles.cardText}>
-                Techlab Scientific Solutions is a Bengaluru based company supporting laboratories with reliable scientific and analytical instrument solutions.
+                "The Shimadzu systems from Techlab are pivotal for our research. Their technical expertise is unmatched."
               </p>
             </div>
             <div className={styles.projectCard}>
-              <span className={styles.cardTag}>24/42 Labs</span>
-              <h3 className={styles.cardTitle}>Amith Krishna</h3>
+              <span className={styles.cardTag}>Research Lead</span>
+              <h3 className={styles.cardTitle}>IIT Madras</h3>
               <p className={styles.cardText}>
-                We work closely with labs, institutions, and industries that depend on accuracy, consistency, and timely support.
+                Techlab supports labs and industries that depend on accuracy, consistency, and timely support.
               </p>
             </div>
           </div>
@@ -94,7 +91,7 @@ const Hero = () => {
 
         {/* Bottom Section: Description + Buttons */}
         <div className={styles.footerSection}>
-          <p className={styles.description}>{staticContent.description}</p>
+          <p className={styles.description}>{currentSlide.description}</p>
           <div className={styles.buttons}>
             <button
               className={styles.primaryBtn}

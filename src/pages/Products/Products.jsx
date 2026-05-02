@@ -2,70 +2,161 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Products.module.css";
 import SEO from "../../components/SEO/SEO";
+import GCMS from "../../assets/products/gcms2010.jpeg";
+import GC from "../../assets/products/gc.jpeg";
+import GC2010 from "../../assets/products/gc2010.jpeg";
+import GCAOC from "../../assets/products/aoc.jpeg";
+import GC2014 from "../../assets/products/gc2014.jpeg";
+import GC14 from "../../assets/products/gc14.jpeg";
+import GC2010lap from "../../assets/products/gc2010lap.jpeg";
+import HS20 from "../../assets/products/hs.jpeg";
+import GCAOCI from "../../assets/products/aoci.jpeg";
+import GCAOC10 from "../../assets/products/gcaoc10.jpeg";
+import GCMSAI from "../../assets/products/gcmsai.jpeg";
+import GCMSAIAS from "../../assets/products/gcmsas.jpeg";
+import GCMSAIHS from "../../assets/products/gcmsaoihs.jpeg";
+import GCHS from "../../assets/products/gchs.jpeg";
+import UV from "../../assets/products/uv.jpeg";
 
 const Products = () => {
-    const [activeCategory, setActiveCategory] = useState("Product type 01");
-    const [activeProduct, setActiveProduct] = useState("Product 02");
+    const [activeCategory, setActiveCategory] = useState("All");
 
     const categories = [
-        "Product type 01",
-        "Product type 02",
-        "Product type 03",
-        "Product type 04",
+        "All",
+        "Analytical Instruments",
+        "Laboratory Equipment",
+        "Automation",
+        "Accessories",
+        "Full Systems",
+        "Spectroscopy"
     ];
-
-    const products = ["Product 01", "Product 02", "Product 03", "Product 04"];
 
     const productsData = [
         {
-            id: 1,
-            name: "Product Name",
-            description:
-                "A small 2 line description about a product, that captures the quick usage of offering of it for a quick glance of the viewer",
-            attributes: {
-                COLOUR: "Dark Blue",
-                TYPE: "Traded Syntax",
-                "DUMMY DATA": "Dummy Data",
-                "DUMMY DATA ": "Dummy Data",
-            },
+            id: "01",
+            name: "Gas Chromatography-Mass Spectrometry (GC-MS)",
+            description: "High-performance GC-MS system for precise identification and quantification of volatile compounds.",
+            category: "Analytical Instruments",
+            image: GCMS,
+            attributes: { MODEL: "QP2010 Ultra", DETECTOR: "Mass Spectrometer", SOFTWARE: "LabSolutions GCMS" },
         },
         {
-            id: 2,
-            name: "Product Name",
-            description:
-                "A small 2 line description about a product, that captures the quick usage of offering of it for a quick glance of the viewer",
-            attributes: {
-                COLOUR: "Dark Blue",
-                TYPE: "Traded Syntax",
-                "DUMMY DATA": "Dummy Data",
-                "DUMMY DATA ": "Dummy Data",
-            },
+            id: "02",
+            name: "Gas Chromatograph",
+            description: "Versatile gas chromatography system optimized for routine analysis with high sensitivity.",
+            category: "Laboratory Equipment",
+            image: GC,
+            attributes: { MODEL: "GC-2010", INLET: "Split/Splitless", TEMP: "Ambient to 450°C" },
         },
         {
-            id: 3,
-            name: "Product Name",
-            description:
-                "A small 2 line description about a product, that captures the quick usage of offering of it for a quick glance of the viewer",
-            attributes: {
-                COLOUR: "Dark Blue",
-                TYPE: "Traded Syntax",
-                "DUMMY DATA": "Dummy Data",
-                "DUMMY DATA ": "Dummy Data",
-            },
+            id: "03",
+            name: "Gas Chromatograph",
+            description: "Advanced GC platform featuring exceptional temperature control and modular design.",
+            category: "Laboratory Equipment",
+            image: GC2010,
+            attributes: { MODEL: "GC-2010 Plus", CARRIER: "He, H2, N2", COOLING: "Rapid" },
         },
         {
-            id: 4,
-            name: "Product Name",
-            description:
-                "A small 2 line description about a product, that captures the quick usage of offering of it for a quick glance of the viewer",
-            attributes: {
-                COLOUR: "Dark Blue",
-                TYPE: "Traded Syntax",
-                "DUMMY DATA": "Dummy Data",
-                "DUMMY DATA ": "Dummy Data",
-            },
+            id: "04",
+            name: "Gas Chromatograph (GC) with Auto Injector (AOC 20i)",
+            description: "Automated GC system equipped with the AOC-20i for high-throughput sample processing.",
+            category: "Automation",
+            image: GCAOC,
+            attributes: { MODEL: "GC 2010, AOC 20i", SAMPLER: "AOC-20i", VIALS: "12" },
+        },
+        {
+            id: "05",
+            name: "Gas Chromatograph",
+            description: "Reliable gas chromatography system designed for standard industrial applications.",
+            category: "Laboratory Equipment",
+            image: GC2014,
+            attributes: { MODEL: "GC-2014", DETECTOR: "Dual FID", DISPLAY: "LCD" },
+        },
+        {
+            id: "06",
+            name: "Gas Chromatograph",
+            description: "Rugged and efficient GC system suitable for heavy workloads in QC labs.",
+            category: "Laboratory Equipment",
+            image: GC14,
+            attributes: { MODEL: "GC-2014 Plus", THROUGHPUT: "Medium-High", LIMS: "Compatible" },
+        },
+        {
+            id: "07",
+            name: "Gas Chromatograph",
+            description: "Compact and powerful gas chromatograph offering high-speed analysis.",
+            category: "Laboratory Equipment",
+            image: GC2010lap,
+            attributes: { MODEL: "GC-2010 Pro", FOOTPRINT: "Compact", SPEED: "High-speed" },
+        },
+        {
+            id: "08",
+            name: "Headspace Autosampler",
+            description: "High-sensitivity headspace autosampler for volatile organic compound analysis.",
+            category: "Accessories",
+            image: HS20,
+            attributes: { MODEL: "HS-20", LOOP: "1mL", TEMP: "Up to 300°C" },
+        },
+        {
+            id: "09",
+            name: "Gas Chromatograph (GC) with Auto Injector (AOC 20i)",
+            description: "Enhanced automated GC system combining the GC-2010 Plus with auto-injection.",
+            category: "Automation",
+            image: GCAOCI,
+            attributes: { MODEL: "GC 2010 Plus, AOC 20i", PRECISION: "High", SETUP: "One-click" },
+        },
+        {
+            id: "10",
+            name: "Gas Chromatograph (GC) with Auto Injector (AOC 20i)",
+            description: "Durable automated GC solution for consistent and unattended sample injection.",
+            category: "Automation",
+            image: GCAOC10,
+            attributes: { MODEL: "GC 2010, AOC 20i", DUTY: "24/7", CONNECT: "Ethernet" },
+        },
+        {
+            id: "11",
+            name: "Gas Chromatograph (GC) with Auto Injector (AOC 20i)",
+            description: "High-performance GC system integrated with automation for specialized research.",
+            category: "Automation",
+            image: GCMSAI,
+            attributes: { MODEL: "GCMS-QP2010 Ultra", SCAN: "Fast", RESOLUTION: "High" },
+        },
+        {
+            id: "12",
+            name: "Gas chromatography-mass spectrometry (GCMS) with Auto Injector and Auto Sampler",
+            description: "Comprehensive GC-MS solution for maximum laboratory efficiency.",
+            category: "Full Systems",
+            image: GCMSAIAS,
+            attributes: { MODEL: "QP2010 Plus", RACK: "150 vials", SENSITIVITY: "1pg OFN" },
+        },
+        {
+            id: "13",
+            name: "Gas chromatography-mass spectrometry (GCMS) with Auto Injector and Headspace Sampler (HS)",
+            description: "Specialized GC-MS configuration optimized for volatile analysis.",
+            category: "Full Systems",
+            image: GCMSAIHS,
+            attributes: { MODEL: "QP2010 SE", TRANSFER: "Temp controlled", STANDARDS: "CFR Part 11" },
+        },
+        {
+            id: "14",
+            name: "Gas Chromatograph (GC) with Headspace Sampler (HS)",
+            description: "High-efficiency GC system paired with a headspace sampler for environmental testing.",
+            category: "Full Systems",
+            image: GCHS,
+            attributes: { MODEL: "GC 2010 Plus", CARRIER: "Direct flow", SAFETY: "Auto check" },
+        },
+        {
+            id: "15",
+            name: "UV-Visible Spectrophotometer",
+            description: "Dual-beam UV-Vis spectrophotometer offering high resolution and stability.",
+            category: "Spectroscopy",
+            image: UV,
+            attributes: { MODEL: "UV-1800", RANGE: "190-1100 nm", BANDWIDTH: "1nm" },
         },
     ];
+
+    const filteredProducts = activeCategory === "All"
+        ? productsData
+        : productsData.filter(p => p.category === activeCategory);
 
     return (
         <div className={styles.productsPage}>
@@ -86,35 +177,23 @@ const Products = () => {
                             onClick={() => setActiveCategory(category)}
                         >
                             {category}
-                            <span className={styles.arrow}>▲</span>
                         </button>
                     ))}
                 </div>
 
-                {/* Level 2 Filter: Products + Counter */}
                 <div className={styles.productFilterWrapper}>
-                    <div className={styles.productFilter}>
-                        {products.map((product) => (
-                            <button
-                                key={product}
-                                className={`${styles.productBtn} ${activeProduct === product ? styles.active : ""
-                                    }`}
-                                onClick={() => setActiveProduct(product)}
-                            >
-                                {product}
-                            </button>
-                        ))}
+                    <div className={styles.counter}>
+                        Showing {filteredProducts.length} of {productsData.length} products
                     </div>
-                    <div className={styles.counter}>01/04</div>
                 </div>
 
                 {/* Product List */}
                 <div className={styles.productList}>
-                    {productsData.map((product) => (
+                    {filteredProducts.map((product) => (
                         <div key={product.id} className={styles.productCard}>
                             {/* Improved Image Container */}
                             <div className={styles.imageContainer}>
-                                <div className={styles.productImage}></div>
+                                <img src={product.image} alt={product.name} className={styles.productImage} />
                             </div>
 
                             {/* Product Details */}
@@ -137,8 +216,8 @@ const Products = () => {
                                 </div>
 
                                 <div className={styles.btnWrapper}>
-                                    <Link to="/contact" className={styles.contactLink}>
-                                        CONTACT →
+                                    <Link to={`/product/${product.id}`} className={styles.contactLink}>
+                                        VIEW DETAILS →
                                     </Link>
                                 </div>
                             </div>

@@ -15,22 +15,25 @@ const Footer = () => {
         { name: "Home", path: "/" },
         { name: "About", path: "/about" },
         { name: "Services", path: "/services" },
-        { name: "Product", path: "/products" },
-        { name: "FAQs", path: "/faqs" },
+        { name: "Products", path: "/products" },
         { name: "Contact", path: "/contact" },
     ];
 
     const productLinks = [
-        { name: "Product 01", path: "/product/01" },
-        { name: "Product 02", path: "/product/02" },
-        { name: "Product 03", path: "/product/03" },
-        { name: "Product 04", path: "/product/04" },
+        { name: "GC-MS (QP2010 Ultra)", path: "/product/01" },
+        { name: "Gas Chromatograph (GC)", path: "/product/02" },
+        { name: "GC-2010 Plus", path: "/product/03" },
+        { name: "GC with AOC 20i", path: "/product/04" },
+        { name: "HS-20 Autosampler", path: "/product/08" },
+        { name: "UV-Visible Spectro", path: "/product/15" },
+        { name: "View All Products →", path: "/products" },
     ];
 
     const serviceLinks = [
-        { name: "Service 01", path: "/service/01" },
-        { name: "Service 02", path: "/service/02" },
-        { name: "Service 03", path: "/service/03" },
+        { name: "AMC Service Contracts", path: "/services" },
+        { name: "CMC Service Contracts", path: "/services" },
+        { name: "Onetime Service Visit", path: "/services" },
+        { name: "Inspection & Calibration", path: "/services" },
     ];
 
     return (
@@ -102,7 +105,7 @@ const Footer = () => {
                 {/* Bottom Section: Copyright & Top Button */}
                 <div className={styles.bottomSection}>
                     <p className={styles.copyright}>
-                        All Content is copyrighted @Thinkers Lab C 2025
+                        All Content is copyrighted @Techlab Scientific Solutions 2026
                     </p>
                     <button className={styles.topBtn} onClick={scrollToTop}>
                         Go to top <span className={styles.arrow}>↑</span>

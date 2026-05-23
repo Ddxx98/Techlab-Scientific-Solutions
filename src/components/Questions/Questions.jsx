@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Questions.module.css";
+import AnimationWrapper from "../AnimationWrapper";
+import { motion, AnimatePresence } from "framer-motion";
 
 const faqData = {
     general: [
@@ -78,7 +80,7 @@ const Questions = () => {
     return (
         <section className={styles.questionsSection}>
             <div className={styles.container}>
-                <div className={styles.header}>
+                <AnimationWrapper type="fade-right" className={styles.header}>
                     <div className={styles.titleWrapper}>
                         <h2 className={styles.title}>
                             Frequently <br />
@@ -87,7 +89,7 @@ const Questions = () => {
                         </h2>
                     </div>
                     <div className={styles.watermark}>Q</div>
-                </div>
+                </AnimationWrapper>
 
                 <div className={styles.controls}>
                     <div className={styles.tabs}>
@@ -113,35 +115,47 @@ const Questions = () => {
                 </div>
 
                 <div className={styles.faqList}>
-                    {faqData[activeTab].map((item) => (
-                        <div
-                            key={item.id}
-                            className={`${styles.faqItem} ${openItems.includes(item.id) ? styles.open : ""}`}
-                        >
-                            <button
-                                className={styles.questionBtn}
-                                onClick={() => toggleItem(item.id)}
+                    <AnimatePresence mode="wait">
+                        {faqData[activeTab].map((item, index) => (
+                            <AnimationWrapper 
+                                key={`${activeTab}-${item.id}`} 
+                                type="fade-up" 
+                                delay={index * 0.05}
                             >
-                                <span className={styles.questionText}>{item.question}</span>
-                                <span className={styles.icon}>
-                                    {openItems.includes(item.id) ? (
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                            <line x1="5" y1="12" x2="19" y2="12" />
-                                        </svg>
-                                    ) : (
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                            <circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="16" /><line x1="8" y1="12" x2="16" y2="12" />
-                                        </svg>
-                                    )}
-                                </span>
-                            </button>
-                            <div className={styles.answerWrapper}>
-                                <div className={styles.answerContent}>
-                                    <p className={styles.answerText}>{item.answer}</p>
+                                <div
+                                    className={`${styles.faqItem} ${openItems.includes(item.id) ? styles.open : ""}`}
+                                >
+                                    <button
+                                        className={styles.questionBtn}
+                                        onClick={() => toggleItem(item.id)}
+                                    >
+                                        <span className={styles.questionText}>{item.question}</span>
+                                        <span className={styles.icon}>
+                                            {openItems.includes(item.id) ? (
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                                </svg>
+                                            ) : (
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                    <circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="16" /><line x1="8" y1="12" x2="16" y2="12" />
+                                                </svg>
+                                            )}
+                                        </span>
+                                    </button>
+                                    <motion.div 
+                                        className={styles.answerWrapper}
+                                        initial={false}
+                                        animate={{ height: openItems.includes(item.id) ? "auto" : 0 }}
+                                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                                    >
+                                        <div className={styles.answerContent}>
+                                            <p className={styles.answerText}>{item.answer}</p>
+                                        </div>
+                                    </motion.div>
                                 </div>
-                            </div>
-                        </div>
-                    ))}
+                            </AnimationWrapper>
+                        ))}
+                    </AnimatePresence>
                 </div>
             </div>
         </section>

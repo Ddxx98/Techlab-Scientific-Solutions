@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import styles from "./Footer.module.css";
+import AnimationWrapper from "../AnimationWrapper";
 
 const Footer = () => {
     const scrollToTop = () => {
@@ -25,7 +26,7 @@ const Footer = () => {
         { name: "GC-2010 Plus", path: "/product/03" },
         { name: "GC with AOC 20i", path: "/product/04" },
         { name: "HS-20 Autosampler", path: "/product/08" },
-        { name: "UV-Visible Spectro", path: "/product/15" },
+        { name: "UV-Visible Spectrophotometer", path: "/product/15" },
         { name: "View All Products →", path: "/products" },
     ];
 
@@ -38,19 +39,7 @@ const Footer = () => {
 
     return (
         <footer className={styles.footer}>
-            <div className={styles.container}>
-                {/* Top Section: Logo */}
-                <div className={styles.topSection}>
-                    <div className={styles.logoWrapper}>
-                        <div className={styles.logoIcon}>
-                            <img src={logo} alt="logo" />
-                        </div>
-                        <div className={styles.logoText}>
-                            <span className={styles.companyName}>Techlab</span>
-                            <span className={styles.companySub}>Scientific Solutions</span>
-                        </div>
-                    </div>
-                </div>
+            <AnimationWrapper type="fade-up" className={styles.container}>
 
                 {/* Middle Section: Links & Contact */}
                 <div className={styles.middleSection}>
@@ -90,8 +79,9 @@ const Footer = () => {
 
                         <div className={styles.contactColumn}>
                             <div className={styles.contactInfo}>
-                                <p className={styles.phone}>+91 - 7411723668</p>
-                                <p className={styles.email}>techlab.tss@gamil.com</p>
+                                <a href="tel:+917411723668" className={styles.contactLink}>+91 - 7411723668</a>
+                                <a href="tel:+917411723669" className={styles.contactLink}>+91 - 7411723669</a>
+                                <a href="mailto:sales@techlabscientific.com" className={styles.contactLink}>sales@techlabscientific.com</a>
                                 <p className={styles.address}>
                                     Building no. 57, Government press layout, <br />
                                     Mallathahalli, Ullal main road, Bengaluru, <br />
@@ -111,7 +101,7 @@ const Footer = () => {
                         Go to top <span className={styles.arrow}>↑</span>
                     </button>
                 </div>
-            </div>
+            </AnimationWrapper>
         </footer>
     );
 };

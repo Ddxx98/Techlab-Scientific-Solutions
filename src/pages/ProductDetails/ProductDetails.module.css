@@ -138,7 +138,7 @@
 @media (max-width: 48rem) {
     .main {
         padding: 3rem 1.25rem;
-        padding-top: 5.5rem;
+        padding-top: 6.5rem; /* Clean clearance below fixed mobile header */
     }
 
     .specsList {

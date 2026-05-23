@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Review.module.css";
+import AnimationWrapper from "../AnimationWrapper";
+import { AnimatePresence, motion } from "framer-motion";
 import male from "../../assets/male.png";
 import female from "../../assets/female.png";
 
@@ -69,9 +71,11 @@ const Review = ({ isDark = true }) => {
     return (
         <section className={`${styles.reviewSection} ${themeClass}`}>
             <div className={styles.container}>
-                <h2 className={styles.title}>
-                    What <span className={styles.highlight}>people says</span> about us
-                </h2>
+                <AnimationWrapper type="fade-up">
+                    <h2 className={styles.title}>
+                        What <span className={styles.highlight}>people says</span> about us
+                    </h2>
+                </AnimationWrapper>
 
                 <div className={styles.tabs}>
                     <button
@@ -89,18 +93,26 @@ const Review = ({ isDark = true }) => {
                 </div>
 
                 <div className={styles.grid}>
-                    {reviewsData[activeTab].map((review) => (
-                        <div key={review.id} className={styles.card}>
-                            <div className={styles.cardHeader}>
-                                <div className={styles.avatarPlaceholder}><img src={review.image} alt="" /></div>
-                                <div className={styles.authorInfo}>
-                                    <span className={styles.labName}>{review.lab}</span>
-                                    <h4 className={styles.authorName}>{review.author}</h4>
+                    <AnimatePresence mode="wait">
+                        {reviewsData[activeTab].map((review, index) => (
+                            <AnimationWrapper 
+                                key={`${activeTab}-${review.id}`} 
+                                type="fade-up" 
+                                delay={index * 0.1}
+                            >
+                                <div className={styles.card}>
+                                    <div className={styles.cardHeader}>
+                                        <div className={styles.avatarPlaceholder}><img src={review.image} alt="" /></div>
+                                        <div className={styles.authorInfo}>
+                                            <span className={styles.labName}>{review.lab}</span>
+                                            <h4 className={styles.authorName}>{review.author}</h4>
+                                        </div>
+                                    </div>
+                                    <p className={styles.reviewText}>{review.text}</p>
                                 </div>
-                            </div>
-                            <p className={styles.reviewText}>{review.text}</p>
-                        </div>
-                    ))}
+                            </AnimationWrapper>
+                        ))}
+                    </AnimatePresence>
 
                     {/* Contact Card */}
                     <div className={styles.contactCard}>

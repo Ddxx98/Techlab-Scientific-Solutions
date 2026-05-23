@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import styles from "./ProductDetails.module.css";
+import AnimationWrapper from "../../components/AnimationWrapper";
 import GCMS from "../../assets/products/gcms2010.jpeg";
 import GC from "../../assets/products/gc.jpeg";
 import GC2010 from "../../assets/products/gc2010.jpeg";
@@ -164,16 +165,18 @@ const ProductDetails = () => {
         <div className={styles.pageWrapper}>
             <main className={styles.main}>
                 <div className={styles.container}>
-                    <Link to="/" className={styles.backLink}>
-                        <span className={styles.backArrow}>←</span> Back to Products
-                    </Link>
+                    <AnimationWrapper type="fade-down">
+                        <Link to="/" className={styles.backLink}>
+                            <span className={styles.backArrow}>←</span> Back to Products
+                        </Link>
+                    </AnimationWrapper>
 
                     <div className={styles.detailsGrid}>
-                        <div className={styles.imageSection}>
+                        <AnimationWrapper type="fade-right" className={styles.imageSection}>
                             <img src={product.image} alt={product.name} className={styles.mainImage} />
-                        </div>
+                        </AnimationWrapper>
 
-                        <div className={styles.infoSection}>
+                        <AnimationWrapper type="fade-left" className={styles.infoSection}>
                             <span className={styles.category}>{product.category}</span>
                             <h1 className={styles.productName}>{product.name}</h1>
                             <p className={styles.description}>{product.description}</p>
@@ -193,7 +196,7 @@ const ProductDetails = () => {
                             >
                                 Request Inquiry
                             </button>
-                        </div>
+                        </AnimationWrapper>
                     </div>
                 </div>
             </main>

@@ -26,7 +26,7 @@
 }
 
 .title {
-    font-size: 4rem;
+    font-size: 2rem;
     font-weight: 500;
     color: var(--color-text-primary);
     line-height: 1.1;
@@ -39,9 +39,9 @@
 
 .watermark {
     position: absolute;
-    top: -2rem;
+    top: -1rem;
     right: 0;
-    font-size: 20rem;
+    font-size: 10rem;
     font-weight: 700;
     color: rgba(0, 0, 0, 0.03);
     line-height: 1;
@@ -166,12 +166,12 @@
 
 @media (max-width: 62rem) {
     .title {
-        font-size: 3rem;
+        font-size: 2rem;
     }
 
     .watermark {
-        font-size: 15rem;
-        top: -1rem;
+        font-size: 8rem;
+        top: -0.5rem;
     }
 }
 
@@ -185,7 +185,7 @@
     }
 
     .title {
-        font-size: 2.5rem;
+        font-size: 1.75rem;
     }
 
     .watermark {

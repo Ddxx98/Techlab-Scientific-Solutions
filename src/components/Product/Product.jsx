@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./Product.module.css";
+import AnimationWrapper from "../AnimationWrapper";
 import GCMS from "../../assets/products/gcms2010.jpeg";
 import GC from "../../assets/products/gc.jpeg";
 import GC2010 from "../../assets/products/gc2010.jpeg";
@@ -164,25 +165,31 @@ const Product = () => {
     return (
         <section className={styles.productSection}>
             <div className={styles.container}>
-                <div className={styles.header}>
+                <AnimationWrapper type="fade-up" className={styles.header}>
                     <h2 className={styles.title}><span className={styles.highlight}>Products</span> for you</h2>
                     <p className={styles.subtitle}>
                         We work with a wide range of analytical instruments and laboratory equipment used across research, quality control, and testing environments.
                     </p>
-                </div>
+                </AnimationWrapper>
 
                 <div className={styles.grid}>
-                    {displayedProducts.map((product) => (
-                        <Link key={product.id} to={`/product/${product.id}`} className={styles.card}>
-                            <div className={styles.cardHeader}>
-                                <h3 className={styles.productName}>{product.name}</h3>
-                                <span className={styles.arrow}>→</span>
-                            </div>
-                            <div className={styles.imageWrapper}>
-                                <img src={product.image} alt={product.name} className={styles.productImage} />
-                                <div className={styles.categoryBadge}>{product.category}</div>
-                            </div>
-                        </Link>
+                    {displayedProducts.map((product, index) => (
+                        <AnimationWrapper 
+                            key={product.id} 
+                            type="fade-up" 
+                            delay={(index % 4) * 0.1}
+                        >
+                            <Link to={`/product/${product.id}`} className={styles.card}>
+                                <div className={styles.cardHeader}>
+                                    <h3 className={styles.productName}>{product.name}</h3>
+                                    <span className={styles.arrow}>→</span>
+                                </div>
+                                <div className={styles.imageWrapper}>
+                                    <img src={product.image} alt={product.name} className={styles.productImage} />
+                                    {/* <div className={styles.categoryBadge}>{product.category}</div> */}
+                                </div>
+                            </Link>
+                        </AnimationWrapper>
                     ))}
 
                     {!showAll ? (

@@ -1,7 +1,14 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 import styles from "./Contact.module.css";
 import SEO from "../../components/SEO/SEO";
-import ContactImg from "../../assets/contact.png"
+import ContactImg from "../../assets/contact.png";
+import AnimationWrapper from "../../components/AnimationWrapper";
+
+// EmailJS Configuration - You can replace these with your actual IDs from the EmailJS dashboard
+const EMAILJS_SERVICE_ID = "service_txb9gav"; // Replace with your Service ID
+const EMAILJS_TEMPLATE_ID = "template_techlab"; // Replace with your Template ID
+const EMAILJS_PUBLIC_KEY = "your_public_key"; // Replace with your Public Key
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -69,9 +76,33 @@ const Contact = () => {
 
         setStatus({ submitting: true, submitted: false, error: null });
 
+        // Format the 'contactingFor' categories into a readable string
+        const selectedCategories = Object.entries(formData.contactingFor)
+            .filter(([_, checked]) => checked)
+            .map(([key, _]) => key.charAt(0).toUpperCase() + key.slice(1).replace(/([A-Z])/g, ' $1'))
+            .join(", ");
+
+        // Prepare template parameters
+        const templateParams = {
+            name: formData.name,
+            phone: formData.phone || "Not provided",
+            email: formData.email,
+            location: formData.location || "Not provided",
+            contacting_for: selectedCategories,
+            message: formData.message,
+        };
+
         try {
-            await new Promise(resolve => setTimeout(resolve, 2000));
+            await emailjs.send(
+                EMAILJS_SERVICE_ID,
+                EMAILJS_TEMPLATE_ID,
+                templateParams,
+                EMAILJS_PUBLIC_KEY
+            );
+
             setStatus({ submitting: false, submitted: true, error: null });
+            
+            // Reset form
             setFormData({
                 name: "",
                 phone: "",
@@ -87,8 +118,19 @@ const Contact = () => {
                 consent: true
             });
             setErrors({});
+
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                setStatus(prev => ({ ...prev, submitted: false }));
+            }, 5000);
+
         } catch (err) {
-            setStatus({ submitting: false, submitted: false, error: "Something went wrong. Please try again later." });
+            console.error("EmailJS Error:", err);
+            setStatus({ 
+                submitting: false, 
+                submitted: false, 
+                error: "Failed to send message. Please try again or contact us directly via email." 
+            });
         }
     };
 
@@ -99,11 +141,13 @@ const Contact = () => {
                 description="Get in touch with Techlab Scientific Solutions for any inquiries regarding laboratory equipment, services, or support."
             />
             <div className={styles.container}>
-                <h1 className={styles.pageTitle}>Contact Us</h1>
+                <AnimationWrapper type="fade-down">
+                    <h1 className={styles.pageTitle}>Contact Us</h1>
+                </AnimationWrapper>
 
                 <div className={styles.contentWrapper}>
                     {/* Left Side: Form */}
-                    <div className={styles.formSection}>
+                    <AnimationWrapper type="fade-right" className={styles.formSection}>
                         <form className={styles.form} onSubmit={handleSubmit} noValidate>
                             {status.submitted && (
                                 <div className={styles.successMessage} role="alert">
@@ -231,10 +275,10 @@ const Contact = () => {
                                 {!status.submitting && <span className={styles.arrow} aria-hidden="true">→</span>}
                             </button>
                         </form>
-                    </div>
+                    </AnimationWrapper>
 
                     {/* Right Side: Illustration & Text */}
-                    <div className={styles.illustrationSection}>
+                    <AnimationWrapper type="fade-left" className={styles.illustrationSection}>
                         <h2 className={styles.illustrationTitle}>
                             Our team will reach you out within next 48 hours as you click on the
                             submit button
@@ -246,42 +290,47 @@ const Contact = () => {
                                 className={styles.illustrationImage}
                             />
                         </div>
-                    </div>
+                    </AnimationWrapper>
                 </div>
 
                 {/* Bottom Address Section */}
-                <div className={styles.addressSection} aria-labelledby="bangalore-office">
-                    <h3 id="bangalore-office" className={styles.addressTitle}>BANGALORE</h3>
-                    <div className={styles.addressList}>
-                        <div className={styles.addressRow}>
-                            <span className={styles.icon} aria-hidden="true">💼</span>
-                            <div className={styles.addressContent}>
-                                <p>
-                                    Building no. 57, Government press layout, Mallathahalli, <br />
-                                    Ullal main road, Bengaluru, Karnataka, India - 560 056.
-                                </p>
-                                <div className={styles.linkGroup}>
-                                    <button className={styles.inlineLink} onClick={() => navigator.clipboard.writeText("Building no. 57, Government press layout, Mallathahalli, Ullal main road, Bengaluru, Karnataka, India - 560 056.")} aria-label="Copy office address">Copy Address</button>
-                                    <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className={styles.inlineLink}>Google Maps ↗</a>
+                <AnimationWrapper type="fade-up">
+                    <div className={styles.addressSection} aria-labelledby="bangalore-office">
+                        <h3 id="bangalore-office" className={styles.addressTitle}>BANGALORE</h3>
+                        <div className={styles.addressList}>
+                            <div className={styles.addressRow}>
+                                <span className={styles.icon} aria-hidden="true">💼</span>
+                                <div className={styles.addressContent}>
+                                    <p>
+                                        Building no. 57, Government press layout, Mallathahalli, <br />
+                                        Ullal main road, Bengaluru, Karnataka, India - 560 056.
+                                    </p>
+                                    <div className={styles.linkGroup}>
+                                        <button className={styles.inlineLink} onClick={() => navigator.clipboard.writeText("Building no. 57, Government press layout, Mallathahalli, Ullal main road, Bengaluru, Karnataka, India - 560 056.")} aria-label="Copy office address">Copy Address</button>
+                                        <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className={styles.inlineLink}>Google Maps ↗</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className={styles.contactRow}>
+                                <span className={styles.icon} aria-hidden="true">✉️</span>
+                                <div className={styles.contactDetails}>
+                                    <a href="mailto:sales@techlabscientific.com" className={styles.detailLink}>sales@techlabscientific.com</a>
+                                    <button className={styles.inlineLink} onClick={() => navigator.clipboard.writeText("sales@techlabscientific.com")} aria-label="Copy email address">Copy Email</button>
+                                </div>
+                            </div>
+
+                            <div className={styles.contactRow}>
+                                <span className={styles.icon} aria-hidden="true">📱</span>
+                                <div className={styles.contactDetails}>
+                                    <a href="tel:+917411723668" className={styles.detailLink}>+91 - 7411723668</a>
+                                    <a href="tel:+917411723669" className={styles.detailLink}>+91 - 7411723669</a>
+                                    <button className={styles.inlineLink} onClick={() => navigator.clipboard.writeText("+917411723668, +917411723669")} aria-label="Copy phone numbers">Copy Numbers</button>
                                 </div>
                             </div>
                         </div>
-
-                        <div className={styles.contactRow}>
-                            <span className={styles.icon} aria-hidden="true">✉️</span>
-                            <p className={styles.contactInfo}>
-                                techlab.tss@gamil.com <button className={styles.inlineLink} onClick={() => navigator.clipboard.writeText("techlab.tss@gamil.com")} aria-label="Copy email address">Copy Email</button>
-                            </p>
-                        </div>
-
-                        <div className={styles.contactRow}>
-                            <span className={styles.icon} aria-hidden="true">📱</span>
-                            <p className={styles.contactInfo}>
-                                +91 - 7411723668 <button className={styles.inlineLink} onClick={() => navigator.clipboard.writeText("+917411723668")} aria-label="Copy phone number">Copy Phone Number</button>
-                            </p>
-                        </div>
                     </div>
-                </div>
+                </AnimationWrapper>
             </div>
         </div>
     );

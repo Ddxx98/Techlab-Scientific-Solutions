@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import hero1 from "../../assets/hero_slide_1.png";
 import hero2 from "../../assets/hero_slide_2.png";
 import hero3 from "../../assets/hero_slide_3.png";
@@ -48,51 +49,81 @@ const Hero = () => {
       <div className={styles.container}>
         {/* Top Heading */}
         <div className={styles.headerSection}>
-          <h1 className={styles.title}>
-            {currentSlide.title} <br />
-            <span className={styles.highlight}>{currentSlide.highlight}</span>{" "}
-            {currentSlide.subtitle}
+          <motion.h1 
+            key={current}
+            className={styles.title}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <motion.span
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+            >
+              {currentSlide.title}
+            </motion.span>
+             <br />
+            <motion.span 
+              className={styles.highlight}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+            >
+              {currentSlide.highlight}
+            </motion.span>{" "}
+            <motion.span
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+            >
+              {currentSlide.subtitle}
+            </motion.span>
             <span className={styles.cursor}>|</span>
-          </h1>
+          </motion.h1>
         </div>
 
         {/* Middle Section: Image + Side Projects */}
         <div className={styles.mainContent}>
           <div className={styles.imageSection}>
-            <img
-              src={currentSlide.image}
-              alt="Hero Slide"
-              className={styles.heroImage}
-            />
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={current}
+                src={currentSlide.image}
+                alt="Hero Slide"
+                className={styles.heroImage}
+                initial={{ opacity: 0, scale: 1.05 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.8 }}
+              />
+            </AnimatePresence>
             <div className={styles.controls}>
               <button onClick={prevSlide} className={styles.controlBtn}>←</button>
               <button onClick={nextSlide} className={styles.controlBtn}>→</button>
             </div>
           </div>
 
-          {/* Side Projects (Desktop Only) */}
-          <div className={styles.sideSection}>
-            <div className={styles.projectCard}>
-              <span className={styles.cardTag}>24/42 Labs</span>
-              <h3 className={styles.cardTitle}>Dr. Rajesh Iyer</h3>
-              <p className={styles.cardText}>
-                "The Shimadzu systems from Techlab are pivotal for our research. Their technical expertise is unmatched."
-              </p>
-            </div>
-            <div className={styles.projectCard}>
-              <span className={styles.cardTag}>Research Lead</span>
-              <h3 className={styles.cardTitle}>IIT Madras</h3>
-              <p className={styles.cardText}>
-                Techlab supports labs and industries that depend on accuracy, consistency, and timely support.
-              </p>
-            </div>
-          </div>
         </div>
 
         {/* Bottom Section: Description + Buttons */}
         <div className={styles.footerSection}>
-          <p className={styles.description}>{currentSlide.description}</p>
-          <div className={styles.buttons}>
+          <motion.p 
+            key={current + "desc"}
+            className={styles.description}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
+          >
+            {currentSlide.description}
+          </motion.p>
+          <motion.div 
+            className={styles.buttons}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 1, duration: 0.8 }}
+          >
             <button
               className={styles.primaryBtn}
               onClick={() => navigate("/services")}
@@ -105,7 +136,7 @@ const Hero = () => {
             >
               Talk to an Expert <span className={styles.arrow}>→</span>
             </button>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

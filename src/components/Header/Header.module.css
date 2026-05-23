@@ -21,14 +21,16 @@
   display: flex;
   align-items: center;
   gap: 0.625rem;
-  font-weight: 600;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
   color: var(--color-primary);
   text-decoration: none;
-  font-size: 1.125rem;
+  font-size: clamp(1.125rem, 1.5vw + 0.5rem, 1.75rem);
+  letter-spacing: 0.05em;
 }
 
 .logo img {
-  width: 6.25rem;
+  width: 6.5rem;
 }
 
 .nav {
@@ -40,7 +42,10 @@
 .nav a {
   text-decoration: none;
   color: var(--color-text-primary);
-  font-size: 0.9375rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   transition: color 0.2s;
 }
 
@@ -55,9 +60,12 @@
   background: var(--color-primary);
   color: var(--color-text-white);
   border: none;
-  padding: 0.625rem 1.125rem;
+  padding: 0.625rem 1.25rem;
   cursor: pointer;
   font-weight: 600;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
@@ -93,9 +101,14 @@
 }
 
 .mobileMenu a {
-  padding: 1vh 0;
+  padding: 1.5vh 0;
   text-decoration: none;
   color: var(--color-text-primary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--color-border-dark);
 }
 
 .mobileContactBtn {
@@ -134,7 +147,11 @@
     display: block;
   }
 
+  .logo img {
+    width: clamp(4rem, 12vw, 6rem);
+  }
+
   .logo span {
-    display: none;
+    font-size: 1.125rem;
   }
 }

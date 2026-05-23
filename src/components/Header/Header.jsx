@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { NavLink, Link, useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import styles from "./Header.module.css";
 import logo from "../../assets/logo.png"; // replace with your logo path
 
@@ -16,7 +17,12 @@ const Header = () => {
   ];
 
   return (
-    <header className={styles.header}>
+    <motion.header 
+      className={styles.header}
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
       <div className={styles.container}>
         {/* Logo */}
         <Link to="/" className={styles.logo}>
@@ -70,7 +76,7 @@ const Header = () => {
           </button>
         </div>
       )}
-    </header>
+    </motion.header>
   );
 };
 

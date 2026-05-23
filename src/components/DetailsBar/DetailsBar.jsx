@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./DetailsBar.module.css";
+import AnimationWrapper from "../AnimationWrapper";
 
 const DetailsBar = ({ stats }) => {
     const defaultStats = [
@@ -16,7 +17,7 @@ const DetailsBar = ({ stats }) => {
 
     return (
         <section className={styles.detailsBar}>
-            <div className={styles.container}>
+            <AnimationWrapper type="fade-up" className={styles.container}>
                 <div className={styles.statsWrapper}>
                     {extendedStats.map((stat, index) => (
                         <div key={index} className={styles.statItem}>
@@ -25,7 +26,7 @@ const DetailsBar = ({ stats }) => {
                         </div>
                     ))}
                 </div>
-            </div>
+            </AnimationWrapper>
         </section>
     );
 };

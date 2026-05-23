@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./ServiceData.module.css";
+import AnimationWrapper from "../AnimationWrapper";
 import amc from "../../assets/amc_service.png";
 import cmc from "../../assets/cmc_service.png";
 import onetime from "../../assets/onetime_service.png";
@@ -37,27 +38,34 @@ const ServiceData = () => {
     return (
         <section className={styles.serviceDataSection}>
             <div className={styles.container}>
-                <h1 className={styles.sectionTitle}>Our Services</h1>
+                <AnimationWrapper type="fade-down">
+                    <h1 className={styles.sectionTitle}>Our Services</h1>
+                </AnimationWrapper>
 
                 <div className={styles.servicesList}>
-                    {services.map((service) => (
-                        <div key={service.id} className={styles.serviceRow}>
-                            <div className={styles.titleCol}>
-                                <h3 className={styles.serviceTitle}>{service.title}</h3>
-                            </div>
-                            <div className={styles.detailsCol}>
-                                <div className={styles.imageWrapper}>
-                                    <div className={styles.imagePlaceholder}>
-                                        {/* Using a placeholder-style image if needed, or actual image */}
-                                        <img src={service.image} alt={service.title} className={styles.serviceImage} />
+                    {services.map((service, index) => (
+                        <AnimationWrapper 
+                            key={service.id} 
+                            type="fade-up" 
+                            delay={index * 0.1}
+                        >
+                            <div className={styles.serviceRow}>
+                                <div className={styles.titleCol}>
+                                    <h3 className={styles.serviceTitle}>{service.title}</h3>
+                                </div>
+                                <div className={styles.detailsCol}>
+                                    <div className={styles.imageWrapper}>
+                                        <div className={styles.imagePlaceholder}>
+                                            <img src={service.image} alt={service.title} className={styles.serviceImage} />
+                                        </div>
+                                    </div>
+                                    <div className={styles.content}>
+                                        <p className={styles.description}>{service.description}</p>
+                                        <Link to="/contact" className={styles.contactLink}>CONTACT</Link>
                                     </div>
                                 </div>
-                                <div className={styles.content}>
-                                    <p className={styles.description}>{service.description}</p>
-                                    <Link to="/contact" className={styles.contactLink}>CONTACT</Link>
-                                </div>
                             </div>
-                        </div>
+                        </AnimationWrapper>
                     ))}
                 </div>
             </div>

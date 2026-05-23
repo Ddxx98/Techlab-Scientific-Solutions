@@ -1,6 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./WhyUs.module.css";
+import AnimationWrapper from "../AnimationWrapper";
+import { motion } from "framer-motion";
 import BackgroundImg from "../../assets/whyus.jpg"; // Assuming user will provide this, or I use placeholder
 
 const features = [
@@ -54,21 +56,27 @@ const WhyUs = () => {
             </div>
 
             <div className={styles.container}>
-                <div className={styles.headerContent}>
+                <AnimationWrapper type="fade-up" className={styles.headerContent}>
                     <h2 className={styles.title}>
                         Why Techlab Scientific Solutions?
                     </h2>
                     <p className={styles.description}>
                         We believe long term reliability matters more than quick fixes.
                     </p>
-                </div>
+                </AnimationWrapper>
 
                 <div className={styles.gridWrapper}>
                     {features.map((feature, index) => (
-                        <div key={index} className={styles.featureCard}>
-                            <div className={styles.iconWrapper}>{feature.icon}</div>
-                            <span className={styles.featureTitle}>{feature.title}</span>
-                        </div>
+                        <AnimationWrapper 
+                            key={index} 
+                            type="scale" 
+                            delay={index * 0.1}
+                        >
+                            <div className={styles.featureCard}>
+                                <div className={styles.iconWrapper}>{feature.icon}</div>
+                                <span className={styles.featureTitle}>{feature.title}</span>
+                            </div>
+                        </AnimationWrapper>
                     ))}
                 </div>
 

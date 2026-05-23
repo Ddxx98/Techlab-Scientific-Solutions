@@ -15,6 +15,7 @@ const Home = () => {
             <SEO
                 title="Home"
                 description="Welcome to Techlab Scientific Solutions. We provide high-quality laboratory equipment and scientific solutions for research and industrial applications."
+                keywords="Techlab Scientific Solutions, analytical instruments, laboratory supplies, scientific solutions, research equipment, Shimadzu service, lab instrumentation"
             />
             <Hero />
             <Industries />

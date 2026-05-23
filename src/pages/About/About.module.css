@@ -21,7 +21,7 @@
 }
 
 .pageTitle {
-    font-size: 3.5rem;
+    font-size: 2.75rem;
     font-weight: 500;
     color: var(--color-text-primary);
     margin: 0;
@@ -69,7 +69,7 @@
 }
 
 .heroTitle {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 500;
     margin: 0;
 }
@@ -101,7 +101,7 @@
 }
 
 .sectionTitle h3 {
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: 500;
     color: var(--color-text-primary);
     margin: 0;
@@ -194,18 +194,18 @@
     }
 
     .pageTitle {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     .heroTitle {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
 }
 
 /* Mobile */
 @media (max-width: 48rem) {
     .aboutPage {
-        padding-top: 5.5rem;
+        padding-top: 6.5rem; /* Clean clearance below fixed mobile header */
     }
 
     .headerContent {
@@ -240,7 +240,7 @@
     }
 
     .sectionTitle h3 {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
     }
 
     .sectionBody p,

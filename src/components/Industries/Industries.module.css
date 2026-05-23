@@ -9,7 +9,7 @@
 }
 
 .title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 500;
     color: var(--color-text-primary);
     margin-bottom: 3rem;
@@ -65,15 +65,17 @@
     background: var(--color-bg-light-alt);
 }
 
-.optionBtn.active {
-    border-top-color: var(--color-primary);
-}
-
 .optionName {
-    font-size: 1rem;
+    font-size: 0.8125rem;
     font-weight: 500;
     color: var(--color-text-secondary);
     line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.optionBtn.active {
+    border-top-color: var(--color-primary);
 }
 
 .optionBtn.active .optionName {
@@ -103,15 +105,14 @@
 
 @media (max-width: 48rem) {
     .title {
-        font-size: 2rem;
+        font-size: 1.75rem;
         margin-bottom: 2rem;
     }
 
     .imageWrapper {
         height: 20rem;
     }
-
     .optionName {
-        font-size: 0.875rem;
+        font-size: 0.75rem;
     }
 }

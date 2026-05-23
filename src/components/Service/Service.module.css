@@ -9,10 +9,10 @@
 }
 
 .mainTitle {
-    font-size: 3rem;
+    font-size: 2.25rem;
     font-weight: 500;
     color: var(--color-text-primary);
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 }
 
 .highlight {
@@ -56,10 +56,11 @@
     color: var(--color-primary);
 }
 
-.serviceTitle {
-    font-size: 1.125rem;
-    font-weight: 600;
+.serviceT.title {
+    font-size: 2.25rem;
+    font-weight: 500;
     color: var(--color-text-primary);
+    line-height: 1.1;
     margin: 0;
 }
 
@@ -165,9 +166,11 @@
 }
 
 @media (max-width: 48rem) {
+    .title {
+        font-size: 1.875rem;
+    }
     .mainTitle {
-        font-size: 2.25rem;
-        margin-bottom: 2.5rem;
+        margin-bottom: 1.5rem;
     }
 
     .serviceSection {

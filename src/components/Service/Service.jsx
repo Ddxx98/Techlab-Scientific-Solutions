@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Service.module.css";
+import AnimationWrapper from "../AnimationWrapper";
+import { motion, AnimatePresence } from "framer-motion";
 import amc from "../../assets/amc_service.png";
 import cmc from "../../assets/cmc_service.png";
 import onetime from "../../assets/onetime_service.png";
@@ -48,30 +50,37 @@ const Service = () => {
     return (
         <section className={styles.serviceSection}>
             <div className={styles.container}>
-                <h2 className={styles.mainTitle}><span className={styles.highlight}>Services</span> for you</h2>
+                <AnimationWrapper type="fade-up">
+                    <h2 className={styles.mainTitle}><span className={styles.highlight}>Services</span> for you</h2>
+                </AnimationWrapper>
 
                 <div className={styles.contentWrapper}>
                     {/* Left Side: Service List */}
                     <div className={styles.serviceList}>
                         {servicesData.slice(0, 2).map((service, index) => (
-                            <div
-                                key={service.id}
-                                className={`${styles.serviceItem} ${index === activeIndex ? styles.active : ""}`}
-                                onClick={() => setActiveIndex(index)}
+                            <AnimationWrapper 
+                                key={service.id} 
+                                type="fade-right" 
+                                delay={index * 0.2}
                             >
-                                <div className={styles.serviceHeader}>
-                                    <span className={styles.serviceId}>{service.id} - </span>
-                                    <h3 className={styles.serviceTitle}>{service.title}</h3>
-                                </div>
-                                <div className={styles.serviceBody}>
-                                    <p className={styles.serviceDescription}>{service.description}</p>
-                                </div>
+                                <div
+                                    className={`${styles.serviceItem} ${index === activeIndex ? styles.active : ""}`}
+                                    onClick={() => setActiveIndex(index)}
+                                >
+                                    <div className={styles.serviceHeader}>
+                                        <span className={styles.serviceId}>{service.id} - </span>
+                                        <h3 className={styles.serviceTitle}>{service.title}</h3>
+                                    </div>
+                                    <div className={styles.serviceBody}>
+                                        <p className={styles.serviceDescription}>{service.description}</p>
+                                    </div>
 
-                                {/* Mobile Image (shown between items on mobile) */}
-                                <div className={styles.mobileImageWrapper}>
-                                    <img src={service.image} alt={service.title} className={styles.mobileImage} />
+                                    {/* Mobile Image (shown between items on mobile) */}
+                                    <div className={styles.mobileImageWrapper}>
+                                        <img src={service.image} alt={service.title} className={styles.mobileImage} />
+                                    </div>
                                 </div>
-                            </div>
+                            </AnimationWrapper>
                         ))}
 
                         <div className={styles.moreInfo}>
@@ -86,13 +95,20 @@ const Service = () => {
                     </div>
 
                     {/* Right Side: Desktop Image */}
-                    <div className={styles.desktopImageWrapper}>
-                        <img
-                            src={servicesData[activeIndex].image}
-                            alt={servicesData[activeIndex].title}
-                            className={styles.desktopImage}
-                        />
-                    </div>
+                    <AnimationWrapper type="fade-left" className={styles.desktopImageWrapper}>
+                        <AnimatePresence mode="wait">
+                            <motion.img
+                                key={activeIndex}
+                                src={servicesData[activeIndex].image}
+                                alt={servicesData[activeIndex].title}
+                                className={styles.desktopImage}
+                                initial={{ opacity: 0, scale: 1.05 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 0.95 }}
+                                transition={{ duration: 0.5 }}
+                            />
+                        </AnimatePresence>
+                    </AnimationWrapper>
                 </div>
             </div>
         </section>

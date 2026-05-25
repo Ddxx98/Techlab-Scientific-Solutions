@@ -11,7 +11,7 @@ const Services = () => {
                 description="Explore the range of analytical and scientific instrument services provided by Techlab Scientific Solutions, including installation, maintenance, and support."
             />
             <ServiceData />
-            <Review isDark={false} />
+            {/* <Review isDark={false} /> */}
         </div>
     );
 };

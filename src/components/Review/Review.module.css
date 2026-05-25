@@ -10,9 +10,9 @@
 }
 
 .title {
-    font-size: 2.25rem;
+    font-size: 1.5rem;
     font-weight: 500;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     color: rgba(255, 255, 255, 0.6);
 }
 
@@ -56,13 +56,14 @@
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+    row-gap: 1rem; /* Space between the rows */
 }
 
 .card {
     padding: 2rem;
-    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: -8px 8px 24px rgba(0, 0, 0, 0.12);
     display: flex;
+    min-height: 20rem;
     flex-direction: column;
     gap: 0.3rem;
     background-color: #00458F;
@@ -106,7 +107,7 @@
 
 .contactCard {
     padding: 2rem;
-    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: -8px 8px 24px rgba(0, 0, 0, 0.12);
     display: flex;
     align-items: center;
     background-color: #00458F;
@@ -241,12 +242,12 @@
     }
 
     .title {
-        font-size: 1.875rem;
-        margin-bottom: 2.5rem;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
     }
 
     .reviewSection {
-        padding: 3rem 1.25rem;
+        padding: 2.5rem 1.25rem;
     }
 
     .card,

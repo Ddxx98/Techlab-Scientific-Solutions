@@ -22,7 +22,7 @@ const Home = () => {
             <DetailsBar />
             <Service />
             <Product />
-            <Review isDark={true} />
+            {/* <Review isDark={true} /> */}
             <Questions />
             <Support />
         </>

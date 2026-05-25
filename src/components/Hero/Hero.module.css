@@ -29,7 +29,7 @@
 }
 
 .title {
-  font-size: clamp(1.5rem, 3.8vh, 2.6rem);
+  font-size: clamp(1.5rem, 3.8vh, 1.5rem);
   font-weight: 600;
   color: var(--color-text-primary);
   line-height: 1.1;
@@ -77,7 +77,7 @@
 
 .imageSection {
   position: relative;
-  border-radius: 0.5rem;
+  /* border-radius: 0.5rem; */
   overflow: hidden;
   height: 100%;
   flex: 1;
@@ -210,10 +210,9 @@
 @media (max-width: 48rem) {
   .hero {
     padding: 0 var(--section-padding-x);
-    padding-top: 6.5rem; /* Clear the mobile fixed header nicely */
+    padding-top: 5.5rem; /* Clear the mobile fixed header */
     height: auto;
-    min-height: 100vh;
-    min-height: 100dvh;
+    min-height: unset;
     overflow: visible;
     display: flex;
     align-items: flex-start;
@@ -221,8 +220,8 @@
 
   .container {
     height: auto;
-    padding: 1.5rem 0 2rem 0;
-    gap: 1.5rem;
+    padding: 0 0 1.5rem 0;
+    gap: 1.25rem;
   }
 
   .mainContent {

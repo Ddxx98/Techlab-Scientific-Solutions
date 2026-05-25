@@ -13,7 +13,7 @@
 }
 
 .pageTitle {
-    font-size: 2.25rem;
+    font-size: 1.5rem;
     font-weight: 500;
     color: var(--color-text-primary);
     margin-bottom: 3rem;
@@ -356,8 +356,20 @@
 }
 
 @media (max-width: 48rem) {
+    .contactPage {
+        padding-top: 6rem;
+    }
+
+    .contentWrapper {
+        gap: 2rem;
+    }
+
+    .illustrationSection {
+        padding-top: 1.5rem;
+    }
+
     .pageTitle {
-        font-size: 1.875rem;
+        font-size: 1.5rem;
     }
 
     .illustrationTitle {

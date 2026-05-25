@@ -59,7 +59,7 @@
 }
 
 .title {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     font-weight: 500;
     color: var(--color-text-primary);
     margin-bottom: 1.5rem;
@@ -106,13 +106,13 @@
     }
 
     .title {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 }
 
 @media (max-width: 48rem) {
     .supportSection {
-        padding: 2rem 1.25rem;
+        padding: 3rem 1.25rem;
     }
 
     .dashedBox {
@@ -142,7 +142,7 @@
     }
 
     .title {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
     }
 
     .description {

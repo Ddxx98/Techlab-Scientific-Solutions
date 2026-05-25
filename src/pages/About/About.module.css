@@ -1,5 +1,5 @@
 .aboutPage {
-    padding-top: 8rem;
+    padding-top: 5rem;
     background: var(--color-bg-accent);
 }
 
@@ -10,7 +10,7 @@
 }
 
 .headerSection {
-    padding: 6rem 0 3rem;
+    padding: 2rem 0;
 }
 
 .headerContent {
@@ -21,7 +21,7 @@
 }
 
 .pageTitle {
-    font-size: 2.75rem;
+    font-size: 1.5rem;
     font-weight: 500;
     color: var(--color-text-primary);
     margin: 0;
@@ -208,6 +208,10 @@
         padding-top: 6.5rem; /* Clean clearance below fixed mobile header */
     }
 
+    .pageTitle {
+        font-size: 1.5rem;
+    }
+
     .headerContent {
         flex-direction: column;
         align-items: flex-start;
@@ -236,7 +240,7 @@
     .sectionGrid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
-        padding: 3rem 0;
+        padding: 2rem 0;
     }
 
     .sectionTitle h3 {

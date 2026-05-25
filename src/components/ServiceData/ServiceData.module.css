@@ -10,7 +10,7 @@
 }
 
 .sectionTitle {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 500;
     color: var(--color-text-primary);
     margin-bottom: 4rem;
@@ -86,7 +86,7 @@
     }
 
     .sectionTitle {
-        font-size: 1.875rem;
+        font-size: 1.5rem;
     }
 }
 
@@ -94,11 +94,11 @@
 @media (max-width: 48rem) {
     .serviceDataSection {
         padding: 4rem 1.5rem;
-        padding-top: 8rem;
+        padding-top: 6rem;
     }
 
     .sectionTitle {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
         margin-bottom: 3rem;
     }
 

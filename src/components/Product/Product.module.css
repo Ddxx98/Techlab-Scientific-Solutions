@@ -13,7 +13,7 @@
 }
 
 .title {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 500;
     color: var(--color-text-primary);
     margin-bottom: 1.5rem;
@@ -39,6 +39,7 @@
 .card {
     background: var(--color-bg-white);
     border-left: 2px solid var(--color-border-light);
+    min-height: 25rem;
     padding: 1.5rem;
     text-decoration: none;
     display: flex;
@@ -152,8 +153,12 @@
         grid-template-columns: 1fr;
     }
 
+    .header {
+        margin-bottom: 2rem;
+    }
+
     .title {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
     }
 
     .productSection {

@@ -6,9 +6,13 @@ import ContactImg from "../../assets/contact.png";
 import AnimationWrapper from "../../components/AnimationWrapper";
 
 // EmailJS Configuration - You can replace these with your actual IDs from the EmailJS dashboard
-const EMAILJS_SERVICE_ID = "service_txb9gav"; // Replace with your Service ID
-const EMAILJS_TEMPLATE_ID = "template_techlab"; // Replace with your Template ID
-const EMAILJS_PUBLIC_KEY = "your_public_key"; // Replace with your Public Key
+const EMAILJS_SERVICE_ID = "service_06nvgci"; // Replace with your Service ID
+const EMAILJS_TEMPLATE_ID = "template_l557hy3"; // Replace with your Template ID
+const EMAILJS_PUBLIC_KEY = "JxblGGRwCnaMoTIuK"; // Replace with your Public Key
+
+// Google Sheets Configuration - Paste your Google Web App URL here after deploying the Apps Script
+const GOOGLE_SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbz7JktKTuA_2AbGe_iNCXBE-sMVC0lWVfSTGg88CCe83-9_CBxLATjXCGqpRfs5BTthQA/exec"; 
+const deployment_id = "AKfycbz7JktKTuA_2AbGe_iNCXBE-sMVC0lWVfSTGg88CCe83-9_CBxLATjXCGqpRfs5BTthQA";
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -99,6 +103,18 @@ const Contact = () => {
                 templateParams,
                 EMAILJS_PUBLIC_KEY
             );
+
+            // Optional: Store leads in Google Sheets if the Web App URL is configured
+            if (GOOGLE_SHEET_WEBAPP_URL) {
+                fetch(GOOGLE_SHEET_WEBAPP_URL, {
+                    method: "POST",
+                    mode: "no-cors",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(templateParams),
+                }).catch((err) => console.error("Google Sheets Error:", err));
+            }
 
             setStatus({ submitting: false, submitted: true, error: null });
             
@@ -274,6 +290,19 @@ const Contact = () => {
                                 {status.submitting ? "SENDING..." : "SUBMIT"}
                                 {!status.submitting && <span className={styles.arrow} aria-hidden="true">→</span>}
                             </button>
+
+                            {(status.submitted || status.error) && <div style={{ height: "1.5rem" }} />}
+
+                            {status.submitted && (
+                                <div className={styles.successMessage} role="alert" style={{ marginBottom: 0 }}>
+                                    Thank you! Your message has been sent successfully. We'll get back to you soon.
+                                </div>
+                            )}
+                            {status.error && (
+                                <div className={styles.errorMessage} role="alert" style={{ marginBottom: 0 }}>
+                                    {status.error}
+                                </div>
+                            )}
                         </form>
                     </AnimationWrapper>
 

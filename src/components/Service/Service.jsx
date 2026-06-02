@@ -7,6 +7,7 @@ import amc from "../../assets/amc_service.png";
 import cmc from "../../assets/cmc_service.png";
 import onetime from "../../assets/onetime_service.png";
 import calibration from "../../assets/calibration_service.png";
+import training from "../../assets/training_service.png";
 
 const servicesData = [
     {
@@ -33,6 +34,12 @@ const servicesData = [
         description: "General inspection, Service, Installation, Calibration, and Qualification Visit options for thorough system checks.",
         image: calibration,
     },
+    {
+        id: "05",
+        title: "Training / Research Support / Workshop",
+        description: "Unlock advanced analytical capabilities through structured learning, research assistance, and hands-on laboratory workshops guided by qualified professionals.",
+        image: training,
+    },
 ];
 
 const Service = () => {
@@ -57,7 +64,7 @@ const Service = () => {
                 <div className={styles.contentWrapper}>
                     {/* Left Side: Service List */}
                     <div className={styles.serviceList}>
-                        {servicesData.slice(0, 2).map((service, index) => (
+                        {servicesData.slice(0, 3).map((service, index) => (
                             <AnimationWrapper 
                                 key={service.id} 
                                 type="fade-right" 
@@ -84,7 +91,7 @@ const Service = () => {
                         ))}
 
                         <div className={styles.moreInfo}>
-                            <span className={styles.moreText}>+4 more</span>
+                            <span className={styles.moreText}>+2 more</span>
                             <button
                                 className={styles.exploreBtn}
                                 onClick={() => navigate("/services")}

@@ -19,7 +19,7 @@ const Home = () => {
             />
             <Hero />
             <Industries />
-            <DetailsBar />
+            {/* <DetailsBar /> */}
             <Service />
             <Product />
             {/* <Review isDark={true} /> */}

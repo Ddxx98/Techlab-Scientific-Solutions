@@ -17,6 +17,10 @@ import GCMSAIAS from "../../assets/products/gcmsas.jpeg";
 import GCMSAIHS from "../../assets/products/gcmsaoihs.jpeg";
 import GCHS from "../../assets/products/gchs.jpeg";
 import UV from "../../assets/products/uv.jpeg";
+import labInstrumentsImg from "../../assets/products/lab_instruments.png";
+import accessoriesImg from "../../assets/products/accessories.png";
+import consumablesImg from "../../assets/products/consumables.png";
+import gasUtilityImg from "../../assets/products/gas_utility.png";
 
 const productsData = [
     {
@@ -31,7 +35,7 @@ const productsData = [
     {
         id: "02",
         name: "Gas Chromatograph",
-        category: "Laboratory Equipment",
+        category: "Analytical Instruments",
         description: "Versatile gas chromatography system optimized for routine analysis with high sensitivity and reliability.",
         model: "GC-2010",
         make: "Shimadzu",
@@ -40,7 +44,7 @@ const productsData = [
     {
         id: "03",
         name: "Gas Chromatograph",
-        category: "Laboratory Equipment",
+        category: "Analytical Instruments",
         description: "Advanced GC platform featuring exceptional temperature control and modular design for diverse laboratory needs.",
         model: "GC-2010 Plus",
         make: "Shimadzu",
@@ -49,7 +53,7 @@ const productsData = [
     {
         id: "04",
         name: "Gas Chromatograph (GC) with Auto Injector (AOC 20i)",
-        category: "Automation",
+        category: "Analytical Instruments",
         description: "Automated GC system equipped with the AOC-20i auto-injector for high-throughput sample processing and improved reproducibility.",
         model: "GC 2010, AOC 20i",
         make: "Shimadzu",
@@ -58,7 +62,7 @@ const productsData = [
     {
         id: "05",
         name: "Gas Chromatograph",
-        category: "Laboratory Equipment",
+        category: "Analytical Instruments",
         description: "Reliable gas chromatography system designed for standard industrial and research applications.",
         model: "GC-2014",
         make: "Shimadzu",
@@ -67,7 +71,7 @@ const productsData = [
     {
         id: "06",
         name: "Gas Chromatograph",
-        category: "Laboratory Equipment",
+        category: "Analytical Instruments",
         description: "Rugged and efficient GC system suitable for heavy workloads and consistent performance in quality control labs.",
         model: "GC-2014 Plus",
         make: "Shimadzu",
@@ -76,7 +80,7 @@ const productsData = [
     {
         id: "07",
         name: "Gas Chromatograph",
-        category: "Laboratory Equipment",
+        category: "Analytical Instruments",
         description: "Compact and powerful gas chromatograph offering high-speed analysis and flexible detector options.",
         model: "GC-2010 Pro",
         make: "Shimadzu",
@@ -94,7 +98,7 @@ const productsData = [
     {
         id: "09",
         name: "Gas Chromatograph (GC) with Auto Injector (AOC 20i)",
-        category: "Automation",
+        category: "Analytical Instruments",
         description: "Enhanced automated GC system combining the GC-2010 Plus with advanced auto-injection technology.",
         model: "GC 2010 Plus, AOC 20i",
         make: "Shimadzu",
@@ -103,7 +107,7 @@ const productsData = [
     {
         id: "10",
         name: "Gas Chromatograph (GC) with Auto Injector (AOC 20i)",
-        category: "Automation",
+        category: "Analytical Instruments",
         description: "Durable automated GC solution for laboratories requiring consistent and unattended sample injection.",
         model: "GC 2010, AOC 20i",
         make: "Shimadzu",
@@ -112,7 +116,7 @@ const productsData = [
     {
         id: "11",
         name: "Gas Chromatograph (GC) with Auto Injector (AOC 20i)",
-        category: "Automation",
+        category: "Analytical Instruments",
         description: "High-performance GC system integrated with automation for specialized research and development workflows.",
         model: "GCMS-QP2010 Ultra, AOC 20i",
         make: "Shimadzu",
@@ -121,7 +125,7 @@ const productsData = [
     {
         id: "12",
         name: "Gas chromatography-mass spectrometry (GCMS) with Auto Injector and Auto Sampler",
-        category: "Full Systems",
+        category: "Analytical Instruments",
         description: "Comprehensive GC-MS solution featuring both auto-injection and multi-vial sampling for maximum laboratory efficiency.",
         model: "QP2010 Plus, AOC 20i, AOC 20s",
         make: "Shimadzu",
@@ -130,7 +134,7 @@ const productsData = [
     {
         id: "13",
         name: "Gas chromatography-mass spectrometry (GCMS) with Auto Injector and Headspace Sampler (HS)",
-        category: "Full Systems",
+        category: "Analytical Instruments",
         description: "Specialized GC-MS configuration optimized for volatile analysis using integrated headspace sampling techniques.",
         model: "QP2010 SE, AOC 20i, HS 20",
         make: "Shimadzu",
@@ -139,7 +143,7 @@ const productsData = [
     {
         id: "14",
         name: "Gas Chromatograph (GC) with Headspace Sampler (HS)",
-        category: "Full Systems",
+        category: "Analytical Instruments",
         description: "High-efficiency GC system paired with a headspace sampler for robust environmental and forensic testing.",
         model: "GC 2010 Plus, HS 20",
         make: "Shimadzu",
@@ -148,11 +152,56 @@ const productsData = [
     {
         id: "15",
         name: "UV-Visible Spectrophotometer",
-        category: "Spectroscopy",
+        category: "Analytical Instruments",
         description: "Dual-beam UV-Vis spectrophotometer offering high resolution and stability for pharmaceutical and chemical analysis.",
         model: "UV-1800",
         make: "Shimadzu",
         image: UV,
+    },
+    {
+        id: "16",
+        name: "Laboratory Instruments Portfolio",
+        category: "Laboratory Instruments",
+        description: "Comprehensive range of high-quality laboratory products including balances, pH meters, centrifuges, muffle furnaces, water baths, stirrers, shakers and heating plates.",
+        model: "Techlab Complete Catalog",
+        make: "Techlab Approved Partners",
+        image: labInstrumentsImg,
+    },
+    {
+        id: "17",
+        name: "Chromatographic Accessories & Samplers",
+        category: "Accessories",
+        description: "Premium automated injection and sampling accessories including liquid autosamplers, gas samplers, methanizers, ATR modules, specialized detectors, and analytical software.",
+        model: "GC/GCMS Accessories",
+        make: "Shimadzu & Techlab OEM",
+        image: accessoriesImg,
+    },
+    {
+        id: "18",
+        name: "Analytical Consumables & Lab Supplies",
+        category: "Consumables",
+        description: "High-purity laboratory consumables including columns, glass liners, syringes, injection septa, vials, ferrules, cuvettes, lamps and pipettes.",
+        model: "Daily Lab Disposables",
+        make: "Techlab Certified",
+        image: consumablesImg,
+    },
+    {
+        id: "19",
+        name: "Calibration, CRM Standards & Sample Preparation",
+        category: "Calibration / Reference Standards / Sample Preparation",
+        description: "Certified Reference Materials (CRMs), standard chemicals, certified UV/IR optical standards, digital flowmeters, thermometers, and QuEChERS sample prep kits.",
+        model: "Standards & CRM Kits",
+        make: "NIST Traceable Standards",
+        image: consumablesImg,
+    },
+    {
+        id: "20",
+        name: "Support & Utility Systems Supplies",
+        category: "Support & Utility Systems Supplies",
+        description: "Complete utility supply solutions including gas manifolds, regulators, SS/PTFE pipelines, purification traps, safety leak detectors, fume hoods, exhaust scrubbers and ventilation systems.",
+        model: "Gas Supply & Lab Ventilation",
+        make: "Techlab Engineering",
+        image: gasUtilityImg,
     },
 ];
 

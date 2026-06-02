@@ -21,13 +21,18 @@ const Footer = () => {
     ];
 
     const productLinks = [
-        { name: "GC-MS (QP2010 Ultra)", path: "/product/01" },
-        { name: "Gas Chromatograph (GC)", path: "/product/02" },
-        { name: "GC-2010 Plus", path: "/product/03" },
-        { name: "GC with AOC 20i", path: "/product/04" },
-        { name: "HS-20 Autosampler", path: "/product/08" },
-        { name: "UV-Visible Spectrophotometer", path: "/product/15" },
-        { name: "View All Products →", path: "/products" },
+        {
+            name: "Gas Chromatograph System",
+            path: "/products",
+            subItems: [
+                { name: "A) Manual Injection", path: "/product/02" },
+                { name: "B) Auto Injection (With Auto Injector / Auto Sampler)", path: "/product/04" }
+            ]
+        },
+        { name: "Gas Chromatograph System with Headspace Sampler", path: "/product/14" },
+        { name: "Gas Chromatograph Mass Spectrometer", path: "/product/01" },
+        { name: "UV Visible Spectrophotometer", path: "/product/15" },
+        { name: "HPLC Systems", path: "/products" }
     ];
 
     const serviceLinks = [
@@ -61,6 +66,15 @@ const Footer = () => {
                                 {productLinks.map((link, index) => (
                                     <li key={index}>
                                         <Link to={link.path} className={styles.link}>{link.name}</Link>
+                                        {link.subItems && (
+                                            <ul className={styles.subLinkList}>
+                                                {link.subItems.map((sub, sIndex) => (
+                                                    <li key={sIndex}>
+                                                        <Link to={sub.path} className={styles.subLink}>{sub.name}</Link>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        )}
                                     </li>
                                 ))}
                             </ul>

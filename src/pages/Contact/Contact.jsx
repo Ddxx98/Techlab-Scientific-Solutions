@@ -6,13 +6,24 @@ import ContactImg from "../../assets/contact.png";
 import AnimationWrapper from "../../components/AnimationWrapper";
 
 // EmailJS Configuration - You can replace these with your actual IDs from the EmailJS dashboard
-const EMAILJS_SERVICE_ID = "service_06nvgci"; // Replace with your Service ID
-const EMAILJS_TEMPLATE_ID = "template_l557hy3"; // Replace with your Template ID
-const EMAILJS_PUBLIC_KEY = "JxblGGRwCnaMoTIuK"; // Replace with your Public Key
+const EMAILJS_SERVICE_ID = "service_of4g0pl"; // Replace with your Service ID
+const EMAILJS_TEMPLATE_ID = "template_t5ibvw3"; // Replace with your Template ID
+const EMAILJS_PUBLIC_KEY = "hOUC9VlgRCMO6MRR3"; // Replace with your Public Key
 
 // Google Sheets Configuration - Paste your Google Web App URL here after deploying the Apps Script
-const GOOGLE_SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbz7JktKTuA_2AbGe_iNCXBE-sMVC0lWVfSTGg88CCe83-9_CBxLATjXCGqpRfs5BTthQA/exec"; 
-const deployment_id = "AKfycbz7JktKTuA_2AbGe_iNCXBE-sMVC0lWVfSTGg88CCe83-9_CBxLATjXCGqpRfs5BTthQA";
+const GOOGLE_SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbx6qS8sxJba4LsYYhEMfd5Zcqcc9af9xRZwutC8FuaM1GBGiUBY1ujmuOZqKmTLKoA/exec"; 
+const deployment_id = "AKfycbx6qS8sxJba4LsYYhEMfd5Zcqcc9af9xRZwutC8FuaM1GBGiUBY1ujmuOZqKmTLKoA";
+
+const categoryLabels = {
+    products: "Products",
+    sparesConsumables: "Spares/Consumables/Accessories/Support Utilities/Standards /Miscellaneous",
+    amc: "AMC",
+    cmc: "CMC",
+    oneTimeService: "One Time Service",
+    inspectionCalibration: "Inspection and Calibration",
+    trainingResearchWorkshop: "Training / Research Support / Workshop",
+    somethingElse: "Something Else"
+};
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -22,8 +33,12 @@ const Contact = () => {
         location: "",
         contactingFor: {
             products: false,
-            services: true,
-            sparePart: false,
+            sparesConsumables: false,
+            amc: false,
+            cmc: false,
+            oneTimeService: false,
+            inspectionCalibration: false,
+            trainingResearchWorkshop: false,
             somethingElse: false,
         },
         message: "",
@@ -83,7 +98,7 @@ const Contact = () => {
         // Format the 'contactingFor' categories into a readable string
         const selectedCategories = Object.entries(formData.contactingFor)
             .filter(([_, checked]) => checked)
-            .map(([key, _]) => key.charAt(0).toUpperCase() + key.slice(1).replace(/([A-Z])/g, ' $1'))
+            .map(([key, _]) => categoryLabels[key] || (key.charAt(0).toUpperCase() + key.slice(1).replace(/([A-Z])/g, ' $1')))
             .join(", ");
 
         // Prepare template parameters
@@ -126,8 +141,12 @@ const Contact = () => {
                 location: "",
                 contactingFor: {
                     products: false,
-                    services: true,
-                    sparePart: false,
+                    sparesConsumables: false,
+                    amc: false,
+                    cmc: false,
+                    oneTimeService: false,
+                    inspectionCalibration: false,
+                    trainingResearchWorkshop: false,
                     somethingElse: false,
                 },
                 message: "",
@@ -243,7 +262,7 @@ const Contact = () => {
                                                 onChange={() => handleCheckboxChange(option)}
                                             />
                                             <span className={styles.checkmark}></span>
-                                            {option.charAt(0).toUpperCase() + option.slice(1).replace(/([A-Z])/g, ' $1')}
+                                            {categoryLabels[option] || (option.charAt(0).toUpperCase() + option.slice(1).replace(/([A-Z])/g, ' $1'))}
                                         </label>
                                     ))}
                                 </div>

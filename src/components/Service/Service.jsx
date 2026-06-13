@@ -1,13 +1,16 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import styles from "./Service.module.css";
 import AnimationWrapper from "../AnimationWrapper";
 import { motion, AnimatePresence } from "framer-motion";
-import amc from "../../assets/amc_service.png";
-import cmc from "../../assets/cmc_service.png";
-import onetime from "../../assets/onetime_service.png";
-import calibration from "../../assets/calibration_service.png";
-import training from "../../assets/training_service.png";
+
+const amc = "/assets/amc_service.png";
+const cmc = "/assets/cmc_service.png";
+const onetime = "/assets/onetime_service.png";
+const calibration = "/assets/calibration_service.png";
+const training = "/assets/training_service.png";
 
 const servicesData = [
     {
@@ -44,7 +47,7 @@ const servicesData = [
 
 const Service = () => {
     const [activeIndex, setActiveIndex] = useState(0);
-    const navigate = useNavigate();
+    const router = useRouter();
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -94,7 +97,7 @@ const Service = () => {
                             <span className={styles.moreText}>+2 more</span>
                             <button
                                 className={styles.exploreBtn}
-                                onClick={() => navigate("/services")}
+                                onClick={() => router.push("/services")}
                             >
                                 Explore ALL <span className={styles.arrow}>→</span>
                             </button>

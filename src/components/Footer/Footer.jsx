@@ -1,6 +1,7 @@
+"use client";
+
 import React from "react";
-import { Link } from "react-router-dom";
-import logo from "../../assets/logo.png";
+import Link from "next/link";
 import styles from "./Footer.module.css";
 import AnimationWrapper from "../AnimationWrapper";
 
@@ -54,7 +55,7 @@ const Footer = () => {
                             <ul className={styles.linkList}>
                                 {exploreLinks.map((link, index) => (
                                     <li key={index}>
-                                        <Link to={link.path} className={styles.link}>{link.name}</Link>
+                                        <Link href={link.path} className={styles.link}>{link.name}</Link>
                                     </li>
                                 ))}
                             </ul>
@@ -65,12 +66,12 @@ const Footer = () => {
                             <ul className={styles.linkList}>
                                 {productLinks.map((link, index) => (
                                     <li key={index}>
-                                        <Link to={link.path} className={styles.link}>{link.name}</Link>
+                                        <Link href={link.path} className={styles.link}>{link.name}</Link>
                                         {link.subItems && (
                                             <ul className={styles.subLinkList}>
                                                 {link.subItems.map((sub, sIndex) => (
                                                     <li key={sIndex}>
-                                                        <Link to={sub.path} className={styles.subLink}>{sub.name}</Link>
+                                                        <Link href={sub.path} className={styles.subLink}>{sub.name}</Link>
                                                     </li>
                                                 ))}
                                             </ul>
@@ -85,7 +86,7 @@ const Footer = () => {
                             <ul className={styles.linkList}>
                                 {serviceLinks.map((link, index) => (
                                     <li key={index}>
-                                        <Link to={link.path} className={styles.link}>{link.name}</Link>
+                                        <Link href={link.path} className={styles.link}>{link.name}</Link>
                                     </li>
                                 ))}
                             </ul>

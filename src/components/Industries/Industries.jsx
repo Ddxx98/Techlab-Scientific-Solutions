@@ -1,13 +1,15 @@
+"use client";
+
 import React, { useState } from "react";
 import styles from "./Industries.module.css";
 import AnimationWrapper from "../AnimationWrapper";
 import { motion, AnimatePresence } from "framer-motion";
 
-import pharma from "../../assets/pharma_industry.png";
-import food from "../../assets/food_industry.png";
-import environmental from "../../assets/environmental_industry.png";
-import petrochemical from "../../assets/petrochemical_industry.png";
-import forensic from "../../assets/forensic_industry.png";
+const pharma = "/assets/pharma_industry.png";
+const food = "/assets/food_industry.png";
+const environmental = "/assets/environmental_industry.png";
+const petrochemical = "/assets/petrochemical_industry.png";
+const forensic = "/assets/forensic_industry.png";
 
 const industriesData = [
     {

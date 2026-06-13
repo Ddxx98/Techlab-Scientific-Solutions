@@ -1,10 +1,12 @@
+"use client";
+
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import styles from "./Review.module.css";
 import AnimationWrapper from "../AnimationWrapper";
 import { AnimatePresence, motion } from "framer-motion";
-import male from "../../assets/male.png";
-import female from "../../assets/female.png";
+const male = "/assets/male.png";
+const female = "/assets/female.png";
 
 const reviewsData = {
     products: [
@@ -64,7 +66,7 @@ const reviewsData = {
 
 const Review = ({ isDark = true }) => {
     const [activeTab, setActiveTab] = useState("products");
-    const navigate = useNavigate();
+    const router = useRouter();
 
     const themeClass = isDark ? "" : styles.lightTheme;
 
@@ -123,7 +125,7 @@ const Review = ({ isDark = true }) => {
                             </h3>
                             <button
                                 className={styles.contactBtn}
-                                onClick={() => navigate("/contact")}
+                                onClick={() => router.push("/contact")}
                             >
                                 CONTACT <span className={styles.arrow}>→</span>
                             </button>

@@ -1,19 +1,23 @@
+"use client";
+
 import React, { useState } from "react";
-import { NavLink, Link, useNavigate } from "react-router-dom";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import styles from "./Header.module.css";
-import logo from "../../assets/logo.png"; // replace with your logo path
+
+const logo = "/assets/logo.png";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const navigate = useNavigate();
+  const pathname = usePathname();
+  const router = useRouter();
 
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Services", path: "/services" },
     { name: "Products", path: "/products" },
     { name: "About", path: "/about" },
-
   ];
 
   return (
@@ -25,25 +29,28 @@ const Header = () => {
     >
       <div className={styles.container}>
         {/* Logo */}
-        <Link to="/" className={styles.logo}>
-          <img src={logo} alt="Techlab Scientific Solutions" />
+        <Link href="/" className={styles.logo}>
+          <img src={logo} alt="Techlab Scientific Solutions" width="144" height="88" />
           <span>Techlab Scientific Solutions</span>
         </Link>
 
         {/* Desktop Nav */}
         <nav className={styles.nav}>
-          {navLinks.map((link) => (
-            <NavLink
-              key={link.path}
-              to={link.path}
-              className={({ isActive }) => (isActive ? styles.active : "")}
-            >
-              {link.name}
-            </NavLink>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = pathname === link.path;
+            return (
+              <Link
+                key={link.path}
+                href={link.path}
+                className={isActive ? styles.active : ""}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
           <button
             className={styles.contactBtn}
-            onClick={() => navigate("/contact")}
+            onClick={() => router.push("/contact")}
           >
             CONTACT <span>→</span>
           </button>
@@ -61,17 +68,20 @@ const Header = () => {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className={styles.mobileMenu}>
-          {navLinks.map((link) => (
-            <NavLink
-              key={link.path}
-              to={link.path}
-              className={({ isActive }) => (isActive ? styles.active : "")}
-              onClick={() => setMenuOpen(false)}
-            >
-              {link.name}
-            </NavLink>
-          ))}
-          <button onClick={() => navigate("/contact")} className={styles.mobileContactBtn}>
+          {navLinks.map((link) => {
+            const isActive = pathname === link.path;
+            return (
+              <Link
+                key={link.path}
+                href={link.path}
+                className={isActive ? styles.active : ""}
+                onClick={() => setMenuOpen(false)}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
+          <button onClick={() => { router.push("/contact"); setMenuOpen(false); }} className={styles.mobileContactBtn}>
             CONTACT <span>→</span>
           </button>
         </div>

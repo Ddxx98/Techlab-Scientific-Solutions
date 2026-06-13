@@ -1,12 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import styles from "./ServiceData.module.css";
 import AnimationWrapper from "../AnimationWrapper";
-import amc from "../../assets/amc_service.png";
-import cmc from "../../assets/cmc_service.png";
-import onetime from "../../assets/onetime_service.png";
-import calibration from "../../assets/calibration_service.png";
-import training from "../../assets/training_service.png";
+
+const amc = "/assets/amc_service.png";
+const cmc = "/assets/cmc_service.png";
+const onetime = "/assets/onetime_service.png";
+const calibration = "/assets/calibration_service.png";
+const training = "/assets/training_service.png";
 
 const ServiceData = () => {
     const services = [
@@ -199,7 +200,7 @@ const ServiceData = () => {
                                             </div>
                                         )}
 
-                                        <Link to="/contact" className={styles.contactLink}>CONTACT US FOR INQUIRIES →</Link>
+                                        <Link href="/contact" className={styles.contactLink}>CONTACT US FOR INQUIRIES →</Link>
                                     </div>
                                 </div>
                             </div>

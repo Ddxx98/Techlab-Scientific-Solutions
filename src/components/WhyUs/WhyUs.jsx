@@ -1,9 +1,9 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import Link from "next/link";
 import styles from "./WhyUs.module.css";
 import AnimationWrapper from "../AnimationWrapper";
-import { motion } from "framer-motion";
-import BackgroundImg from "../../assets/whyus.jpg"; // Assuming user will provide this, or I use placeholder
+
+const BackgroundImg = "/assets/whyus.jpg";
 
 const features = [
     {
@@ -41,12 +41,10 @@ const features = [
 ];
 
 const WhyUs = () => {
-    const navigate = useNavigate();
     return (
         <section className={styles.whyUsSection}>
             {/* Background Image Wrapper */}
             <div className={styles.bgWrapper}>
-                {/* Placeholder image until user provides actual one */}
                 <img
                     src={BackgroundImg}
                     alt="Background"
@@ -81,18 +79,18 @@ const WhyUs = () => {
                 </div>
 
                 <div className={styles.buttonGroup}>
-                    <button
+                    <Link
+                        href="/services"
                         className={styles.primaryBtn}
-                        onClick={() => navigate("/services")}
                     >
                         Explore services <span className={styles.arrow}>→</span>
-                    </button>
-                    <button
+                    </Link>
+                    <Link
+                        href="/products"
                         className={styles.secondaryBtn}
-                        onClick={() => navigate("/products")}
                     >
                         View Products <span className={styles.arrow}>→</span>
-                    </button>
+                    </Link>
                 </div>
             </div>
         </section>

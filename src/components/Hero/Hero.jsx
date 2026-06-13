@@ -1,9 +1,12 @@
+"use client";
+
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import hero1 from "../../assets/hero_slide_1.png";
-import hero2 from "../../assets/hero_slide_2.png";
-import hero3 from "../../assets/hero_slide_3.png";
+
+const hero1 = "/assets/hero_slide_1.png";
+const hero2 = "/assets/hero_slide_2.png";
+const hero3 = "/assets/hero_slide_3.png";
 import styles from "./Hero.module.css";
 
 const heroSlides = [
@@ -32,7 +35,7 @@ const heroSlides = [
 
 const Hero = () => {
   const [current, setCurrent] = useState(0);
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const currentSlide = heroSlides[current];
 
@@ -126,13 +129,13 @@ const Hero = () => {
           >
             <button
               className={styles.primaryBtn}
-              onClick={() => navigate("/services")}
+              onClick={() => router.push("/services")}
             >
               View services <span className={styles.arrow}>→</span>
             </button>
             <button
               className={styles.secondaryBtn}
-              onClick={() => navigate("/contact")}
+              onClick={() => router.push("/contact")}
             >
               Talk to an Expert <span className={styles.arrow}>→</span>
             </button>

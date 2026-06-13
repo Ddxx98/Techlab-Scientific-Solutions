@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import styles from "./Questions.module.css";
 import AnimationWrapper from "../AnimationWrapper";
@@ -7,50 +9,83 @@ const faqData = {
     general: [
         {
             id: 1,
-            question: "What is Technical Scientific Solutions ?",
-            answer: "Techlab Scientific Solutions is a Bengaluru based company supporting laboratories with reliable scientific and analytical instrument solutions. We work closely with labs, institutions, and industries that depend on accuracy, consistency, and timely support.",
+            question: "What is Techlab Scientific Solutions and where are you located?",
+            answer: "Techlab Scientific Solutions is a Bengaluru-based company dedicated to supporting laboratories with reliable scientific and analytical instrument solutions. We work closely with research labs, testing institutes, and diverse industries that depend on accuracy, consistency, and timely support.",
         },
         {
             id: 2,
-            question: "What is Technical Scientific Solutions ?",
-            answer: "Techlab Scientific Solutions is a Bengaluru based company supporting laboratories with reliable scientific and analytical instrument solutions. We work closely with labs, institutions, and industries that depend on accuracy, consistency, and timely support.",
+            question: "Who are your typical clients and what industries do you serve?",
+            answer: "We serve academic research laboratories, testing facilities, pharmaceutical companies, chemical manufacturers, food & beverage industries, and environmental monitoring agencies that require precise measurement instruments.",
         },
         {
             id: 3,
-            question: "What is Technical Scientific Solutions ?",
-            answer: "Techlab Scientific Solutions is a Bengaluru based company supporting laboratories with reliable scientific and analytical instrument solutions. We work closely with labs, institutions, and industries that depend on accuracy, consistency, and timely support.",
+            question: "What is the core business principle of Techlab Scientific Solutions?",
+            answer: "Our principle is simple: to make sure your instruments work the way they should when you need them. We focus on clear communication, practical solutions, honest timelines, and reliable follow-up, avoiding over-selling or unnecessary procedures.",
         },
         {
             id: 4,
-            question: "What is Technical Scientific Solutions ?",
-            answer: "Techlab Scientific Solutions is a Bengaluru based company supporting laboratories with reliable scientific and analytical instrument solutions. We work closely with labs, institutions, and industries that depend on accuracy, consistency, and timely support.",
+            question: "How quickly does your service team respond to breakdown calls?",
+            answer: "We understand that a down instrument stops your work. With our local presence in Bengaluru, we offer rapid response times for diagnostic and repair services, treating every instrument as critical to your laboratory workflows.",
         },
         {
             id: 5,
-            question: "What is Technical Scientific Solutions ?",
-            answer: "Techlab Scientific Solutions is a Bengaluru based company supporting laboratories with reliable scientific and analytical instrument solutions. We work closely with labs, institutions, and industries that depend on accuracy, consistency, and timely support.",
-        },
-        {
-            id: 6,
-            question: "What is Technical Scientific Solutions ?",
-            answer: "Techlab Scientific Solutions is a Bengaluru based company supporting laboratories with reliable scientific and analytical instrument solutions. We work closely with labs, institutions, and industries that depend on accuracy, consistency, and timely support.",
+            question: "Do you supply genuine spare parts for analytical systems?",
+            answer: "Yes, we provide genuine and highly compatible spare parts, consumables, and accessories for Shimadzu and other major chromatography and spectroscopy brands to ensure optimal uptime and performance.",
         },
     ],
     products: [
         {
             id: 1,
-            question: "What products do you offer ?",
-            answer: "We offer a wide range of analytical instruments, laboratory equipment, and consumables tailored for various scientific applications.",
+            question: "What types of products do you supply for laboratories?",
+            answer: "Our catalog covers Analytical Instruments (GC, GCMS, UV-Vis), Laboratory Instruments (Balances, pH Meters, Centrifuges, Ovens, Autoclaves, Shakers), Accessories (Auto Injectors, Headspace Samplers, ATR modules), Consumables (Liners, Septa, Columns, Vials, Syringes), Calibration Standards (CRMs, traceables), and Support & Utility Systems (Gas manifolds, purification traps, fume hoods, exhaust ventilation).",
         },
-        // Add more product FAQs
+        {
+            id: 2,
+            question: "Which analytical instruments do you specialize in?",
+            answer: "We specialize in Shimadzu Gas Chromatography (GC) systems, GC-MS (Gas Chromatography-Mass Spectrometry) systems, Headspace Autosamplers, and UV-Visible Spectrophotometers, supplying both system hardware and advanced software configurations.",
+        },
+        {
+            id: 3,
+            question: "Can you dynamically suggest custom specifications for lab equipment?",
+            answer: "Yes. For sophisticated laboratory equipment like micro-balances, centrifuges, and autoclaves, we provide detailed technical specifications matching the precise requirements of your workflow.",
+        },
+        {
+            id: 4,
+            question: "Do you offer accessories like autosamplers or specialized software?",
+            answer: "Absolutely. We supply a complete range of automated injection and sampling accessories including liquid autosamplers (AOC-20i/s), automated gas samplers, methanizers for trace FID analysis, ATR attachments, and LabSolutions-compatible data handling software.",
+        },
+        {
+            id: 5,
+            question: "Are your calibration standards traceable?",
+            answer: "Yes, all our Certified Reference Materials (CRMs) and calibration standards are NIST-traceable and come accompanied by a comprehensive Certificate of Analysis (CoA) to comply with GLP/GMP laboratory standards.",
+        },
     ],
     services: [
         {
             id: 1,
-            question: "What services do you provide ?",
-            answer: "Our services include instrument installation, preventive maintenance, on-site repairs, and technical support for all our products.",
+            question: "What maintenance contract options do you offer for instruments?",
+            answer: "We provide two primary contract packages: Annual Maintenance Contracts (AMC) for routine preventive maintenance visits and priority support, and Comprehensive Maintenance Contracts (CMC) which include full breakdown coverage and replacement of eligible spare parts.",
         },
-        // Add more service FAQs
+        {
+            id: 2,
+            question: "Do you support one-time diagnostic or installation services?",
+            answer: "Yes, we offer One-time Service Visits covering professional breakdown diagnosis, routine inspections, instrument dismantling, relocation/shifting, and re-installation services.",
+        },
+        {
+            id: 3,
+            question: "What kind of professional training and workshops do you conduct?",
+            answer: "We run structured training programs and workshops covering basic theory and hands-on laboratory sessions for GC, GC-HS, and GC-MS. These programs are tailored for students, research scholars, faculty, and QA/QC/R&D professionals.",
+        },
+        {
+            id: 4,
+            question: "How do you support academic and industrial research projects?",
+            answer: "We provide comprehensive research support, assisting in analytical method development, sample analysis, gas chromatography optimization, and data interpretation for thesis work or industrial product testing.",
+        },
+        {
+            id: 5,
+            question: "Do you provide laboratory gas pipeline installation?",
+            answer: "Yes, under our Support & Utility services, we design and install high-purity SS316/PTFE gas pipelines, distribution panels, automatic changeover manifolds, and purification traps, alongside fume hood ventilation and exhaust duct systems.",
+        },
     ],
 };
 

@@ -6,11 +6,11 @@ import styles from "./Service.module.css";
 import AnimationWrapper from "../AnimationWrapper";
 import { motion, AnimatePresence } from "framer-motion";
 
-const amc = "/assets/amc_service.png";
-const cmc = "/assets/cmc_service.png";
-const onetime = "/assets/onetime_service.png";
-const calibration = "/assets/calibration_service.png";
-const training = "/assets/training_service.png";
+const amc = "/assets/amc_service.webp";
+const cmc = "/assets/cmc_service.webp";
+const onetime = "/assets/onetime_service.webp";
+const calibration = "/assets/calibration_service.webp";
+const training = "/assets/training_service.webp";
 
 const servicesData = [
     {

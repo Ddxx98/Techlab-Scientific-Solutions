@@ -1,19 +1,19 @@
-const GCMS = "/assets/products/gcms2010.jpeg";
-const GC = "/assets/products/gc.jpeg";
-const GC2010 = "/assets/products/gc2010.jpeg";
-const GCAOC = "/assets/products/aoc.jpeg";
-const GC2014 = "/assets/products/gc2014.jpeg";
-const GC14 = "/assets/products/gc14.jpeg";
-const GC2010lap = "/assets/products/gc2010lap.jpeg";
-const HS20 = "/assets/products/hs.jpeg";
-const GCAOCI = "/assets/products/aoci.jpeg";
-const GCAOC10 = "/assets/products/gcaoc10.jpeg";
-const GCMSAI = "/assets/products/gcmsai.jpeg";
-const GCMSAIAS = "/assets/products/gcmsas.jpeg";
-const GCMSAIHS = "/assets/products/gcmsaoihs.jpeg";
-const GCHS = "/assets/products/gchs.jpeg";
-const UV = "/assets/products/uv.jpeg";
-const accessoriesImg = "/assets/products/accessories.png";
+const GCMS = "/assets/products/gcms2010.webp";
+const GC = "/assets/products/gc.webp";
+const GC2010 = "/assets/products/gc2010.webp";
+const GCAOC = "/assets/products/aoc.webp";
+const GC2014 = "/assets/products/gc2014.webp";
+const GC14 = "/assets/products/gc14.webp";
+const GC2010lap = "/assets/products/gc2010lap.webp";
+const HS20 = "/assets/products/hs.webp";
+const GCAOCI = "/assets/products/aoci.webp";
+const GCAOC10 = "/assets/products/gcaoc10.webp";
+const GCMSAI = "/assets/products/gcmsai.webp";
+const GCMSAIAS = "/assets/products/gcmsas.webp";
+const GCMSAIHS = "/assets/products/gcmsaoihs.webp";
+const GCHS = "/assets/products/gchs.webp";
+const UV = "/assets/products/uv.webp";
+const accessoriesImg = "/assets/products/accessories.webp";
 
 
 // Helper to format product names from image filenames
@@ -158,30 +158,10 @@ function getProductSpecs(name, category) {
 
 // Attributes mapping for UI cards and list
 function getProductAttributes(name, category, imageCount) {
-  const nameLower = name.toLowerCase();
-  const attributes = {
-    CATEGORY: category,
-  };
+  const attributes = {};
   
   if (imageCount > 1) {
     attributes.IMAGES = `${imageCount} Views`;
-  }
-  
-  if (nameLower.includes('balance')) {
-    attributes.TYPE = "Precision Weighing";
-    attributes.CALIBRATION = "External / Internal";
-  } else if (nameLower.includes('meter')) {
-    attributes.TYPE = "Analytical Measurement";
-    attributes.COMPENSATION = "ATC (Automatic)";
-  } else if (nameLower.includes('centrifuge') || nameLower.includes('shaker') || nameLower.includes('stirrer')) {
-    attributes.CONTROL = "Digital / Microprocessor";
-    attributes.SPEED = "Variable Speed";
-  } else if (nameLower.includes('oven') || nameLower.includes('furnace') || nameLower.includes('waterbath') || nameLower.includes('hot plate')) {
-    attributes.TEMP_CONTROL = "PID Digital";
-    attributes.SAFETY = "Over-temp protection";
-  } else {
-    attributes.QUALITY = "Premium Grade";
-    attributes.COMPLIANCE = "Lab Standard";
   }
   
   return attributes;
@@ -207,7 +187,7 @@ const staticProducts = [
       "Fast data acquisition for routine and advanced analysis",
       "Library search capability (NIST / Wiley compatible)"
     ],
-    attributes: { MODEL: "QP2010 Ultra", DETECTOR: "Mass Spectrometer", SOFTWARE: "LabSolutions GCMS" }
+    attributes: { MODEL: "QP2010 Ultra" }
   },
   {
     id: "02",
@@ -227,7 +207,7 @@ const staticProducts = [
       "High sensitivity with low detection limits",
       "Compatible with automated sample introduction systems (HS-20, AOC-20i, etc.)"
     ],
-    attributes: { MODEL: "GC-2010", INLET: "Split/Splitless", TEMP: "Ambient to 450°C" }
+    attributes: { MODEL: "GC-2010" }
   },
   {
     id: "03",
@@ -247,7 +227,7 @@ const staticProducts = [
       "High sensitivity with low detection limits",
       "Compatible with automated sample introduction systems (HS-20, AOC-20i, etc.)"
     ],
-    attributes: { MODEL: "GC-2010 Plus", CARRIER: "He, H2, N2", COOLING: "Rapid" }
+    attributes: { MODEL: "GC-2010 Plus" }
   },
   {
     id: "04",
@@ -271,7 +251,7 @@ const staticProducts = [
       "High-throughput laboratory analysis capability",
       "Suitable for 24/7 continuous operation setups"
     ],
-    attributes: { MODEL: "GC 2010, AOC 20i", SAMPLER: "AOC-20i", VIALS: "12" }
+    attributes: { MODEL: "GC 2010, AOC 20i" }
   },
   {
     id: "05",
@@ -291,7 +271,7 @@ const staticProducts = [
       "High sensitivity with low detection limits",
       "Compatible with automated sample introduction systems (HS-20, AOC-20i, etc.)"
     ],
-    attributes: { MODEL: "GC-2014", DETECTOR: "Dual FID", DISPLAY: "LCD" }
+    attributes: { MODEL: "GC-2014" }
   },
   {
     id: "06",
@@ -311,7 +291,7 @@ const staticProducts = [
       "High sensitivity with low detection limits",
       "Compatible with automated sample introduction systems (HS-20, AOC-20i, etc.)"
     ],
-    attributes: { MODEL: "GC-2014 Plus", THROUGHPUT: "Medium-High", LIMS: "Compatible" }
+    attributes: { MODEL: "GC-2014 Plus" }
   },
   {
     id: "07",
@@ -331,7 +311,7 @@ const staticProducts = [
       "High sensitivity with low detection limits",
       "Compatible with automated sample introduction systems (HS-20, AOC-20i, etc.)"
     ],
-    attributes: { MODEL: "GC-2010 Pro", FOOTPRINT: "Compact", SPEED: "High-speed" }
+    attributes: { MODEL: "GC-2010 Pro" }
   },
   {
     id: "08",
@@ -343,7 +323,7 @@ const staticProducts = [
     images: [HS20],
     description: "High-sensitivity headspace autosampler for the analysis of volatile organic compounds in environmental and pharmaceutical samples.",
     specs: ["Make: Shimadzu", "Sample Loop: 1mL (Std)", "Vial Size: 10/20mL", "Temp range: Up to 300°C", "Leak Test: Automatic"],
-    attributes: { MODEL: "HS-20", LOOP: "1mL", TEMP: "Up to 300°C" }
+    attributes: { MODEL: "HS-20" }
   },
   {
     id: "09",
@@ -367,7 +347,7 @@ const staticProducts = [
       "High-throughput laboratory analysis capability",
       "Suitable for 24/7 continuous operation setups"
     ],
-    attributes: { MODEL: "GC 2010 Plus, AOC 20i", PRECISION: "High", SETUP: "One-click" }
+    attributes: { MODEL: "GC 2010 Plus, AOC 20i" }
   },
   {
     id: "10",
@@ -391,7 +371,7 @@ const staticProducts = [
       "High-throughput laboratory analysis capability",
       "Suitable for 24/7 continuous operation setups"
     ],
-    attributes: { MODEL: "GC 2010, AOC 20i", DUTY: "24/7", CONNECT: "Ethernet" }
+    attributes: { MODEL: "GC 2010, AOC 20i" }
   },
   {
     id: "11",
@@ -411,7 +391,7 @@ const staticProducts = [
       "Fast data acquisition for routine and advanced analysis",
       "Library search capability (NIST / Wiley compatible)"
     ],
-    attributes: { MODEL: "GCMS-QP2010 Ultra", SCAN: "Fast", RESOLUTION: "High" }
+    attributes: { MODEL: "GCMS-QP2010 Ultra" }
   },
   {
     id: "12",
@@ -431,7 +411,7 @@ const staticProducts = [
       "Fast data acquisition for routine and advanced analysis",
       "Library search capability (NIST / Wiley compatible)"
     ],
-    attributes: { MODEL: "QP2010 Plus", RACK: "150 vials", SENSITIVITY: "1pg OFN" }
+    attributes: { MODEL: "QP2010 Plus" }
   },
   {
     id: "13",
@@ -451,7 +431,7 @@ const staticProducts = [
       "Fast data acquisition for routine and advanced analysis",
       "Library search capability (NIST / Wiley compatible)"
     ],
-    attributes: { MODEL: "QP2010 SE", TRANSFER: "Temp controlled", STANDARDS: "CFR Part 11" }
+    attributes: { MODEL: "QP2010 SE" }
   },
   {
     id: "14",
@@ -475,7 +455,7 @@ const staticProducts = [
       "Minimal sample preparation required",
       "Ideal for solid and liquid volatile analysis"
     ],
-    attributes: { MODEL: "GC 2010 Plus", CARRIER: "Direct flow", SAFETY: "Auto check" }
+    attributes: { MODEL: "GC 2010 Plus" }
   },
   {
     id: "15",
@@ -494,7 +474,7 @@ const staticProducts = [
       "PC/software integration option for data analysis",
       "Suitable for routine and advanced laboratory analysis"
     ],
-    attributes: { MODEL: "UV-1800", RANGE: "190-1100 nm", BANDWIDTH: "1nm" }
+    attributes: { MODEL: "UV-1800" }
   },
   {
     id: "17",
@@ -515,7 +495,7 @@ const staticProducts = [
       "Additional Sampling Devices & Valves",
       "Software & Data Handling Systems (LabSolutions compatible integration)"
     ],
-    attributes: { SAMPLING: "Auto-injectors, ATR", COMPATIBILITY: "Shimadzu & Major GCs", SOFTWARE: "Data handling ready" }
+    attributes: { MODEL: "GC/GCMS Accessories" }
   }
 ];
 

@@ -111,6 +111,72 @@ export const rawDynamicProducts = ${JSON.stringify(products, null, 2)};
 
   fs.writeFileSync(OUTPUT_FILE, content, 'utf8');
   console.log(`Successfully generated products list at: ${OUTPUT_FILE}`);
+
+  // Generate sitemap.xml and robots.txt
+  const DOMAIN = 'https://techlabscientific.com';
+  const currentDate = new Date().toISOString().split('T')[0];
+
+  // Core static pages
+  const staticPages = [
+    { path: '', changefreq: 'monthly', priority: '1.0' },
+    { path: '/about', changefreq: 'monthly', priority: '0.8' },
+    { path: '/services', changefreq: 'monthly', priority: '0.8' },
+    { path: '/products', changefreq: 'weekly', priority: '0.8' },
+    { path: '/contact', changefreq: 'monthly', priority: '0.8' },
+  ];
+
+  // Static product IDs ("01" to "17")
+  const staticProductIds = Array.from({ length: 17 }, (_, i) => String(i + 1).padStart(2, '0'));
+  
+  // Dynamic product IDs
+  const dynamicProductIds = products.map(p => p.id);
+
+  const allProductIds = [...staticProductIds, ...dynamicProductIds];
+
+  let sitemapContent = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+`;
+
+  // Append static pages
+  for (const page of staticPages) {
+    sitemapContent += `  <url>
+    <loc>${DOMAIN}${page.path}</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>${page.changefreq}</changefreq>
+    <priority>${page.priority}</priority>
+  </url>
+`;
+  }
+
+  // Append product pages
+  for (const productId of allProductIds) {
+    sitemapContent += `  <url>
+    <loc>${DOMAIN}/product/${productId}</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+`;
+  }
+
+  sitemapContent += `</urlset>
+`;
+
+  const sitemapPath = path.join(__dirname, '..', 'public', 'sitemap.xml');
+  fs.writeFileSync(sitemapPath, sitemapContent, 'utf8');
+  console.log(`Successfully generated sitemap at: ${sitemapPath}`);
+
+  // Generate robots.txt
+  const robotsContent = `User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: ${DOMAIN}/sitemap.xml
+`;
+
+  const robotsPath = path.join(__dirname, '..', 'public', 'robots.txt');
+  fs.writeFileSync(robotsPath, robotsContent, 'utf8');
+  console.log(`Successfully generated robots.txt at: ${robotsPath}`);
 }
 
 scanDirectory();

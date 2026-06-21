@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "./Support.module.css";
 import AnimationWrapper from "../AnimationWrapper";
 
-const SupportImage = "/assets/support1.png";
+const SupportImage = "/assets/support1.webp";
 
 const Support = () => {
     return (

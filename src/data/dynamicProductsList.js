@@ -7,8 +7,8 @@ export const rawDynamicProducts = [
     "name": "Chemicals",
     "category": "Calibration / Reference Standards / Sample Preparation",
     "images": [
-      "/assets/products/Calibration_Ref Standards_Sample Prep/Chemicals_01.jfif",
-      "/assets/products/Calibration_Ref Standards_Sample Prep/Chemicals.jfif"
+      "/assets/products/Calibration_Ref Standards_Sample Prep/Chemicals_01.webp",
+      "/assets/products/Calibration_Ref Standards_Sample Prep/Chemicals.webp"
     ]
   },
   {
@@ -16,9 +16,9 @@ export const rawDynamicProducts = [
     "name": "CRMS",
     "category": "Calibration / Reference Standards / Sample Preparation",
     "images": [
-      "/assets/products/Calibration_Ref Standards_Sample Prep/CRMs_01.jfif",
-      "/assets/products/Calibration_Ref Standards_Sample Prep/CRMs_02.jfif",
-      "/assets/products/Calibration_Ref Standards_Sample Prep/CRMs.jfif"
+      "/assets/products/Calibration_Ref Standards_Sample Prep/CRMs_01.webp",
+      "/assets/products/Calibration_Ref Standards_Sample Prep/CRMs_02.webp",
+      "/assets/products/Calibration_Ref Standards_Sample Prep/CRMs.webp"
     ]
   },
   {
@@ -26,8 +26,8 @@ export const rawDynamicProducts = [
     "name": "Digital Flowmeter",
     "category": "Calibration / Reference Standards / Sample Preparation",
     "images": [
-      "/assets/products/Calibration_Ref Standards_Sample Prep/Digital Flowmeter_01.jfif",
-      "/assets/products/Calibration_Ref Standards_Sample Prep/Digital Flowmeter.jfif"
+      "/assets/products/Calibration_Ref Standards_Sample Prep/Digital Flowmeter_01.webp",
+      "/assets/products/Calibration_Ref Standards_Sample Prep/Digital Flowmeter.webp"
     ]
   },
   {
@@ -35,8 +35,8 @@ export const rawDynamicProducts = [
     "name": "Digital Manometer",
     "category": "Calibration / Reference Standards / Sample Preparation",
     "images": [
-      "/assets/products/Calibration_Ref Standards_Sample Prep/Digital Manometer_01.jfif",
-      "/assets/products/Calibration_Ref Standards_Sample Prep/Digital Manometer.jfif"
+      "/assets/products/Calibration_Ref Standards_Sample Prep/Digital Manometer_01.webp",
+      "/assets/products/Calibration_Ref Standards_Sample Prep/Digital Manometer.webp"
     ]
   },
   {
@@ -44,7 +44,7 @@ export const rawDynamicProducts = [
     "name": "Digital Thermometer",
     "category": "Calibration / Reference Standards / Sample Preparation",
     "images": [
-      "/assets/products/Calibration_Ref Standards_Sample Prep/Digital Thermometer.jfif"
+      "/assets/products/Calibration_Ref Standards_Sample Prep/Digital Thermometer.webp"
     ]
   },
   {
@@ -52,9 +52,9 @@ export const rawDynamicProducts = [
     "name": "Quechers Kit",
     "category": "Calibration / Reference Standards / Sample Preparation",
     "images": [
-      "/assets/products/Calibration_Ref Standards_Sample Prep/Quechers kit _01.jfif",
-      "/assets/products/Calibration_Ref Standards_Sample Prep/Quechers kit _02.jfif",
-      "/assets/products/Calibration_Ref Standards_Sample Prep/Quechers kit.jfif"
+      "/assets/products/Calibration_Ref Standards_Sample Prep/Quechers kit _01.webp",
+      "/assets/products/Calibration_Ref Standards_Sample Prep/Quechers kit _02.webp",
+      "/assets/products/Calibration_Ref Standards_Sample Prep/Quechers kit.webp"
     ]
   },
   {
@@ -62,8 +62,8 @@ export const rawDynamicProducts = [
     "name": "Sample Prep Kits",
     "category": "Calibration / Reference Standards / Sample Preparation",
     "images": [
-      "/assets/products/Calibration_Ref Standards_Sample Prep/Sample Prep Kits_01.jfif",
-      "/assets/products/Calibration_Ref Standards_Sample Prep/Sample Prep Kits.jfif"
+      "/assets/products/Calibration_Ref Standards_Sample Prep/Sample Prep Kits_01.webp",
+      "/assets/products/Calibration_Ref Standards_Sample Prep/Sample Prep Kits.webp"
     ]
   },
   {
@@ -71,8 +71,8 @@ export const rawDynamicProducts = [
     "name": "Standard Chemicals",
     "category": "Calibration / Reference Standards / Sample Preparation",
     "images": [
-      "/assets/products/Calibration_Ref Standards_Sample Prep/standard chemicals_01.jfif",
-      "/assets/products/Calibration_Ref Standards_Sample Prep/standard chemicals.jfif"
+      "/assets/products/Calibration_Ref Standards_Sample Prep/standard chemicals_01.webp",
+      "/assets/products/Calibration_Ref Standards_Sample Prep/standard chemicals.webp"
     ]
   },
   {
@@ -80,7 +80,7 @@ export const rawDynamicProducts = [
     "name": "Standards",
     "category": "Calibration / Reference Standards / Sample Preparation",
     "images": [
-      "/assets/products/Calibration_Ref Standards_Sample Prep/Standards.jpg"
+      "/assets/products/Calibration_Ref Standards_Sample Prep/Standards.webp"
     ]
   },
   {
@@ -88,9 +88,9 @@ export const rawDynamicProducts = [
     "name": "Centrifuge Tubes",
     "category": "Consumables",
     "images": [
-      "/assets/products/Consumables/Centrifuge Tubes_01.jfif",
-      "/assets/products/Consumables/Centrifuge Tubes_02.jfif",
-      "/assets/products/Consumables/Centrifuge Tubes.jfif"
+      "/assets/products/Consumables/Centrifuge Tubes_01.webp",
+      "/assets/products/Consumables/Centrifuge Tubes_02.webp",
+      "/assets/products/Consumables/Centrifuge Tubes.webp"
     ]
   },
   {
@@ -98,8 +98,8 @@ export const rawDynamicProducts = [
     "name": "Crimper",
     "category": "Consumables",
     "images": [
-      "/assets/products/Consumables/Crimper 1.jpg",
-      "/assets/products/Consumables/Crimper.jfif"
+      "/assets/products/Consumables/Crimper 1.webp",
+      "/assets/products/Consumables/Crimper.webp"
     ]
   },
   {
@@ -107,8 +107,8 @@ export const rawDynamicProducts = [
     "name": "Cuvettes",
     "category": "Consumables",
     "images": [
-      "/assets/products/Consumables/Cuvettes_01.jfif",
-      "/assets/products/Consumables/Cuvettes.jfif"
+      "/assets/products/Consumables/Cuvettes_01.webp",
+      "/assets/products/Consumables/Cuvettes.webp"
     ]
   },
   {
@@ -116,7 +116,7 @@ export const rawDynamicProducts = [
     "name": "Deacapper",
     "category": "Consumables",
     "images": [
-      "/assets/products/Consumables/Deacapper 1.jfif"
+      "/assets/products/Consumables/Deacapper 1.webp"
     ]
   },
   {
@@ -124,7 +124,7 @@ export const rawDynamicProducts = [
     "name": "Decapper",
     "category": "Consumables",
     "images": [
-      "/assets/products/Consumables/Decapper.jfif"
+      "/assets/products/Consumables/Decapper.webp"
     ]
   },
   {
@@ -132,9 +132,9 @@ export const rawDynamicProducts = [
     "name": "Ferrule",
     "category": "Consumables",
     "images": [
-      "/assets/products/Consumables/Ferrule 1.jpg",
-      "/assets/products/Consumables/Ferrule 2.jpg",
-      "/assets/products/Consumables/Ferrule.jpg"
+      "/assets/products/Consumables/Ferrule 1.webp",
+      "/assets/products/Consumables/Ferrule 2.webp",
+      "/assets/products/Consumables/Ferrule.webp"
     ]
   },
   {
@@ -142,8 +142,8 @@ export const rawDynamicProducts = [
     "name": "GC Column",
     "category": "Consumables",
     "images": [
-      "/assets/products/Consumables/GC Column 1.jpg",
-      "/assets/products/Consumables/GC Column.jpg"
+      "/assets/products/Consumables/GC Column 1.webp",
+      "/assets/products/Consumables/GC Column.webp"
     ]
   },
   {
@@ -151,8 +151,8 @@ export const rawDynamicProducts = [
     "name": "GC Syringe",
     "category": "Consumables",
     "images": [
-      "/assets/products/Consumables/GC Syringe 1.jpg",
-      "/assets/products/Consumables/GC Syringe.jpg"
+      "/assets/products/Consumables/GC Syringe 1.webp",
+      "/assets/products/Consumables/GC Syringe.webp"
     ]
   },
   {
@@ -160,8 +160,8 @@ export const rawDynamicProducts = [
     "name": "Glasswares",
     "category": "Consumables",
     "images": [
-      "/assets/products/Consumables/Glasswares_01.jfif",
-      "/assets/products/Consumables/Glasswares.jfif"
+      "/assets/products/Consumables/Glasswares_01.webp",
+      "/assets/products/Consumables/Glasswares.webp"
     ]
   },
   {
@@ -169,9 +169,9 @@ export const rawDynamicProducts = [
     "name": "Lamps",
     "category": "Consumables",
     "images": [
-      "/assets/products/Consumables/Lamps_01.jfif",
-      "/assets/products/Consumables/Lamps_02.jfif",
-      "/assets/products/Consumables/Lamps.jfif"
+      "/assets/products/Consumables/Lamps_01.webp",
+      "/assets/products/Consumables/Lamps_02.webp",
+      "/assets/products/Consumables/Lamps.webp"
     ]
   },
   {
@@ -179,8 +179,8 @@ export const rawDynamicProducts = [
     "name": "LC Column",
     "category": "Consumables",
     "images": [
-      "/assets/products/Consumables/LC Column 1.jpg",
-      "/assets/products/Consumables/LC Column.jpg"
+      "/assets/products/Consumables/LC Column 1.webp",
+      "/assets/products/Consumables/LC Column.webp"
     ]
   },
   {
@@ -188,8 +188,8 @@ export const rawDynamicProducts = [
     "name": "Liners",
     "category": "Consumables",
     "images": [
-      "/assets/products/Consumables/Liners 1.jpg",
-      "/assets/products/Consumables/Liners.jpg"
+      "/assets/products/Consumables/Liners 1.webp",
+      "/assets/products/Consumables/Liners.webp"
     ]
   },
   {
@@ -197,8 +197,8 @@ export const rawDynamicProducts = [
     "name": "Nut",
     "category": "Consumables",
     "images": [
-      "/assets/products/Consumables/nut 1.jpg",
-      "/assets/products/Consumables/nut.jpg"
+      "/assets/products/Consumables/nut 1.webp",
+      "/assets/products/Consumables/nut.webp"
     ]
   },
   {
@@ -206,7 +206,7 @@ export const rawDynamicProducts = [
     "name": "Pasteur Pipette",
     "category": "Consumables",
     "images": [
-      "/assets/products/Consumables/Pasteur Pipette.jfif"
+      "/assets/products/Consumables/Pasteur Pipette.webp"
     ]
   },
   {
@@ -214,8 +214,8 @@ export const rawDynamicProducts = [
     "name": "Pipette Tips",
     "category": "Consumables",
     "images": [
-      "/assets/products/Consumables/Pipette tips _01.jfif",
-      "/assets/products/Consumables/Pipette tips.jfif"
+      "/assets/products/Consumables/Pipette tips _01.webp",
+      "/assets/products/Consumables/Pipette tips.webp"
     ]
   },
   {
@@ -223,8 +223,8 @@ export const rawDynamicProducts = [
     "name": "Pipette",
     "category": "Consumables",
     "images": [
-      "/assets/products/Consumables/Pipette_01.jfif",
-      "/assets/products/Consumables/Pipette.jfif"
+      "/assets/products/Consumables/Pipette_01.webp",
+      "/assets/products/Consumables/Pipette.webp"
     ]
   },
   {
@@ -232,8 +232,8 @@ export const rawDynamicProducts = [
     "name": "Septa",
     "category": "Consumables",
     "images": [
-      "/assets/products/Consumables/Septa 1.jfif",
-      "/assets/products/Consumables/Septa.jfif"
+      "/assets/products/Consumables/Septa 1.webp",
+      "/assets/products/Consumables/Septa.webp"
     ]
   },
   {
@@ -241,8 +241,8 @@ export const rawDynamicProducts = [
     "name": "Syringe Filters",
     "category": "Consumables",
     "images": [
-      "/assets/products/Consumables/Syringe filters _01.jfif",
-      "/assets/products/Consumables/Syringe filters.jfif"
+      "/assets/products/Consumables/Syringe filters _01.webp",
+      "/assets/products/Consumables/Syringe filters.webp"
     ]
   },
   {
@@ -250,7 +250,7 @@ export const rawDynamicProducts = [
     "name": "Syringes",
     "category": "Consumables",
     "images": [
-      "/assets/products/Consumables/Syringes.jfif"
+      "/assets/products/Consumables/Syringes.webp"
     ]
   },
   {
@@ -258,8 +258,8 @@ export const rawDynamicProducts = [
     "name": "Vial Holder",
     "category": "Consumables",
     "images": [
-      "/assets/products/Consumables/vial holder 1.jpg",
-      "/assets/products/Consumables/vial holder.jpg"
+      "/assets/products/Consumables/vial holder 1.webp",
+      "/assets/products/Consumables/vial holder.webp"
     ]
   },
   {
@@ -267,7 +267,7 @@ export const rawDynamicProducts = [
     "name": "Vials 20ml Hs",
     "category": "Consumables",
     "images": [
-      "/assets/products/Consumables/Vials 20ml HS.jpg"
+      "/assets/products/Consumables/Vials 20ml HS.webp"
     ]
   },
   {
@@ -275,7 +275,7 @@ export const rawDynamicProducts = [
     "name": "Vials 2ml Ambr",
     "category": "Consumables",
     "images": [
-      "/assets/products/Consumables/Vials 2ml Ambr.jpg"
+      "/assets/products/Consumables/Vials 2ml Ambr.webp"
     ]
   },
   {
@@ -283,7 +283,7 @@ export const rawDynamicProducts = [
     "name": "Vials 2ml",
     "category": "Consumables",
     "images": [
-      "/assets/products/Consumables/Vials 2ml.jpg"
+      "/assets/products/Consumables/Vials 2ml.webp"
     ]
   },
   {
@@ -291,7 +291,7 @@ export const rawDynamicProducts = [
     "name": "Vials Cap Septa 20ml",
     "category": "Consumables",
     "images": [
-      "/assets/products/Consumables/Vials Cap septa 20ml_01.jfif"
+      "/assets/products/Consumables/Vials Cap septa 20ml_01.webp"
     ]
   },
   {
@@ -299,7 +299,7 @@ export const rawDynamicProducts = [
     "name": "Vials Cap Septa 2ml",
     "category": "Consumables",
     "images": [
-      "/assets/products/Consumables/Vials Cap septa 2ml_01.jfif"
+      "/assets/products/Consumables/Vials Cap septa 2ml_01.webp"
     ]
   },
   {
@@ -307,9 +307,9 @@ export const rawDynamicProducts = [
     "name": "Analytical Balance",
     "category": "Laboratory Instruments",
     "images": [
-      "/assets/products/Laboratory Instruments/Analytical Balance_01.jfif",
-      "/assets/products/Laboratory Instruments/Analytical Balance_02.jfif",
-      "/assets/products/Laboratory Instruments/Analytical Balance.jfif"
+      "/assets/products/Laboratory Instruments/Analytical Balance_01.webp",
+      "/assets/products/Laboratory Instruments/Analytical Balance_02.webp",
+      "/assets/products/Laboratory Instruments/Analytical Balance.webp"
     ]
   },
   {
@@ -317,8 +317,8 @@ export const rawDynamicProducts = [
     "name": "Autoclave",
     "category": "Laboratory Instruments",
     "images": [
-      "/assets/products/Laboratory Instruments/Autoclave_01.jfif",
-      "/assets/products/Laboratory Instruments/Autoclave.jfif"
+      "/assets/products/Laboratory Instruments/Autoclave_01.webp",
+      "/assets/products/Laboratory Instruments/Autoclave.webp"
     ]
   },
   {
@@ -326,8 +326,8 @@ export const rawDynamicProducts = [
     "name": "Centrifuge",
     "category": "Laboratory Instruments",
     "images": [
-      "/assets/products/Laboratory Instruments/Centrifuge_01.jfif",
-      "/assets/products/Laboratory Instruments/Centrifuge.jfif"
+      "/assets/products/Laboratory Instruments/Centrifuge_01.webp",
+      "/assets/products/Laboratory Instruments/Centrifuge.webp"
     ]
   },
   {
@@ -335,7 +335,7 @@ export const rawDynamicProducts = [
     "name": "Hot Air Oven",
     "category": "Laboratory Instruments",
     "images": [
-      "/assets/products/Laboratory Instruments/Hot Air Oven.jfif"
+      "/assets/products/Laboratory Instruments/Hot Air Oven.webp"
     ]
   },
   {
@@ -343,8 +343,8 @@ export const rawDynamicProducts = [
     "name": "Hot Plate",
     "category": "Laboratory Instruments",
     "images": [
-      "/assets/products/Laboratory Instruments/Hot Plate_01.jfif",
-      "/assets/products/Laboratory Instruments/Hot Plate.jfif"
+      "/assets/products/Laboratory Instruments/Hot Plate_01.webp",
+      "/assets/products/Laboratory Instruments/Hot Plate.webp"
     ]
   },
   {
@@ -352,7 +352,7 @@ export const rawDynamicProducts = [
     "name": "Incubator",
     "category": "Laboratory Instruments",
     "images": [
-      "/assets/products/Laboratory Instruments/Incubator.jfif"
+      "/assets/products/Laboratory Instruments/Incubator.webp"
     ]
   },
   {
@@ -360,8 +360,8 @@ export const rawDynamicProducts = [
     "name": "Magnetic Stirrer",
     "category": "Laboratory Instruments",
     "images": [
-      "/assets/products/Laboratory Instruments/Magnetic Stirrer_01.jfif",
-      "/assets/products/Laboratory Instruments/Magnetic Stirrer.jfif"
+      "/assets/products/Laboratory Instruments/Magnetic Stirrer_01.webp",
+      "/assets/products/Laboratory Instruments/Magnetic Stirrer.webp"
     ]
   },
   {
@@ -369,8 +369,8 @@ export const rawDynamicProducts = [
     "name": "Microscope",
     "category": "Laboratory Instruments",
     "images": [
-      "/assets/products/Laboratory Instruments/Microscope_01.jfif",
-      "/assets/products/Laboratory Instruments/Microscope.jfif"
+      "/assets/products/Laboratory Instruments/Microscope_01.webp",
+      "/assets/products/Laboratory Instruments/Microscope.webp"
     ]
   },
   {
@@ -378,7 +378,7 @@ export const rawDynamicProducts = [
     "name": "Muffle Furnace",
     "category": "Laboratory Instruments",
     "images": [
-      "/assets/products/Laboratory Instruments/Muffle Furnace.jfif"
+      "/assets/products/Laboratory Instruments/Muffle Furnace.webp"
     ]
   },
   {
@@ -386,7 +386,7 @@ export const rawDynamicProducts = [
     "name": "pH Meter",
     "category": "Laboratory Instruments",
     "images": [
-      "/assets/products/Laboratory Instruments/pH Meter.jfif"
+      "/assets/products/Laboratory Instruments/pH Meter.webp"
     ]
   },
   {
@@ -394,7 +394,7 @@ export const rawDynamicProducts = [
     "name": "Pocket pH Meter",
     "category": "Laboratory Instruments",
     "images": [
-      "/assets/products/Laboratory Instruments/Pocket pH Meter.jfif"
+      "/assets/products/Laboratory Instruments/Pocket pH Meter.webp"
     ]
   },
   {
@@ -402,11 +402,11 @@ export const rawDynamicProducts = [
     "name": "Shakers",
     "category": "Laboratory Instruments",
     "images": [
-      "/assets/products/Laboratory Instruments/Shakers_01.jfif",
-      "/assets/products/Laboratory Instruments/Shakers_02.jfif",
-      "/assets/products/Laboratory Instruments/Shakers_03.jfif",
-      "/assets/products/Laboratory Instruments/Shakers_04.jfif",
-      "/assets/products/Laboratory Instruments/Shakers.jfif"
+      "/assets/products/Laboratory Instruments/Shakers_01.webp",
+      "/assets/products/Laboratory Instruments/Shakers_02.webp",
+      "/assets/products/Laboratory Instruments/Shakers_03.webp",
+      "/assets/products/Laboratory Instruments/Shakers_04.webp",
+      "/assets/products/Laboratory Instruments/Shakers.webp"
     ]
   },
   {
@@ -414,8 +414,8 @@ export const rawDynamicProducts = [
     "name": "Vortex Mirror",
     "category": "Laboratory Instruments",
     "images": [
-      "/assets/products/Laboratory Instruments/Vortex Mirror_01.jfif",
-      "/assets/products/Laboratory Instruments/Vortex Mirror.jfif"
+      "/assets/products/Laboratory Instruments/Vortex Mirror_01.webp",
+      "/assets/products/Laboratory Instruments/Vortex Mirror.webp"
     ]
   },
   {
@@ -423,9 +423,9 @@ export const rawDynamicProducts = [
     "name": "Waterbath",
     "category": "Laboratory Instruments",
     "images": [
-      "/assets/products/Laboratory Instruments/Waterbath _01.jfif",
-      "/assets/products/Laboratory Instruments/Waterbath _02.jfif",
-      "/assets/products/Laboratory Instruments/Waterbath.jfif"
+      "/assets/products/Laboratory Instruments/Waterbath _01.webp",
+      "/assets/products/Laboratory Instruments/Waterbath _02.webp",
+      "/assets/products/Laboratory Instruments/Waterbath.webp"
     ]
   },
   {
@@ -433,8 +433,8 @@ export const rawDynamicProducts = [
     "name": "Weighing Balance",
     "category": "Laboratory Instruments",
     "images": [
-      "/assets/products/Laboratory Instruments/Weighing Balance_01.jfif",
-      "/assets/products/Laboratory Instruments/Weighing Balance.jfif"
+      "/assets/products/Laboratory Instruments/Weighing Balance_01.webp",
+      "/assets/products/Laboratory Instruments/Weighing Balance.webp"
     ]
   },
   {
@@ -442,7 +442,7 @@ export const rawDynamicProducts = [
     "name": "Ducts",
     "category": "Support & Utility Systems Supplies",
     "images": [
-      "/assets/products/Support & Utility Supplies/Ducts.jfif"
+      "/assets/products/Support & Utility Supplies/Ducts.webp"
     ]
   },
   {
@@ -450,8 +450,8 @@ export const rawDynamicProducts = [
     "name": "Exhaust",
     "category": "Support & Utility Systems Supplies",
     "images": [
-      "/assets/products/Support & Utility Supplies/Exhaust_01.jfif",
-      "/assets/products/Support & Utility Supplies/Exhaust.jfif"
+      "/assets/products/Support & Utility Supplies/Exhaust_01.webp",
+      "/assets/products/Support & Utility Supplies/Exhaust.webp"
     ]
   },
   {
@@ -459,11 +459,11 @@ export const rawDynamicProducts = [
     "name": "Filters",
     "category": "Support & Utility Systems Supplies",
     "images": [
-      "/assets/products/Support & Utility Supplies/Filters 1.jpg",
-      "/assets/products/Support & Utility Supplies/Filters 2.jpg",
-      "/assets/products/Support & Utility Supplies/Filters 3.jpg",
-      "/assets/products/Support & Utility Supplies/Filters 4.jpg",
-      "/assets/products/Support & Utility Supplies/Filters.jpg"
+      "/assets/products/Support & Utility Supplies/Filters 1.webp",
+      "/assets/products/Support & Utility Supplies/Filters 2.webp",
+      "/assets/products/Support & Utility Supplies/Filters 3.webp",
+      "/assets/products/Support & Utility Supplies/Filters 4.webp",
+      "/assets/products/Support & Utility Supplies/Filters.webp"
     ]
   },
   {
@@ -471,8 +471,8 @@ export const rawDynamicProducts = [
     "name": "Fittings",
     "category": "Support & Utility Systems Supplies",
     "images": [
-      "/assets/products/Support & Utility Supplies/Fittings_01.jfif",
-      "/assets/products/Support & Utility Supplies/Fittings.jfif"
+      "/assets/products/Support & Utility Supplies/Fittings_01.webp",
+      "/assets/products/Support & Utility Supplies/Fittings.webp"
     ]
   },
   {
@@ -480,8 +480,8 @@ export const rawDynamicProducts = [
     "name": "Fume Hood",
     "category": "Support & Utility Systems Supplies",
     "images": [
-      "/assets/products/Support & Utility Supplies/Fume hood_01.jfif",
-      "/assets/products/Support & Utility Supplies/Fume hood.jfif"
+      "/assets/products/Support & Utility Supplies/Fume hood_01.webp",
+      "/assets/products/Support & Utility Supplies/Fume hood.webp"
     ]
   },
   {
@@ -489,7 +489,7 @@ export const rawDynamicProducts = [
     "name": "Gas Panel And Distribution Set Up",
     "category": "Support & Utility Systems Supplies",
     "images": [
-      "/assets/products/Support & Utility Supplies/Gas Panel and distribution set up.jfif"
+      "/assets/products/Support & Utility Supplies/Gas Panel and distribution set up.webp"
     ]
   },
   {
@@ -497,7 +497,7 @@ export const rawDynamicProducts = [
     "name": "Gas Panel",
     "category": "Support & Utility Systems Supplies",
     "images": [
-      "/assets/products/Support & Utility Supplies/Gas Panel.jfif"
+      "/assets/products/Support & Utility Supplies/Gas Panel.webp"
     ]
   },
   {
@@ -505,7 +505,7 @@ export const rawDynamicProducts = [
     "name": "Genetic Regulator",
     "category": "Support & Utility Systems Supplies",
     "images": [
-      "/assets/products/Support & Utility Supplies/Genetic regulator.jfif"
+      "/assets/products/Support & Utility Supplies/Genetic regulator.webp"
     ]
   },
   {
@@ -513,8 +513,8 @@ export const rawDynamicProducts = [
     "name": "SS Regulators",
     "category": "Support & Utility Systems Supplies",
     "images": [
-      "/assets/products/Support & Utility Supplies/SS Regulators_01.jfif",
-      "/assets/products/Support & Utility Supplies/SS Regulators.jfif"
+      "/assets/products/Support & Utility Supplies/SS Regulators_01.webp",
+      "/assets/products/Support & Utility Supplies/SS Regulators.webp"
     ]
   },
   {
@@ -522,7 +522,7 @@ export const rawDynamicProducts = [
     "name": "SS Tube",
     "category": "Support & Utility Systems Supplies",
     "images": [
-      "/assets/products/Support & Utility Supplies/SS Tube.jfif"
+      "/assets/products/Support & Utility Supplies/SS Tube.webp"
     ]
   },
   {
@@ -530,8 +530,8 @@ export const rawDynamicProducts = [
     "name": "Super Clean Gas Filters",
     "category": "Support & Utility Systems Supplies",
     "images": [
-      "/assets/products/Support & Utility Supplies/Super clean gas filters 1.jpg",
-      "/assets/products/Support & Utility Supplies/Super clean gas filters.jpg"
+      "/assets/products/Support & Utility Supplies/Super clean gas filters 1.webp",
+      "/assets/products/Support & Utility Supplies/Super clean gas filters.webp"
     ]
   },
   {
@@ -539,7 +539,7 @@ export const rawDynamicProducts = [
     "name": "Toggle Valve",
     "category": "Support & Utility Systems Supplies",
     "images": [
-      "/assets/products/Support & Utility Supplies/Toggle valve.jfif"
+      "/assets/products/Support & Utility Supplies/Toggle valve.webp"
     ]
   }
 ];

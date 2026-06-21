@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import styles from "./Footer.module.css";
 import AnimationWrapper from "../AnimationWrapper";
+import { categories } from "../../data/products";
 
 const Footer = () => {
     const scrollToTop = () => {
@@ -15,32 +16,33 @@ const Footer = () => {
 
     const exploreLinks = [
         { name: "Home", path: "/" },
-        { name: "About", path: "/about" },
         { name: "Services", path: "/services" },
         { name: "Products", path: "/products" },
+        { name: "About", path: "/about" },
         { name: "Contact", path: "/contact" },
     ];
 
-    const productLinks = [
-        {
-            name: "Gas Chromatograph System",
-            path: "/products",
-            subItems: [
-                { name: "A) Manual Injection", path: "/product/02" },
-                { name: "B) Auto Injection (With Auto Injector / Auto Sampler)", path: "/product/04" }
-            ]
-        },
-        { name: "Gas Chromatograph System with Headspace Sampler", path: "/product/14" },
-        { name: "Gas Chromatograph Mass Spectrometer", path: "/product/01" },
-        { name: "UV Visible Spectrophotometer", path: "/product/15" },
-        { name: "HPLC Systems", path: "/products" }
-    ];
+    const productLinks = categories
+        .filter(c => c !== "All")
+        .map(c => {
+            let name = c;
+            if (c === "Calibration / Reference Standards / Sample Preparation") {
+                name = "Calibration / Reference Standards";
+            } else if (c === "Support & Utility Systems Supplies") {
+                name = "Support & Utility Systems";
+            }
+            return {
+                name,
+                path: `/products?category=${encodeURIComponent(c)}`
+            };
+        });
 
     const serviceLinks = [
-        { name: "AMC Service Contracts", path: "/services" },
-        { name: "CMC Service Contracts", path: "/services" },
-        { name: "Onetime Service Visit", path: "/services" },
-        { name: "Inspection & Calibration", path: "/services" },
+        { name: "Service Contracts (AMC)", path: "/services#amc" },
+        { name: "Service Contracts (CMC)", path: "/services#cmc" },
+        { name: "Onetime Service Visit", path: "/services#onetime" },
+        { name: "Inspection & Calibration", path: "/services#calibration" },
+        { name: "Training / Workshop / Research Support", path: "/services#training" },
     ];
 
     return (

@@ -52,6 +52,11 @@ export default function ProductDetailsClient({ id }) {
                         <AnimationWrapper type="fade-left" className={styles.infoSection}>
                             <span className={styles.category}>{product.category}</span>
                             <h1 className={styles.productName}>{product.name}</h1>
+                            {product.attributes && product.attributes.MODEL && (
+                                <div className={styles.modelDetail}>
+                                    <strong>Model:</strong> {product.attributes.MODEL}
+                                </div>
+                            )}
                             <p className={styles.description}>{product.description}</p>
 
                             <div className={styles.specsSection}>

@@ -213,25 +213,29 @@
 
 .btnWrapper {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    margin-top: 1.5rem;
 }
 
 .contactLink {
     font-size: 0.875rem;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--color-primary);
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    padding-bottom: 4px;
-    border-bottom: 2px solid var(--color-primary);
+    padding: 0.75rem 2rem;
+    border: 2px solid var(--color-primary);
+    border-radius: 0.25rem;
     transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
 }
 
 .contactLink:hover {
-    color: var(--color-primary-hover);
-    border-bottom-color: var(--color-primary-hover);
-    padding-right: 0.5rem;
+    background: var(--color-primary);
+    color: white;
+    box-shadow: 0 4px 12px rgba(0, 85, 175, 0.15);
 }
 
 /* Tablet */

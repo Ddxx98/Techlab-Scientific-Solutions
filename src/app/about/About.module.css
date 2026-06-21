@@ -37,7 +37,7 @@
 
 .principleHero {
     height: 35rem;
-    background-image: url("/assets/about.jpg");
+    background-image: url("/assets/about.webp");
     background-size: cover;
     background-position: center;
     position: relative;

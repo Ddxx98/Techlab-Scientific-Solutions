@@ -122,6 +122,19 @@
     margin: 0;
 }
 
+.modelDetail {
+    font-size: 1.125rem;
+    color: var(--color-text-primary);
+    margin-top: -0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.modelDetail strong {
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-right: 0.5rem;
+}
+
 .description {
     font-size: 1.125rem;
     color: var(--color-text-secondary);

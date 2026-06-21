@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "./WhyUs.module.css";
 import AnimationWrapper from "../AnimationWrapper";
 
-const BackgroundImg = "/assets/whyus.jpg";
+const BackgroundImg = "/assets/whyus.webp";
 
 const features = [
     {

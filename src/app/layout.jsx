@@ -1,6 +1,28 @@
 import "../index.css";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
+import { Poppins, Orbitron } from "next/font/google";
+import localFont from "next/font/local";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-poppins",
+  display: "swap",
+});
+
+const orbitron = Orbitron({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-orbitron",
+  display: "swap",
+});
+
+const chromia = localFont({
+  src: "../../public/Chromia.otf",
+  variable: "--font-chromia",
+  display: "swap",
+});
 
 export const metadata = {
   metadataBase: new URL("https://techlabscientific.com"),
@@ -38,7 +60,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${poppins.variable} ${orbitron.variable} ${chromia.variable}`}>
       <head>
         <link rel="icon" href="/assets/logo.png" />
         <link rel="shortcut icon" href="/assets/logo.png" />

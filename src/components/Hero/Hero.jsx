@@ -4,9 +4,9 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
-const hero1 = "/assets/hero_slide_1.png";
-const hero2 = "/assets/hero_slide_2.png";
-const hero3 = "/assets/hero_slide_3.png";
+const hero1 = "/assets/hero_slide_1.webp";
+const hero2 = "/assets/hero_slide_2.webp";
+const hero3 = "/assets/hero_slide_3.webp";
 import styles from "./Hero.module.css";
 
 const heroSlides = [

@@ -5,7 +5,7 @@ import emailjs from "@emailjs/browser";
 import styles from "./Contact.module.css";
 import AnimationWrapper from "../../components/AnimationWrapper";
 
-const ContactImg = "/assets/contact.png";
+const ContactImg = "/assets/contact.webp";
 
 // EmailJS Configuration
 const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_of4g0pl";
@@ -17,7 +17,7 @@ const GOOGLE_SHEET_WEBAPP_URL = process.env.NEXT_PUBLIC_GOOGLE_SHEET_WEBAPP_URL 
 
 const categoryLabels = {
     products: "Products",
-    sparesConsumables: "Spares/Consumables/Accessories/Support Utilities/Standards /Miscellaneous",
+    sparesConsumables: "Spares / Consumables / Accessories / Support Utilities / Standards / Miscellaneous",
     amc: "AMC",
     cmc: "CMC",
     oneTimeService: "One Time Service",

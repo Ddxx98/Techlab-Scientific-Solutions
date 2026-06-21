@@ -3,16 +3,17 @@ import Link from "next/link";
 import styles from "./ServiceData.module.css";
 import AnimationWrapper from "../AnimationWrapper";
 
-const amc = "/assets/amc_service.png";
-const cmc = "/assets/cmc_service.png";
-const onetime = "/assets/onetime_service.png";
-const calibration = "/assets/calibration_service.png";
-const training = "/assets/training_service.png";
+const amc = "/assets/amc_service.webp";
+const cmc = "/assets/cmc_service.webp";
+const onetime = "/assets/onetime_service.webp";
+const calibration = "/assets/calibration_service.webp";
+const training = "/assets/training_service.webp";
 
 const ServiceData = () => {
     const services = [
         {
             id: "01",
+            anchor: "amc",
             title: "Service Contracts (AMC)",
             description: "Annual Maintenance Contract (AMC). We offer reliable, scheduled maintenance to keep your laboratory instruments in peak condition.",
             image: amc,
@@ -32,6 +33,7 @@ const ServiceData = () => {
         },
         {
             id: "02",
+            anchor: "cmc",
             title: "Service Contracts (CMC)",
             description: "Comprehensive Maintenance Contract (CMC). Complete coverage including preventive maintenance and parts coverage for zero compromises.",
             image: cmc,
@@ -52,6 +54,7 @@ const ServiceData = () => {
         },
         {
             id: "03",
+            anchor: "onetime",
             title: "Onetime Service Visit",
             description: "Our one-time service visit provides professional diagnosis, repair, and support for your equipment or systems. Whether it's a breakdown, performance issue, routine inspection, dismantling, shifting, or re-installation, our experts deliver prompt and effective solutions.",
             image: onetime,
@@ -67,6 +70,7 @@ const ServiceData = () => {
         },
         {
             id: "04",
+            anchor: "calibration",
             title: "Inspection & Calibration",
             description: "General inspection, Service, Installation, Calibration, and Qualification Visit options for thorough, standardized system checks.",
             image: calibration,
@@ -81,6 +85,7 @@ const ServiceData = () => {
         },
         {
             id: "05",
+            anchor: "training",
             title: "Training / Workshop / Research Support",
             description: "Unlock advanced analytical capabilities through structured learning, research assistance, and hands-on laboratory workshops guided by qualified professionals.",
             image: training,
@@ -129,7 +134,7 @@ const ServiceData = () => {
                             type="fade-up" 
                             delay={index * 0.1}
                         >
-                            <div className={styles.serviceRow}>
+                            <div id={service.anchor} className={styles.serviceRow}>
                                 <div className={styles.titleCol}>
                                     <h3 className={styles.serviceTitle}>{service.title}</h3>
                                 </div>

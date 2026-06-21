@@ -5,11 +5,11 @@ import styles from "./Industries.module.css";
 import AnimationWrapper from "../AnimationWrapper";
 import { motion, AnimatePresence } from "framer-motion";
 
-const pharma = "/assets/pharma_industry.png";
-const food = "/assets/food_industry.png";
-const environmental = "/assets/environmental_industry.png";
-const petrochemical = "/assets/petrochemical_industry.png";
-const forensic = "/assets/forensic_industry.png";
+const pharma = "/assets/pharma_industry.webp";
+const food = "/assets/food_industry.webp";
+const environmental = "/assets/environmental_industry.webp";
+const petrochemical = "/assets/petrochemical_industry.webp";
+const forensic = "/assets/forensic_industry.webp";
 
 const industriesData = [
     {
